@@ -1,0 +1,22 @@
+<div class="movie-container mdl-grid">
+            <div ng-repeat="movie in $ctrl.movies" class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                <div class="movie-card mdl-card mdl-shadow--8dp mdl-cell mdl-cell--12-col">
+                    <div class="mdl-grid">
+                        <div class=" mdl-cell mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                            <h1 class="movie-card__h1">{{ movie.title}}</h1>
+                        </div>
+                        <div class=" mdl-cell mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+                            <h6 class="movie-card__h6"><span>Release Date</span><i class="movie-card__icon material-icons">update</i>04 Jan 2015</h6>
+                        </div>
+                        <div ng-repeat="date in movie.date" class="mdl-grid" id="btnRepeat" style="margin:auto 0; width:100%">
+                        <div class="mdl-cell mdl-cell--4-col-tablet mdl-cell--6-col-desktop">
+                            <h4 class="movie-card__h4">{{ date.date | date }}</h4>
+                        </div>
+                        <div class="mdl-cell mdl-cell-6-col-tablet mdl-cell--6-col-desktop">
+                            <button class="movie-card__button mdl-button mdl-button--raised mdl-js-button dialog-button mdl-button--colored" id="movie">Buy Tickets</button>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>

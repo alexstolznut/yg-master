@@ -1,0 +1,132 @@
+nav {
+    background-color: #B73D5E;
+}
+
+.navbar-light .links .nav-link {
+    color: white;
+    padding-left: 15% !important;
+    font-size: 1.2em
+}
+
+
+.navbar-light .icons .nav-link {
+    color: white;
+    font-size: 1.2em;
+    float: right;
+}
+
+.navbar-light .icons .nav-link img {
+    width: 40px;
+    height: 30px;
+}
+
+.navbar .navbar-nav {
+    padding-left: 0%;
+}
+
+header #headerCarouselIndicators,
+header #aboutHeaderCarouselIndicators {
+    height: 400px;
+    overflow: hidden;
+}
+
+header #headerCarouselIndicators img,
+header #aboutHeaderCarouselIndicators img {
+    height: 400px
+}
+
+.carousel-caption {
+    top: 50%;
+}
+
+.weekly-special-text,
+.popular-items-text {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5%;
+    padding-left: 5%;
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
+    width: 92%;
+
+}
+
+.card.col-lg-3 {
+    padding: 0%;
+    margin: 4%;
+
+}
+
+.card img {
+    width: 100%;
+    padding: 0%;
+    max-height: 150px
+}
+
+.card .btn {
+    padding: 8%;
+    height: 3rem;
+    font-size: .7em;
+    text-align: left;
+    background-color: #B73D5E;
+}
+
+.contact-card, .form-card {
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    margin-top:10%;
+}
+
+.form-card form .form-group{
+    margin: 0 auto;
+    margin-top:2.5%;
+    margin-bottom: 5%;
+}
+
+.about-us-icon {
+    margin-top: 5%;
+}
+
+.about-us-icon img {
+    width: 10%;
+    height: 50%;
+    margin: 0 auto;
+    background-color: brown;
+    border-radius: 65%;
+}
+
+.contact-text {
+    border-bottom: 1px solid black;
+    margin-top: 10%;
+}
+
+.contact-img {
+    width: 50px;
+    height: 50px;
+}
+
+.contact-link {
+    color: black;
+}
+.contact-row{
+    margin-bottom:2.5%;
+    margin-top:2.5%;
+}
+.email .contact-img {
+    width: 75px;
+    height: 75px;
+}
+
+form #userMessage {
+    margin-bottom:0%;
+    padding-bottom: 0%;
+}
+.form-card .form-group:last-of-type {
+    margin-bottom:2.5%;
+}
+
+/*SIDEBAR*/
+
+

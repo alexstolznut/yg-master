@@ -1,0 +1,116 @@
+<html !DOCTYPE>
+
+<head>
+    <title>Bootstrap 3 Collapsible Sidebar</title>
+    <!-- Bootstrap CSS CDN -->
+    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="product-card/product-card.module.js"></script>
+    <script src="product-card/product-card.component.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#"><img id="logo" src="img/Logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav links col-lg-6">
+                <a class="nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+                <a class="nav-item nav-link" href="product.html">Products</a>
+                <a class="nav-item nav-link" href="contact.html">Contact</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none">Cart</a>
+                <a class="nav-item nav-link d-lg-none d-xl-none">Sign In</a>
+            </div>
+
+            <div class="navbar-nav icons col-lg-4 offset-lg-4">
+                <a class="nav-item nav-link d-none d-lg-block" href="#">Sign In</a>
+                <a class="nav-item nav-link d-none d-lg-block" href="#"><img src="img/cart-icon.png" class="d-none d-lg-block"></a>
+            </div>
+
+        </div>
+    </nav>
+    <header></header>
+    <div class="wrapper">
+        <div id="sidebar">
+            <!--Sidebar Content-->
+            <!--Sidebar Links-->
+            <ul class="list-unstyled components">
+                <li><a href="#herbal">Herbal</a></li>
+                <li><a href="#delicaies">Delicacy</a></li>
+                <li><a href="#supplements">Supplements</a></li>
+            </ul>
+        </div>
+
+        <div id="content" ng-app="productApp">
+
+
+            <product-card></product-card>
+        </div>
+
+    </div>
+    <footer class="page-footer font-small stylish-color-dark pt-4 mt-4">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About Us</h5>
+                    <p>Stuff goes here and yeah</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none">
+
+                <div class="col-md-4 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Policies</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="#!">Shipping Policy</a>
+                        </li>
+                        <li>
+                            <a href="#!">Exchange &amp; Retrun Policy</a>
+                        </li>
+                        <li>
+                            <a href="#!">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="clearfix w-100 d-md-none">
+                <div class="col-md-4 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Contact Us</a>
+                            <a href="#!">Wholesale</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="#"> Yongtai Ginseng</a>
+        </div>
+    </footer>
+
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--jQuery Scroll Bar-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/sidebar.js"></script>
+</body>
+
+</html>
