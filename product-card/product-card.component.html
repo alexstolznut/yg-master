@@ -1,6 +1,7 @@
+<link rel="stylesheet" href="../css/product.css">
 <div class="row herbal" id="herbal">
-    <div class="col-12"><h2 class="display-4">Herbal</h2></div>
-    <div class="col-lg-3 col-md-5 col-sm-5 card" ng-repeat="product in $ctrl.products" ng-if="product.type == 'herbal'">
+    <div class="col-12 mx-auto"><h2 class="display-4">Herbal</h2></div>
+    <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in $ctrl.products" ng-if="product.type == 'herbal'">
         <img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{product.title}}</h5>
@@ -13,8 +14,8 @@
 </div>
 
 <div class="row delicacies" id="delicaies">
-    <div class="col-12 "><h2 class="display-4">Delicaies</h2></div>
-    <div class="col-lg-3 col-md-5 col-sm-5 card" ng-repeat="product in $ctrl.products" ng-if="product.type == 'delicacies'">
+    <div class="col-12 mx-auto"><h2 class="display-4">Delicaies</h2></div>
+    <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in $ctrl.products" ng-if="product.type == 'delicacies'">
         <img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{product.title}}</h5>

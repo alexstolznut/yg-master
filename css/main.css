@@ -1,3 +1,4 @@
+/*
 nav {
     background-color: #B73D5E;
 }
@@ -23,16 +24,26 @@ nav {
 .navbar .navbar-nav {
     padding-left: 0%;
 }
+*/
 
 header #headerCarouselIndicators,
 header #aboutHeaderCarouselIndicators {
-    height: 400px;
+    height: 500px;
     overflow: hidden;
 }
 
 header #headerCarouselIndicators img,
 header #aboutHeaderCarouselIndicators img {
-    height: 400px
+    height: 500px
+}
+
+.carousel .carousel-control-next-icon,
+.carousel .carousel-control-prev-icon {
+    padding: 0;
+    width: 75px !important;
+    height: 75px;
+    color: #B73D5E !important;
+
 }
 
 .carousel-caption {
@@ -71,17 +82,18 @@ header #aboutHeaderCarouselIndicators img {
     background-color: #B73D5E;
 }
 
-.contact-card, .form-card {
+.contact-card,
+.form-card {
     border-radius: 10px;
     -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    margin-top:10%;
+    margin-top: 10%;
 }
 
-.form-card form .form-group{
+.form-card form .form-group {
     margin: 0 auto;
-    margin-top:2.5%;
+    margin-top: 2.5%;
     margin-bottom: 5%;
 }
 
@@ -110,23 +122,25 @@ header #aboutHeaderCarouselIndicators img {
 .contact-link {
     color: black;
 }
-.contact-row{
-    margin-bottom:2.5%;
-    margin-top:2.5%;
+
+.contact-row {
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
 }
+
 .email .contact-img {
     width: 75px;
     height: 75px;
 }
 
 form #userMessage {
-    margin-bottom:0%;
+    margin-bottom: 0%;
     padding-bottom: 0%;
 }
+
 .form-card .form-group:last-of-type {
-    margin-bottom:2.5%;
+    margin-bottom: 2.5%;
 }
 
 /*SIDEBAR*/
-
 

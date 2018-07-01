@@ -6,6 +6,7 @@ module('movieCard').
 component('movieCard', {
     templateUrl: "movie-card/movie-card.component.html",
     controller: ['$http', function MovieCardController($http) {
+
             var self = this;
 
             $http.get('data/movies.json').then(function (response) {
