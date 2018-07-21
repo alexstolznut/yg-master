@@ -1,28 +1,50 @@
 <link rel="stylesheet" href="../css/product.css">
-<div class="row herbal" id="herbal">
-    <div class="col-12 mx-auto"><h2 class="display-4">Herbal</h2></div>
-    <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in $ctrl.products" ng-if="product.type == 'herbal'">
-        <img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <h5 class="card-subtitle mb-2" ng-repeat="vars in product.vars">{{vars.price | currency }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Read More</a>
-            <a href="#" class="btn btn-md btn-primary">Add to Cart</a>
-        </div>
-    </div>
-</div>
+<link rel="stylesheet" href="../css/custom.css">
+<div class="wrapper">
+    <div id="sidebar">
 
-<div class="row delicacies" id="delicaies">
-    <div class="col-12 mx-auto"><h2 class="display-4">Delicaies</h2></div>
-    <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in $ctrl.products" ng-if="product.type == 'delicacies'">
-        <img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{product.title}}</h5>
-            <h5 class="card-subtitle mb-2" ng-repeat="vars in product.vars">{{vars.price | currency }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Read More</a>
-            <a href="#" class="btn btn-md btn-primary">Add to Cart</a>
-        </div>
+        <ul class="list-unstyled components">
+            <li><a href="#herbal">Herbal</a></li>
+            <li><a href="#delicaies">Delicacy</a></li>
+            <li><a href="#supplements">Supplements</a></li>
+        </ul>
     </div>
+
+    <div id="content">
+
+        <div class="row herbal" id="herbal">
+            <div class="col-12 mx-auto">
+                <h2 class="display-4">Herbal</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in products" ng-if="product.type == 'Herbal'">
+                <a href="#!/product/{{product.id}}"><img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <h5 class="card-subtitle mb-2" ng-repeat="vars in product.vars">{{vars.price | currency }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                    <a href="#" class="btn btn-md btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row delicacies" id="Delicaies">
+            <div class="col-12 mx-auto">
+                <h2 class="display-4">Delicaies</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in products" ng-if="product.type == 'Delicacies'">
+                <a href="#!/product/{{product.id}}"><img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <h5 class="card-subtitle mb-2" ng-repeat="vars in product.vars">{{vars.price | currency }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                    <a href="#" class="btn btn-md btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
 </div>

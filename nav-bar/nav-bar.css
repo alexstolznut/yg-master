@@ -1,13 +1,13 @@
 nav {
     background-color: #B73D5E !important;
-    z-index:9999;
+    z-index:9999 !important;
 }
 
 .navbar-dark .links .nav-link {
     color: white;
     padding-left: 12% !important;
     font-size: 1.2em;
-    z-index:9999;
+    z-index:9999 !important;
 }
 
 
