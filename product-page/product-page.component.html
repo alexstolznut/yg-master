@@ -62,17 +62,16 @@
             <!-- end row -->
 
             <div class="row add-to-cart">
-                <div class="col-md-5 product-qty">
-                    <span class="btn btn-default btn-lg btn-qty">
-   <span class="glyphicon glyphicon-minus" aria-hidden="true" ng-click="$ctrl.updateItem(product.vars[0].id,product.items['quantity']-1)"></span>
+                <div class="col-md-5 product-qty" ng-repeat="item in $ctrl.items">
+                    <span class="btn btn-default btn-lg btn-qty" ng-if="item">
+   <span class="glyphicon glyphicon-minus" aria-hidden="true" ng-click="$ctrl.updateItem(item['id'],item['quantity']-1)"></span>
                     </span>
-                    <input class="btn btn-default btn-lg btn-qty" value="{{$ctrl.items['quantity']}}" />
-                    <span class="btn btn-default btn-lg btn-qty" ng-click="$ctrl.updateItem(product.vars[0].id,$ctrl.items['quantity']+1)">
+                    <input class="btn btn-default btn-lg btn-qty" value="{{item['quantity']}}" />
+                    <span class="btn btn-default btn-lg btn-qty" ng-click="$ctrl.updateItem(item['id'],item['quantity']+1)">
    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </span>
                 </div>
                 <div class="col-md-4">
-                   {{product}}
                     <button class="btn btn-lg btn-brand btn-full-width atc" ng-click="$ctrl.addItem(product.vars[0].id)">
    Add to Cart
   </button>

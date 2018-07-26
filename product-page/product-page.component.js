@@ -12,12 +12,14 @@ module('productPage').component('productPage', {
                 window.console.log(this.mainImageUrl);
             };
             Product.getProducts().then((products) => {
-//                $scope.products = products;
+                //                $scope.products = products;
                 for (var i = 0; i < products.length; i = i + 1) {
                     if (products[i].id === $routeParams.productId) {
                         $scope.product = products[i];
                         this.setImage($scope.product.pic_urls[0]);
                     }
+                      this.updateItem($scope.product.vars[0].id, 1);
+                    window.console.log(Product.items[0])
                 }
             })
             $scope.username = {
@@ -36,9 +38,9 @@ module('productPage').component('productPage', {
             this.items = Product.items;
 
             /* Fetch the products from the shopify api. Once the call is returned and the promise resolves, assign the results to products */
-//            Product.getProducts().then((products) => {
-//                this.products = products;
-//            });
+            //            Product.getProducts().then((products) => {
+            //                this.products = products;
+            //            });
 
             /* Add an item to the cart.
             Input: 
