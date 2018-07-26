@@ -1,22 +1,149 @@
+nav {
+    margin: 0 !important;
+}
+
 .monospaced {
     font-family: 'Ubuntu Mono', monospaced;
 }
 
+.details h2{
+    font-weight: 400;
+    font-size: 3em !important;
+}
+.add-to-cart{
+    margin-bottom: 2%;
+}
 .add-to-cart .btn-qty {
     width: 52px;
     height: 46px;
+    text-align: center;
 }
-
+.btn-qty span{
+    padding: 0 !important;
+    vertical-align: bottom !important;
+}
 .add-to-cart .btn {
     border-radius: 0;
 }
 
-.btn-brand{
-    background-color: saddlebrown;
+.btn-brand {
+    background-color: #B73D5E;
+    height: 46px;
+    width: 160px;
     color: white;
 }
 
-.bottom-rule{
+.bottom-rule {
     border-bottom: 1px solid black;
-    margin-bottom:2%;
+    margin-bottom: 2%;
+
+}
+.product-info-secondary span{
+    font-size: 1.5em !important;
+    margin-right: 1em;
+}
+.product-info-secondary{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.description{
+    font-size: 2em;
+}
+.in-stock h5{
+    font-size: 2em !important;
+    font-weight: 400;
+    color: #089E72;
+}
+.rating-stars span.glyphicon-star, .rating-stars span.glyphicon-star-empty{
+    font-size: 1.5em;
+    color: #B73D5E;
+}
+.rating-stars span{
+    vertical-align: middle !important;
+}
+.rating-stars span.label-success{
+    margin-left: 1em;
+    font-size: .8em;
+    background-color: #2bbbad;
+}
+.rating-stars{
+    margin-bottom: 1em;
+}
+.assist-info{
+    font-size: 1.5em;
+}
+/*
+.image-responsive {
+    height: 400px;
+    max-width: 400px !important;
+    margin: 0 auto;
+
+
+}
+*/
+
+.product{
+    margin: 0 auto !important;
+  background-color: white;
+  height: 400px;
+  margin-bottom: 2em;
+/*  margin-left: 6em;*/
+  padding: 0em;
+  max-width: 400px;
+}
+
+.phone-thumbs {
+    margin-left: 1em;
+    list-style: none;
+    vertical-align: inherit;
+
+}
+
+.phone-thumbs img {
+    margin: 0 auto;
+    height: 100px;
+    padding: 1em;
+    width: 90px;
+    border: none;
+}
+
+.phone-thumbs li {
+    margin: 0 auto;
+    border: none;
+    background-color: white;
+    display: inline-block;
+    margin: 1em;
+}
+
+.atc{
+    
+}
+
+.product-page {
+    margin-top: 10%;
+    margin-bottom: 5%
+}
+
+nav > div a, nav a.icons {
+    color: white !important;
+    font-size: 1.7em !important;
+}
+
+nav > span .icons img{
+    vertical-align: baseline !important;
+}
+nav > span a.icons:nth-of-type(1){
+    margin-top: 6%; 
+}
+
+footer > div > div a,
+footer > div p {
+    font-size: 1.7em
+}
+
+footer > div h5 {
+    font-size: 2em;
+}
+footer > .container{
+    margin: 0 auto;
 }

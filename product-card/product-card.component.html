@@ -22,8 +22,8 @@
                     <h5 class="card-title">{{product.title}}</h5>
                     <h5 class="card-subtitle mb-2" ng-repeat="vars in product.vars">{{vars.price | currency }}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
-                    <a href="#" class="btn btn-md btn-primary">Add to Cart</a>
+                    <a href="#!/product/{{product.id}}" class="btn btn-sm btn-primary">Read More</a>
+                    <a class="btn btn-md btn-primary" ng-click="$ctrl.addItem(product.vars[0].id)">Add to Cart</a>
                 </div>
             </div>
         </div>
@@ -38,8 +38,8 @@
                     <h5 class="card-title">{{product.title}}</h5>
                     <h5 class="card-subtitle mb-2" ng-repeat="vars in product.vars">{{vars.price | currency }}</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-sm btn-primary">Read More</a>
-                    <a href="#" class="btn btn-md btn-primary">Add to Cart</a>
+                    <a href="#!/product/{{product.id}}" class="btn btn-sm btn-primary">Read More</a>
+                    <a class="btn btn-md btn-primary" ng-click="$ctrl.addItem(product.vars[0].id)">Add to Cart</a>
                 </div>
             </div>
         </div>

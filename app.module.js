@@ -9,6 +9,7 @@
 angular.module('homeApp',[
     'ngRoute',
     'navbar',
+    'footerTemplate',
     'home',
     'productCard',
     'about',
