@@ -47,7 +47,7 @@ module('productPage').component('productPage', {
             */
             this.addItem = function (itemId, q) {
                 Product.addItem(itemId, q).then(() => {
-                    window.console.log(product.vars[0]);
+                    window.console.log();
                     //            var objectLength = (Object.values(shopService.items));
                     //            window.console.log(objectLength[0].quantity);
                     //            window.console.log(objectLength.length);
