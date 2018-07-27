@@ -11,7 +11,7 @@
 
                     <ul class="phone-thumbs image-responsive">
                         <li ng-repeat="img in product.pic_urls">
-                            <img class="img-fluid img-thumbnail" ng-src="{{img}}" ng-click="$ctrl.setImage(img)" />
+                            <img class="img-fluid img-thumbnail" src={{img}} ng-click="$ctrl.setImage(img)" />
                         </li>
                     </ul>
 
