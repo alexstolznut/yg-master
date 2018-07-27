@@ -12,14 +12,11 @@ module('productPage').component('productPage', {
                 window.console.log(this.mainImageUrl);
             };
             Product.getProducts().then((products) => {
-                //                $scope.products = products;
                 for (var i = 0; i < products.length; i = i + 1) {
                     if (products[i].id === $routeParams.productId) {
                         $scope.product = products[i];
                         this.setImage($scope.product.pic_urls[0]);
                     }
-//                      this.updateItem($scope.product.vars[0].id, 1);
-//                    window.console.log(Product.items[0])
                 }
             })
             $scope.username = {
