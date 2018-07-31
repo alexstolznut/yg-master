@@ -35,17 +35,21 @@
 </header>
 
 <div class="container">
+    <a ng-click="$ctrl.switchLang()" class="btn btn-primary">{{$ctrl.langOptions[$ctrl.langPos]}}</a>
+    
     <div class="row weekly-special">
         <div class="weekly-special-text">
             <h1>Specials Example</h1>
         </div>
     </div>
-    
+
     <div class="row">
         <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('special',product)">
             <img class="card-img-top" src="{{product['pic_urls'][0]}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{product['title']}}</h5>
+                <h5 class="card-title" ng-if="$ctrl.langPos == 0">{{product['title-en']}}</h5>
+                <h5 class="card-title" ng-if="$ctrl.langPos == 1">{{product['title-ch']}}</h5>
+                
                 <h5 class="card-subtitle mb-2">{{product['vars'][0]['price']}}</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#!/product/{{id}}" class="btn btn-primary">Read More</a>
@@ -53,8 +57,22 @@
             </div>
         </div>
     </div>
-    
-    
+
+    <div class="row popular-items">
+        <h2 class="popular-items-text">Popular Items</h2>
+    </div>
+    <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('popular',product)">
+        <img class="card-img-top" src="{{product['pic_urls'][0]}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{product['title']}}</h5>
+            <h5 class="card-subtitle mb-2">{{product['vars'][0]['price']}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#!/product/{{id}}" class="btn btn-primary">Read More</a>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+    </div>
+
+
     <div class="row weekly-special">
         <div class="weekly-special-text">
             <h1>Weekly Specials</h1>
