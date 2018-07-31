@@ -14,7 +14,8 @@ angular.
         checkout = c;
     });
 
-    var products = [];
+    //var products = [];
+    var products = {};
 
     //the items object must refer to the same memory address
     //throughout the application lifecycle
@@ -33,7 +34,7 @@ angular.
             title-en: english title only
             tags: list of tags assigned from the shopify store
             type: product type assigned from the shopify store
-            picUrls: list containing urls for product images
+            pic_urls: list containing urls for product images
             vars: a list of variant information dictionaries. Each dictionary has the following available keys:
                 id: variant id as assigned by shopify
                 weight: weight of the variant
@@ -92,7 +93,8 @@ angular.
                     //add the current product to the final list. Only products with at least one image and one variant will be added. 
                     if (('title' in product) && ('tags' in product) &&
                         (product['pic_urls'].length != 0) && (product['vars'].length != 0)) {
-                        products.push(product);
+                        //products.push(product);
+                        products[product['id']] = product;
                     }
                 }
                 //set the boolean flag and resolve the promise

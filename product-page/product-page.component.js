@@ -6,19 +6,33 @@ module('productPage').component('productPage', {
     controller: ['Product', '$scope', '$routeParams',
                  function ProductPageController(Product, $scope, $routeParams) {
             window.console.log($routeParams);
-
+                  
+            this.quantity = 1;
+                     
+            this.updateQuantity = function (delta) {
+                this.quantity += delta;
+            }
+            
             this.setImage = function setImage(imageUrl) {
                 this.mainImageUrl = imageUrl;
-                window.console.log(this.mainImageUrl);
+                //window.console.log(this.mainImageUrl);
             };
+                     
             Product.getProducts().then((products) => {
-                for (var i = 0; i < products.length; i = i + 1) {
+                $scope.product = products[$routeParams['productId']];
+                
+                this.mainImageUrl = $scope.product['pic_urls'][0];
+                
+                
+                /*for (var i = 0; i < products.length; i = i + 1) {
                     if (products[i].id === $routeParams.productId) {
                         $scope.product = products[i];
                         this.setImage($scope.product.pic_urls[0]);
                     }
                 }
-            })
+                */
+            });
+                     
             $scope.username = {
                 text: 'email',
                 word: /^\w*@\w*$/
@@ -46,7 +60,7 @@ module('productPage').component('productPage', {
             */
             this.addItem = function (itemId, q) {
                 Product.addItem(itemId, q).then(() => {
-                    window.console.log();
+                    window.console.log("success");
                     //            var objectLength = (Object.values(shopService.items));
                     //            window.console.log(objectLength[0].quantity);
                     //            window.console.log(objectLength.length);
