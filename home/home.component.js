@@ -2,17 +2,17 @@ angular.
 module('home').
 component('home', {
     templateUrl: "home/home.component.html",
-    controller: [ 'Product', 'Lang-Choice' '$scope', function HomeController (Product, $scope){
+    controller: [ 'LangChoice','Product', '$scope', function HomeController (Product, $scope){
         //assign the products
         Product.getProducts().then( (p) => {
             this.products = p;
         });
         
-        this.langPos = Lang-Choice.langPos;
-                 
-        this.langOptions = Lang-Choice.langOptions;
-                 
-        this.switchLang = Lang-Choice.switchLang();
+        //this.langOptions = LangChoice.langOptions;
+        
+        //this.langPos = LangChoice.langPos;
+        
+        //this.switchLang = LangChoice.switchLang;
 
         /*
     Filter function for product map object since the prebuilt | filter: function cannot operate on maps. See 
