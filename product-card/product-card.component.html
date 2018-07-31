@@ -16,7 +16,7 @@
             <div class="col-12 mx-auto">
                 <h2 class="display-4">Herbal</h2>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in products" ng-if="product.type === 'Herbal'">
+            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="(id,product) in products" ng-if="product.type == 'Herbal'">
                 <a href="#!/product/{{product.id}}"><img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title">{{product.title}}</h5>
