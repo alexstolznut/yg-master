@@ -222,7 +222,7 @@ angular.
             }`
         }
     }).then( (res) => {
-        //console.log(res);
+//        console.log(res);
     });
 
     /* Make the local functions and variables accessible to external code */

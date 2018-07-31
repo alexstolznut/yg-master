@@ -1,1 +1,1 @@
-angular.module('home', ['ngRoute']);
+angular.module('home', ['ngRoute', 'core.lc', 'core.products']);

@@ -1,9 +1,13 @@
 nav {
     background-color: #B73D5E !important;
     z-index:9999 !important;
+/*
+    position: fixed !important;
+    min-width: 100% !important;
+*/
 }
 
-.navbar-dark .links .nav-link {
+.navbar-dark .nav-item .nav-link {
     color: white;
     padding-left: 12% !important;
     font-size: 1.2em;
@@ -29,6 +33,11 @@ span .icons  img {
     padding-left: 0%;
 }
 
+.icons > img{
+    height: 40px !important;
+    width: 40px !important;
+}
+
 span > .icons > span{
 /*    font-size: 1em;*/
     color: #B73D5E;
@@ -44,6 +53,41 @@ span > .icons > span{
     background-color: rgba(255,255,255,.8);
     
 /*    padding:-3%;*/
+}
+.dropdown-item img{
+    height: 25px;
+    width: 25px;
+    float: left;
+}
+.dropdown-toggle::after, .dropdown-toggle::before{
+    content: none !important;
+}
+.dropdown-menu ul, .dropdown-item, .dropdwon-menu > ul > a {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.dropdown-menu, .dropdown-item{
+    padding-bottom: 0rem !important;
+    margin-bottom: 0 !important;
+}
+
+.dropdown-divider{
+    margin-bottom: 0 !important;
+    padding-bottom:0 !important;
+}
+
+ul > li > a.icons{
+    font-size:1.5em !important;
+    vertical-align: bottom;
+    width:95px;
+    height: 50px;
+}
+.nav-link.icons > .cart-icon{
+    height: 35px !important;
+    width: 40px !important;
+    margin-right: .em !important;
+    vertical-align: text-bottom;
 }
 
 @media(max-width:991px){
