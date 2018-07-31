@@ -2,29 +2,18 @@ angular.
 module('home').
 component('home', {
     templateUrl: "home/home.component.html",
-    controller: [ 'Product', '$scope', function HomeController (Product, $scope){
+    controller: [ 'LangChoice','Product', '$scope', function HomeController (Product, $scope){
         //assign the products
         Product.getProducts().then( (p) => {
             this.products = p;
         });
         
-        this.langOptions = ["English", "Chinese"];
+        //this.langOptions = LangChoice.langOptions;
         
-        this.langPos = 0;
+        //this.langPos = LangChoice.langPos;
         
-        this.switchLang = function () {
-            if (this.langPos == 0) {
-                this.langPos = 1;
-            }
-            else {
-                this.langPos = 0;
-            }
-        }
+        //this.switchLang = LangChoice.switchLang;
         
-        this.logLang = function () {
-            console.log(this.langPos);
-            console.log("Is this working?");
-        }
         /*
     Filter function for product map object since the prebuilt | filter: function cannot operate on maps. See 
     https://stackoverflow.com/questions/14788652/how-to-filter-key-value-with-ng-repeat-in-angularjs
