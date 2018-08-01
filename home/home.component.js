@@ -2,12 +2,18 @@ angular.
 module('home').
 component('home', {
     templateUrl: "home/home.component.html",
-    controller: [ 'Product', 'LangChoice', '$scope', function HomeController (Product, LangChoice, $scope){
+    controller: [ 'LangChoice', 'Product', '$scope', function HomeController (LangChoice, Product, $scope){
         //assign the products
         this.specialValues = [];
         this.popularValues = [];
         this.newArrivals = []
-        this.LangChoice = LangChoice;
+        
+        this.langPos = 0;
+        this.langOptions = LangChoice.langOptions;
+        
+        this.switchLang = function () {
+            this.langPos = LangChoice.switchLang();
+        }
         
         Product.getProducts().then( (p) => {
             this.products = p;

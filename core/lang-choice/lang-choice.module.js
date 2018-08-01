@@ -1,1 +1,0 @@
-angular.module('core.lang-choice', ['ngResource']);

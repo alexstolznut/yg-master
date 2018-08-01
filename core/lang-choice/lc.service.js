@@ -10,6 +10,7 @@ angular.module('core.lc').factory('LangChoice', function() {
         else {
             langPos = 0;
         }
+        return langPos;
     }
         
     return {
@@ -18,5 +19,3 @@ angular.module('core.lc').factory('LangChoice', function() {
         switchLang: switchLang
     };
 });
-
-console.log("registered service");
