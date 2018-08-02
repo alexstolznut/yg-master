@@ -1,6 +1,6 @@
 angular.module('core.lc').factory('LangChoice', function() {
     var langPos = 0;
-    var langOptions = ["English", "Chinese"];
+    var langOptions = ["Chinese", "English"];
     
     /* what a function */
     function switchLang() {
