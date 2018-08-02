@@ -4,29 +4,41 @@ component('navbar', {
     templateUrl: "nav-bar/nav-bar.component.html",
     controller: ['Product', '$scope', function NavController(Product, $scope) {
 
-//        Product.getProducts().then((products) => {
-//            $scope.products = products;
-//        });
+        //        Product.getProducts().then((products) => {
+        //            $scope.products = products;
+        //        });
 
         Product.getProducts().then((products) => {
             this.products = products;
         });
 
         this.getItem = function () {
-
             $scope.itemList = Product.items;
 
-            window.console.log($scope.itemList.title);
+            window.console.log($scope.itemList['title']);
+            $scope.itemListLength = Object.keys($scope.itemList).length;
         }
-
-
+    
+        var cartVals,x=[];
+        this.cartTotal = function(){
+            cartVals = Object.values(Product.items);
+//                window.console.log(cartVals.length);
+                for(var i = 0; i < cartVals.length; i = i + 1){
+                    x.push(parseInt(cartVals[i].quantity));
+                }
+                $scope.$apply(function(){$scope.cartTotal = x.reduce((a,b)=> a + b,0)});
+                window.consle.log()
+        }
         /* Add an item to the cart.
         Input: 
             itemId: product id as assigned by shopify. Available @ product['id'] for each item in products
             q: quantity to add. Default is 1.
         */
+        var cartVals;
         this.addItem = function (itemId, q) {
             Product.addItem(itemId, q).then(() => {
+                cartVals = Object.values(Product.items);
+                window.console.log(cartVals);
                 //            var objectLength = (Object.values(shopService.items));
                 //            window.console.log(objectLength[0].quantity);
                 //            window.console.log(objectLength.length);

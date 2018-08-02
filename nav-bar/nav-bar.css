@@ -1,10 +1,9 @@
+body{ 
+margin: 0 auto;
+}
 nav {
     background-color: #B73D5E !important;
     z-index:9999 !important;
-/*
-    position: fixed !important;
-    min-width: 100% !important;
-*/
 }
 
 .navbar-dark .nav-item .nav-link {
@@ -22,10 +21,10 @@ nav {
     z-index: 9999;
 }
 
-span .icons  img {
+span img.cart-icon {
     width: 40px;
-    height: 30px;
-    vertical-align: baseline;
+    height: 35px;
+    vertical-align: text-bottom;
     
 }
 
@@ -38,29 +37,48 @@ span .icons  img {
     width: 40px !important;
 }
 
-span > .icons > span{
+#cartTotal{
 /*    font-size: 1em;*/
-    color: #B73D5E;
+    font-weight: bold;
+    color: white;
     text-align: center;
     position: absolute;
     z-index: 9999;
-    height:25px;
-    width:25px;
-    margin-top:-16px;
+    height:30px;
+    width:30px;
+    margin-top:-20px;
     margin-left:20px;
-    border-radius: 100%;
+    padding-bottom: 1%0 !important;
+/*    border-radius: 100%;*/
+/*
     border: #B73D5E solid white;
     background-color: rgba(255,255,255,.8);
+*/
     
 /*    padding:-3%;*/
+}
+
+li.dropdown:hover>.dropdown-menu{
+    display: block !important;
 }
 .dropdown-item img{
     height: 25px;
     width: 25px;
     float: left;
 }
+.navbar-nav > .nav-item{
+    margin-left: 15% !important;
+}
 .dropdown-toggle::after, .dropdown-toggle::before{
     content: none !important;
+}
+.dropdown-menu{
+    min-width: 100% !important;
+}
+.dropdown-menu > .dropdown-item{
+    width: 100% !important;
+    min-width: 100%;
+    max-width: 100%;
 }
 .dropdown-menu ul, .dropdown-item, .dropdwon-menu > ul > a {
     margin-left: 0 !important;
@@ -70,8 +88,31 @@ span > .icons > span{
 .dropdown-menu, .dropdown-item{
     padding-bottom: 0rem !important;
     margin-bottom: 0 !important;
+    margin: 0 auto;
+    width: 245%;
+    white-space: normal !important;
 }
 
+.dropdown-item img{
+    height: 50px;
+    width: 100px;
+}
+.dropdown-item p{
+    float: left;
+    margin: 0 auto !important;
+    padding: 0;
+    text-align: left !important;
+    font-size: .8em;
+}
+
+.cart-item{
+    width: 100% !important;
+    word-break: normal;
+}
+.btn-checkout {
+    margin: 0 auto;
+    min-width: 95%;
+}
 .dropdown-divider{
     margin-bottom: 0 !important;
     padding-bottom:0 !important;

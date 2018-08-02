@@ -3,18 +3,17 @@
 <div class="wrapper">
     <div id="sidebar">
 
-        <ul class="list-unstyled components">
-            <li><a href="#herbal">Herbal</a></li>
-            <li><a href="#delicaies">Delicacy</a></li>
-            <li><a href="#supplements">Supplements</a></li>
+        <ul class="list-unstyled components navbar-nav">
+            <li><a class="nav-link" href="#!/product/#herbal">Herbal</a></li>
+            <li><a href="#!/product/#delicacy">Delicacy</a></li>
+            <li><a href="#!/product/#supplements">Supplements</a></li>
         </ul>
     </div>
 
     <div id="content">
-
         <div class="row herbal" id="herbal">
             <div class="col-12 mx-auto">
-                <h2 class="display-4">Herbal</h2>
+               <h2 class="display-4">Herbal</h2>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="(id,product) in products" ng-if="product.type == 'Herbal'">
                 <a href="#!/product/{{product.id}}"><img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap"></a>
@@ -28,7 +27,7 @@
             </div>
         </div>
 
-        <div class="row delicacies" id="Delicaies">
+        <div class="row delicacies" id="delicacy">
             <div class="col-12 mx-auto">
                 <h2 class="display-4">Delicaies</h2>
             </div>

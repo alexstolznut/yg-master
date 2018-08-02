@@ -141,6 +141,11 @@ form #userMessage {
 .form-card .form-group:last-of-type {
     margin-bottom: 2.5%;
 }
-
+footer, footer-template{
+    z-index: 9999999 !important;
+}
+product-card{
+    z-index: 0 !important;
+}
 /*SIDEBAR*/
 

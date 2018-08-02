@@ -1,46 +1,8 @@
-<!--
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-<link rel="stylesheet" href="nav-bar/nav-bar.css">
 
-
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="" href="index.html"><img id="logo" src="img/Logo.png"></a>
-    <button class="navbar-toggler pull-left" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav links col-lg-6">
-            <a class="nav-item nav-link" href="#!/home">Home</a>
-            <a class="nav-item nav-link" href="#!/about">About</a>
-            <a class="nav-item nav-link" href="#!/product">Products</a>
-            <a class="nav-item nav-link" href="#!/contact">Contact</a>
-        </div>
-    </div>
-    <span class="justify-content-end">
-        <a class="nav-link justify-content-end icons" href="#">Sign In</a>
-        <a class="nav-link justify-content-end icons" href="#"><span>3</span><img src="img/cart-icon.png"></a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </span>
-</nav>
-
-<div class="cart-list">
-    <ul class="list-unstyled">
-        <li>1 Item</li>
-        <li>2 Item</li>
-        <li>3 Item</li>
-    </ul>
-</div>
--->
 
 <link rel="stylesheet" href="../nav-bar/nav-bar.css">
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <a class="navbar-brand" href="#"><img src="../img/Logo.png"></a>
+    <a class="navbar-brand" href="/home"><img src="../img/Logo.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -69,14 +31,16 @@
     </div>
     <ul class="navbar-nav justify-content-end">
         <li class="nav-item dropdown justify-content-end">
-            <a class="nav-link dropdown-toggle icons" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-click="$ctrl.getItem()">
-          <img class="cart-icon" src="../img/cart-icon.png">
+            <a class="nav-link dropdown-toggle icons" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
+                <span><span id="cartTotal">{{cartTotal}}</span>
+            <img class="cart-icon" src="../img/cart-icon.png"></span>
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" ng-if="itemListLength > 0">
                 <div class="dropdown-item" ng-repeat="item in itemList">
-                    <a class="dropdown-item"><img src="{{item.variant.image['src']}}">{{item['title']}}</a>
-                    <div class="dropdown-divider">{{item.length}}</div>
+                    <a class="dropdown-item row"><img class="col-4 col-sm-4 col-md-4 col-lg-4" src="{{item.variant.image['src']}}"><p class="description col-8 col-sm-8 col-md-8 col-lg-8">{{item['title']}}</p></a>
                 </div>
+                {{itemList['title']}}
+                <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="$ctrl.getCheckout()">Checkout</button>
             </div>
         </li>
         <li class="nav-item justify-content-end">
