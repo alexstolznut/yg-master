@@ -1,8 +1,8 @@
 angular.
-  module('core.products').
-  factory('Product',
-    function($q, $http) {
-           var client = window.ShopifyBuy.buildClient({
+module('core.products').
+factory('Product',
+        function($q, $http) {
+    var client = window.ShopifyBuy.buildClient({
         domain: 'yongtai-ginseng.myshopify.com',
         storefrontAccessToken: 'b787e9f392b579d00b2a3405e04b11bd'
     });
@@ -13,6 +13,12 @@ angular.
     client.checkout.create().then( (c) => {
         checkout = c;
     });
+
+    var checkoutInfo = {
+        totalItems: 0,
+        totalPrice: '0.00',
+        c: checkout 
+    };
 
     //var products = [];
     var products = {};
@@ -122,7 +128,7 @@ angular.
             quantity: q
         }];
 
-       //call the shopify API to add the items
+        //call the shopify API to add the items
         client.checkout.addLineItems(checkout.id,toAdd).then( (tempCheckout) => {
             //parse the results 
             var d = JSON.parse(JSON.stringify(tempCheckout.lineItems));
@@ -143,6 +149,10 @@ angular.
 
                 }
             }
+            //update the checkout info
+            checkoutInfo['totalItems'] = countTotalItems();
+            checkoutInfo['totalPrice'] = tempCheckout['totalPrice'];
+            checkoutInfo['c'] = tempCheckout;
             //resolve the promise. Since items is a local variable, there is no need to return any value
             addItemDef.resolve();
         });
@@ -156,9 +166,13 @@ angular.
     function removeItem(itemId) {
         //this function returns a promise
         var removeItemDef = $q.defer();
-        client.checkout.removeLineItems(checkout.id,itemId).then( (c) => {
+        client.checkout.removeLineItems(checkout.id,itemId).then( (tempCheckout) => {
             //need to remove the key from items
             delete items[itemId];
+            //update the checkoutInfo
+            checkoutInfo['totalItems'] = countTotalItems();
+            checkoutInfo['totalPrice'] = tempCheckout['totalPrice'];
+            checkoutInfo['c'] = tempCheckout;
             removeItemDef.resolve();
         });
         return removeItemDef.promise;
@@ -178,10 +192,14 @@ angular.
             quantity: q
         }];
 
-        client.checkout.updateLineItems(checkout.id,toUpdate).then( (c) => {
+        client.checkout.updateLineItems(checkout.id,toUpdate).then( (tempCheckout) => {
             if (items[itemId]['quantity'] != q) {
                 items[itemId]['quantity'] = q;
             }
+            //update the checkout info
+            checkoutInfo['totalItems'] = countTotalItems();
+            checkoutInfo['totalPrice'] = tempCheckout['totalPrice'];
+            checkoutInfo['c'] = tempCheckout;
             updateItemDef.resolve();
         });
         return updateItemDef.promise;
@@ -197,33 +215,19 @@ angular.
 
         return checkoutDef.promise;
     }
-    
-    $http({
-        method: "POST",
-        url: "https://yongtai-ginseng.myshopify.com/api/graphql/",
-        headers: {
-            'Content-Type': "application/graphql",
-            'X-Shopify-Storefront-Access-Token': 'b787e9f392b579d00b2a3405e04b11bd'
-        },
-        data: { data: `{
-              shop {
-                collections(first: 5) {
-                  edges {
-                    node {
-                      id
-                      handle
-                    }
-                  }
-                  pageInfo {
-                    hasNextPage
-                  }
-                }
-              }
-            }`
+
+    /* 
+    Count the total number of items in the cart.
+    Output: 
+        numItems: integer number of items in cart. 
+    */
+    function countTotalItems() {
+        let numItems = 0;
+        for (let id in items){
+            numItems += items[id]['quantity'];
         }
-    }).then( (res) => {
-//        console.log(res);
-    });
+        return numItems;
+    }
 
     /* Make the local functions and variables accessible to external code */
     return {
