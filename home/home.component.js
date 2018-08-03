@@ -7,7 +7,7 @@ component('home', {
         this.specialValues = [];
         this.popularValues = [];
         this.newArrivals = []
-        
+        $scope.maxItems = 6;
         this.langPos = 0;
         this.langOptions = LangChoice.langOptions;
         
