@@ -236,6 +236,7 @@ factory('Product',
         addItem: addItem,
         removeItem: removeItem,
         updateItem: updateItem,
-        items: items
+        items: items,
+        checkoutInfo: checkoutInfo
     };
 });
