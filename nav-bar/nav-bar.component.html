@@ -32,7 +32,7 @@
     <ul class="navbar-nav justify-content-end">
         <li class="nav-item dropdown justify-content-end">
             <a class="nav-link dropdown-toggle icons" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
-                <span><span id="cartTotal">{{cartTotal}}</span>
+                <span><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0">{{checkoutInfo['totalItems']}}</span>
             <img class="cart-icon" src="../img/cart-icon.png"></span>
         </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" ng-if="itemListLength > 0">

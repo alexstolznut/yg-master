@@ -10,12 +10,13 @@ component('navbar', {
 
         Product.getProducts().then((products) => {
             this.products = products;
+            
         });
-
+        
+        $scope.checkoutInfo = Product.checkoutInfo;
+        window.console.log($scope.checkoutInfo)
         this.getItem = function () {
             $scope.itemList = Product.items;
-
-            window.console.log($scope.itemList['title']);
             $scope.itemListLength = Object.keys($scope.itemList).length;
         }
     
@@ -60,9 +61,10 @@ component('navbar', {
             Input:
                 itemId: product id of item to update
         */
-        this.checkItems = function () {
-            window.console.log(Product.items.length);
-        }
+//        $scope.$apply(function(){ $scope.checkoutInfo = Product.checkoutInfo});
+//        this.checkItems = function () {
+//            window.console.log(Product.items.length);
+//        }
         this.updateItem = function (itemId, q) {
             Product.updateItem(itemId, q).then(() => {
                 //do not remove empty .then()

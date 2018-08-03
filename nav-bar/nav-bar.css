@@ -46,9 +46,10 @@ span img.cart-icon {
     z-index: 9999;
     height:30px;
     width:30px;
-    margin-top:-20px;
+    margin-top:-22px;
     margin-left:20px;
     padding-bottom: 1%0 !important;
+    z-index:9999;
 /*    border-radius: 100%;*/
 /*
     border: #B73D5E solid white;

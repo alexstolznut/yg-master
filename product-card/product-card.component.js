@@ -46,14 +46,17 @@ component('productCard', {
         var cartVals, finalVal;
         this.addItem = function (itemId, q) {
             Product.addItem(itemId, q).then(() => {
-                cartVals = Object.values(Product.items);
-//                window.console.log(cartVals.length);
-                var x;
-                x = [];
-                for(var i = 0; i < cartVals.length; i = i + 1){
-                    x.push(parseInt(cartVals[i].quantity));
-                }
-                $scope.cartTotal = x.reduce((a,b)=> a + b,0);
+                $scope.checkoutInfo = Product.checkoutInfo;
+                window.console.log(Product);
+//                cartVals = Object.values(Product.items);
+////                window.console.log(cartVals.length);
+//                
+//                var x;
+//                x = [];
+//                for(var i = 0; i < cartVals.length; i = i + 1){
+//                    x.push(parseInt(cartVals[i].quantity));
+//                }
+//                $scope.cartTotal = x.reduce((a,b)=> a + b,0);
 //                window.console.log("Final Val: " + parseInt(finalVal));
                 //these empty .then() functions are necessary to trigger an update of the UI. If you remove them you will notice the UI will not reflect changes in state until a new event (button click, keypress) is triggered. 
             });
