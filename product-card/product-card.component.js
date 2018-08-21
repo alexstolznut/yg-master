@@ -5,7 +5,7 @@ angular.
 module('productCard').
 component('productCard', {
     templateUrl: "product-card/product-card.component.html",
-    controller: ['Product', '$scope', '$anchorScroll', '$location', '$rootScope', '$routeParams', function ProductCardController(Product, $scope, $anchorScroll, $location, $rootScope, $routeParams) {
+    controller: ['Product', 'LangChoice', '$scope', '$anchorScroll', '$location', '$rootScope', '$routeParams', function ProductCardController(Product, LangChoice, $scope, $anchorScroll, $location, $rootScope, $routeParams) {
 
 
         $rootScope.$on('$routeChangeSuccess', function (newRoute, oldRoute) {
@@ -91,6 +91,14 @@ component('productCard', {
                 window.location.href = url;
             });
         }
+        
+        //LANG CHOICE 
+        $scope.langPos = 0;
+        setInterval(function () {
+            $scope.$apply(function () {
+                $scope.langPos = LangChoice.langPos;
+            });
+        }, 0);
 
   }]
 });

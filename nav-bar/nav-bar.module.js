@@ -1,1 +1,1 @@
-angular.module('navbar', ['ngRoute', 'core.products']);
+angular.module('navbar', ['ngRoute', 'core.products', 'core.lc']);

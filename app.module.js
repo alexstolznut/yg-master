@@ -14,7 +14,12 @@ angular.module('homeApp',[
     'productCard',
     'about',
     'contact',
-    'productPage'
+    'productPage',
+    'termsOfUse',
+    'shipping',
+    'return',
+    'privacy',
+    'checkoutPage'
 ]);
 
 //angular.module('aboutApp',[

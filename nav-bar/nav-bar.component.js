@@ -2,7 +2,7 @@ angular.
 module('navbar').
 component('navbar', {
     templateUrl: "nav-bar/nav-bar.component.html",
-    controller: ['Product', '$scope', function NavController(Product, $scope) {
+    controller: ['LangChoice', 'Product', '$scope', function NavController(LangChoice, Product, $scope) {
 
         //        Product.getProducts().then((products) => {
         //            $scope.products = products;
@@ -12,7 +12,29 @@ component('navbar', {
             this.products = products;
             
         });
+         $scope.langPos = LangChoice.langPos;
+         $scope.langPos = LangChoice.langPos;
+        setInterval(function () {
+            $scope.$apply(function () {
+                $scope.langPos = LangChoice.langPos;
+            });
+        }, 0);
         
+        this.langOptions = LangChoice.langOptions;
+        
+        this.switchLang = function () {
+//            $scope.langPos = LangChoice.switchLang();
+//window.console.log("switchLang: "+ $scope.langPos);
+            if(LangChoice.langPos === 0){
+                LangChoice.langPos = 1;
+            } else{
+                LangChoice.langPos = 0;
+            }
+            window.console.log(LangChoice);
+            this.LanguageChoice = LangChoice.langOptions[LangChoice.langPos];
+        }
+        
+        this.LanguageChoice = LangChoice.langOptions[LangChoice.langPos];
         $scope.checkoutInfo = Product.checkoutInfo;
         window.console.log($scope.checkoutInfo)
         this.getItem = function () {
@@ -73,12 +95,6 @@ component('navbar', {
 
         /* Generate a shopify checkout url to pay/place the order 
          */
-        this.getCheckout = function () {
-            Product.getCheckout().then((url) => {
-                //If you want to see where this will direct you,
-                //console.log(url);
-                window.location.href = url;
-            });
-        }
+       
     }]
 });

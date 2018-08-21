@@ -3,27 +3,37 @@
 angular.
 module('productPage').component('productPage', {
     templateUrl: 'product-page/product-page.component.html',
-    controller: ['Product', '$scope', '$routeParams',
-                 function ProductPageController(Product, $scope, $routeParams) {
-            window.console.log($routeParams);
-                  
-            this.quantity = 1;
+    controller: ['Product', 'LangChoice', '$scope', '$routeParams', '$anchorScroll', '$location', '$rootScope',
+                 function ProductPageController(Product, LangChoice, $scope, $routeParams, $anchorScroll, $location, $rootScope) {
+
+
+            $rootScope.$on('$routeChangeSuccess', function (newRoute, oldRoute) {
+                if ($location.hash()) $anchorScroll();
+            });
                      
+
+            $scope.selectedTab = 1;
+
+
+
+            this.quantity = 1;
+
             this.updateQuantity = function (delta) {
                 this.quantity += delta;
             }
             
+
             this.setImage = function setImage(imageUrl) {
                 this.mainImageUrl = imageUrl;
                 //window.console.log(this.mainImageUrl);
             };
-                     
+
             Product.getProducts().then((products) => {
                 $scope.product = products[$routeParams['productId']];
-                
+
                 this.mainImageUrl = $scope.product['pic_urls'][0];
-                
-                
+
+
                 /*for (var i = 0; i < products.length; i = i + 1) {
                     if (products[i].id === $routeParams.productId) {
                         $scope.product = products[i];
@@ -32,7 +42,7 @@ module('productPage').component('productPage', {
                 }
                 */
             });
-                     
+
             $scope.username = {
                 text: 'email',
                 word: /^\w*@\w*$/
@@ -49,9 +59,10 @@ module('productPage').component('productPage', {
             this.items = Product.items;
 
             /* Fetch the products from the shopify api. Once the call is returned and the promise resolves, assign the results to products */
-            //            Product.getProducts().then((products) => {
-            //                this.products = products;
-            //            });
+                        Product.getProducts().then((products) => {
+                            this.products = products;
+                            window.console.log(this.products);
+                        });
 
             /* Add an item to the cart.
             Input: 
@@ -61,6 +72,7 @@ module('productPage').component('productPage', {
             this.addItem = function (itemId, q) {
                 Product.addItem(itemId, q).then(() => {
                     window.console.log("success");
+                    this.quantity = 1;
                     //            var objectLength = (Object.values(shopService.items));
                     //            window.console.log(objectLength[0].quantity);
                     //            window.console.log(objectLength.length);
@@ -98,6 +110,14 @@ module('productPage').component('productPage', {
                     window.location.href = url;
                 });
             }
+            
+             //LANG CHOICE 
+        $scope.langPos = 0;
+        setInterval(function () {
+            $scope.$apply(function () {
+                $scope.langPos = LangChoice.langPos;
+            });
+        }, 0);
 
   }]
 })

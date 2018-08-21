@@ -22,12 +22,14 @@
         <div class="col-md-6 details">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>{{product.title}}</h2>
+                    <h2 ng-if="langPos==0">{{product['title-en']}}</h2>
+                    <h2 ng-if="langPos==1">{{product['title-ch']}}</h2>
                 </div>
             </div>
             <div class="row in-stock">
                 <div class="col-md-12">
-                    <h5>2 In Stock</h5>
+                    <h5 ng-if="product.vars[0].available == true"> In Stock</h5>
+                    <h5 ng-if="product.vars[0].available != true"> Not In Stock</h5>
                 </div>
             </div>
             <div class="row">
@@ -38,14 +40,19 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <p class="description">
-                        Classic film camera. Uses 620 roll film. Has a 2&frac14; x 3&frac14; incg image size.
+                    <p class="description" ng-if="langPos==0">
+                        English Description
+                    </p>
+                    <p class="description" ng-if="langPos==1">
+                        Chinese Description
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-5 rating-stars">
-                    <span class="sr-only">Four out of Five Stars</span>
+                    <span class="sr-only" ng-if="langPos==0">Four out of Five Stars</span>
+                    <span class="sr-only" ng-if="langPos==1">
+五星中的四星</span>
                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                     <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -72,8 +79,11 @@
                     </span>
                 </div>
                 <div class="col-md-4">
-                    <button class="btn btn-lg btn-brand btn-full-width atc" ng-click="$ctrl.addItem(product['id'],$ctrl.quantity)">
+                    <button class="btn btn-lg btn-brand btn-full-width atc" ng-click="$ctrl.addItem(product.vars[0].id, $ctrl.quantity)" ng-if="langPos==0">
    Add to Cart
+  </button>
+                    <button class="btn btn-lg btn-brand btn-full-width atc" ng-click="$ctrl.addItem(product.vars[0].id, $ctrl.quantity)" ng-if="langPos==1">
+  添加到购物车
   </button>
                 </div>
             </div>
@@ -89,6 +99,33 @@
                 </div>
             </div>
             <!-- end row -->
+
+            <!-- Nav Tabs -->
+            <div class="tabbable tabs-below">
+                <ul class="nav nav-pills">
+                    <li ng-class="{active: selectedTab == 1}">
+                        <a href="" ng-click="selectedTab = 1"><span ng-if="langPos==0">Description</span><span ng-if="langPos==1">描述</span></a>
+                    </li>
+                    <li ng-class="{active: selectedTab == 2}">
+                        <a href="" ng-click="selectedTab = 2"><span ng-if="langPos==0">Uses</span><span ng-if="langPos==1">用途</span></a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" ng-show="selectedTab == 1" ng-if="langPos==0">
+                    1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                 <div class="tab-content" ng-show="selectedTab == 1" ng-if="langPos==1">
+                    Chinese Stuff
+                </div>
+
+                <div class="tab-content" ng-show="selectedTab == 2" ng-if="langPos==0">
+                    2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+                <div class="tab-content" ng-show="selectedTab == 2" ng-if="langPos==1">
+                    Chinese Uses
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

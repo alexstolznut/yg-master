@@ -1,0 +1,1 @@
+angular.module('checkoutPage', ['ngRoute', 'core.products', 'core.lc']);

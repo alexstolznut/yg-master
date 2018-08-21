@@ -82,6 +82,7 @@ ul ul a {
     margin-left: 250px;
 }
 #sidebar{
+    margin-top:20px;
     position: fixed;
     min-width: 250px;
     max-width: 250px;

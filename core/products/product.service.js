@@ -62,6 +62,7 @@ factory('Product',
                 var i;
                 for (i = 0; i<products_complete.length; i++) {
                     let product_tmp = products_complete[i];
+//                    window.console.log(products_complete);
                     let product = {};
                     //add name and tags
                     product['id'] = product_tmp['id'];

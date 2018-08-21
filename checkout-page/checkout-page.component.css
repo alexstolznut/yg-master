@@ -1,0 +1,75 @@
+body{
+    margin-top: 100px !important;
+}
+.list-group-item > div  img{
+    height: 50px !important;
+    width: 50px !important;
+/*    float: left !important;*/
+}
+.list-group-item  > div > div > h1{
+/*    float: left;*/
+    padding: 0 !important;
+/*    margin: 0 auto !important;*/
+    font-weight: 300 !important;
+    min-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+}
+
+.list-group-item a{
+    justify-content: flex-end !important;
+    float: right
+}
+/*
+.btn-qty{
+    min-width:10% !important;
+}*/
+
+.btn-qty{
+    height:50px;
+}
+input{
+    font-size: 1.75em !important;
+    width: 75px;
+/*    font-weight: bold !important;*/
+    line-height: 12px !important;
+}
+
+span.glyphicon{
+    margin: 0 auto !important;;
+    text-align: center !important;
+    margin-top:100% !important;
+}
+.list-group-item span{
+    margin: 0 auto;
+}
+a.justify-content-start{
+    float: left;
+}
+
+.list-group-item .row{
+    margin-top: 2%
+}
+
+.list-group-item a{
+    vertical-align: bottom !important;
+}
+
+.edit-row a, a.justify-content-end{
+    height: 45px !important;
+    width: 65px !important;
+    text-align: center;
+    padding: 4%;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display:block;
+}

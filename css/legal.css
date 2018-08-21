@@ -1,0 +1,10 @@
+h1.title, h2.title{
+    color: #B73D5E !important;
+    font-weight: 600;
+}
+h1.title{
+    font-size: 3.5em;
+}
+.body{
+    margin-top: 10%;
+}

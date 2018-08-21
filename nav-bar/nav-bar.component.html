@@ -1,7 +1,6 @@
-
-
 <link rel="stylesheet" href="../nav-bar/nav-bar.css">
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="/home"><img src="../img/Logo.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,16 +9,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#!/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#!/home" ng-if="langPos==0">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#!/home" ng-if="langPos==1">
+家 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!/product">Products</a>
+                <a class="nav-link" href="#!/product" ng-if="langPos==0">Products</a>
+                <a class="nav-link" href="#!/product" ng-if="langPos==1">制品</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!/about">About</a>
+                <a class="nav-link" href="#!/about" ng-if="langPos==0">About</a>
+                <a class="nav-link" href="#!/about" ng-if="langPos==1">
+关于</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!/contact">Contact</a>
+                <a class="nav-link" href="#!/contact" ng-if="langPos==0">Contact</a>
+                <a class="nav-link" href="#!/contact" ng-if="langPos==1">
+联系</a>
+            </li>
+            <li class="nav-item">
+                <a ng-click="$ctrl.switchLang()" class="btn btn-primary">{{$ctrl.LanguageChoice}}</a>
             </li>
         </ul>
         <!--
@@ -31,7 +40,7 @@
     </div>
     <ul class="navbar-nav justify-content-end">
         <li class="nav-item dropdown justify-content-end">
-            <a class="nav-link dropdown-toggle icons" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
+            <a class="nav-link dropdown-toggle icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
                 <span><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0">{{checkoutInfo['totalItems']}}</span>
             <img class="cart-icon" src="../img/cart-icon.png"></span>
         </a>
@@ -44,7 +53,9 @@
             </div>
         </li>
         <li class="nav-item justify-content-end">
-            <a class="nav-link justify-content-end icons">Sign In</a>
+            <a class="nav-link justify-content-end icons" ng-if="langPos==0">Sign In</a>
+            <a class="nav-link justify-content-end icons" ng-if="langPos==1">
+签到</a>
         </li>
     </ul>
 </nav>

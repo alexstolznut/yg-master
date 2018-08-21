@@ -1,2 +1,2 @@
 angular.module('productPage',['ngRoute',
-'core.products'])
+'core.products', 'core.lc'])

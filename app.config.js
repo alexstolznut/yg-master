@@ -22,6 +22,21 @@ config(['$locationProvider', '$routeProvider',
         when('/contact', {
             template: '<contact></contact>'
         }).
+        when('/terms',{
+            template: '<terms-of-use></terms-of-use>'
+        }).
+        when('/shipping',{
+            template: '<shipping></shipping>'
+        }).
+        when('/return policy',{
+            template: '<return></return>'
+        }).
+        when('/privacy policy',{
+            template:'<privacy></privacy>'
+        }).
+        when('/checkout',{
+            template:'<checkout-page></checkout-page>'
+        }).
         otherwise('/home');
     }
         

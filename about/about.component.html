@@ -1,35 +1,43 @@
- <link rel="stylesheet" href="../css/about.css">
-       <header>
-        <div id="aboutHeaderCarouselIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="img/about-header.jpg" alt="First slide">
-                </div>
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Yongtai Ginseng</h2>
-                    <h5>Stockton's number one provider in herbal remedies</h5>
-                </div>
+<link rel="stylesheet" href="../css/about.css">
+<header>
+    <div id="aboutHeaderCarouselIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="img/about-header.jpg" alt="First slide">
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+                <h2>Yongtai Ginseng</h2>
+                <h5>Stockton's number one provider in herbal remedies</h5>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <div class="container">
-      <div class="row about-us">
-          <div class="about-us-icon text-center col-12"><img class="mx-auto d-block img-thumbnail" src="img/img_85340.png"></div>
-      </div>
-       <div class="row">
-            <div class="col-12">
-                <h2 class="display-3">About Us</h2>
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nibh turpis, cursus ac diam ut, laoreet lacinia eros. Etiam mollis, leo pretium auctor sagittis, lectus lorem molestie purus, et ornare nulla felis quis ipsum. Fusce orci elit, suscipit id metus sit amet, imperdiet mattis metus. Curabitur a ultricies eros, lacinia auctor quam. Suspendisse ac dictum quam. Nullam lacinia imperdiet dolor quis ultricies. Suspendisse ultrices, augue non sagittis ornare, lorem ipsum dictum nunc, sed tristique turpis enim quis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida, nulla non efficitur elementum, augue dui sollicitudin dolor, vitae sollicitudin nunc nisl non dolor. Suspendisse eget mi eget diam ornare convallis sit amet sed lacus. Nulla cursus dolor posuere neque lobortis, vitae mollis libero luctus. Praesent bibendum scelerisque magna. Aenean mollis tristique scelerisque. Sed consectetur vehicula tortor, nec commodo purus feugiat eget. Ut pretium magna sem, quis sollicitudin eros semper sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-            </div>
-        </div>
-        <div class="row">
-        <div class="col-lg-6"><img></div>
-        <div class="col-lg-6">
-            <h2 class="display-4">Our Origins</h2>
-            <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nibh turpis, cursus ac diam ut, laoreet lacinia eros. Etiam mollis, leo pretium auctor sagittis, lectus lorem molestie purus, et ornare nulla felis quis ipsum. Fusce orci elit, suscipit id metus sit amet, imperdiet mattis metus. Curabitur a ultricies eros, lacinia auctor quam. Suspendisse ac dictum quam. Nullam lacinia imperdiet dolor quis ultricies. Suspendisse ultrices, augue non sagittis ornare, lorem ipsum dictum nunc, sed tristique turpis enim quis dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam gravida, nulla non efficitur elementum, augue dui sollicitudin dolor, vitae sollicitudin nunc nisl non dolor. Suspendisse eget mi eget diam ornare convallis sit amet sed lacus. Nulla cursus dolor posuere neque lobortis, vitae mollis libero luctus. Praesent bibendum scelerisque magna. Aenean mollis tristique scelerisque. Sed consectetur vehicula tortor, nec commodo purus feugiat eget. Ut pretium magna sem, quis sollicitudin eros semper sit amet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+<div class="container">
+    <div class="row about-us">
+        <div class="about-us-icon text-center col-12"><img class="mx-auto d-block img-thumbnail" src="img/img_85340.png"></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">About Us</h2>
+            <p class="description" ng-if="langPos == 0">Established in 2014 in Sacramento, California. Yongtai Ginseng has become the premier and trusted retailer of Asian products in Northern California。 Born from generations of herbal and tea wisdom, we take pride in offering the best in Chinese herbs, premium loose teas, ginseng, Asian delicacies, housewares, and fine wine and spirits.
+            </p>
+            <p class="description" ng-if="langPos == 1">永泰参茸公司於2014年加州沙卡缅度，至今成為北加州地區較具規模的亞洲商品誠信零售商。傳承世代經營藥材及茶葉的精髓，永合豐經營的貨品琳瑯滿目，品種繁千，包括有中藥材、雀石茗茶、花旗人參、亞洲美食、家用電器、世界名酒等。
             </p>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-6"><img></div>
+        <div class="col-lg-6">
+            <h2 class="display-4">Our Origins</h2>
+            <p class="description" ng-if="langPos == 0">
+                The ginseng &amp; wellness products offered by Yongtai Ginseng will meet or exceed your expectations of the high quality, effectiveness and consideration you demand in order to maintain your healthy lifestyle. Yongtai has taken the time to develop and research our ginseng and wellness products intent on ensuring they meet your high standards and increase the state of wellness you deserve. Enrich your capabilities. Balance your well-being. Thrive for the best.
+
+            </p>
+              <p class="description" ng-if="langPos == 1">
+                永泰人参提供的人参和保健产品将达到或超出您对高品质，有效性的期望，以保持您的健康生活方式。 永泰花时间开发和研究我们的人参和健康产品，旨在确保它们符合您的高标准并增加您应得的健康状态。丰富您的体能。平衡你的心态。茁壮成长。
+
+            </p>
+        </div>
     </div>
+</div>

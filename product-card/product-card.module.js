@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('productCard', ['core.products']);
+angular.module('productCard', ['core.products', 'core.lc']);
