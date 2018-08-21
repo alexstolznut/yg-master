@@ -6,6 +6,7 @@ nav {
     z-index:9999 !important;
 /*    opacity: .8;*/
 }
+
 nav.bg-dark{
     background-color: rgba(33,33,33,.8) !important;
 }
@@ -61,7 +62,9 @@ span img.cart-icon {
     
 /*    padding:-3%;*/
 }
-
+.navbar-nav > .nav-item.langBtn{
+    margin-left: 45% !important;
+}
 li.dropdown:hover>.dropdown-menu{
     display: block !important;
     opacity: 1 !important;
@@ -79,6 +82,7 @@ li.dropdown:hover>.dropdown-menu{
 }
 .navbar-nav > .nav-item{
     margin-left: 15% !important;
+    min-width: 18%;
 }
 .dropdown-toggle::after, .dropdown-toggle::before{
     content: none !important;
