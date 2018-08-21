@@ -73,3 +73,14 @@ a.justify-content-start{
 .show{
     display:block;
 }
+.checkout > .justify-content-end{
+    float: right !important;
+    margin-top: 2% !important;
+    width: 20%;
+    height: 80%
+}
+.checkout{
+    margin: 0 auto !important;
+    margin-right: 0 !important;
+    padding:0 !important;
+}

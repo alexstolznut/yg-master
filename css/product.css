@@ -1,7 +1,10 @@
 .card .btn {
-    width: 43%;
-    font-size: .6em !important;
-    padding: 7%;
+    width: 100%;
+    font-size: 1.2em !important;
+    padding: 4% !important;
+    font-weight: bold;
+    background-color: #B73D5E !important;
+    text-align: center !important;
 }
 body{
     min-width: 100% !important;
