@@ -20,15 +20,17 @@ nav.bg-dark{
 
 .navbar-dark .icons{
     color: white;
-    font-size: 1.2em;
+    font-size: 2em !important;
     float: right;
     z-index: 9999;
 }
 
 span img.cart-icon {
+    margin-top: -5% !important;
+    text-align: center;
     width: 40px;
     height: 35px;
-    vertical-align: text-bottom;
+    vertical-align: text-top !important;
     
 }
 
@@ -64,6 +66,13 @@ span img.cart-icon {
 }
 .navbar-nav > .nav-item.langBtn{
     margin-left: 45% !important;
+    font-size: 1em !important;
+}
+.navbar-nav > .nav-item.langBtn a{
+    font-size: 1.5em !important;
+    height: 80%;
+    border: 1px solid white !important;
+    
 }
 li.dropdown:hover>.dropdown-menu{
     display: block !important;

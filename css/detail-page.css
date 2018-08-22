@@ -118,6 +118,12 @@ nav {
 .atc{
     
 }
+.nav-pills>li {
+    width: 44%;
+    float: left;
+    font-size: 1.5em;
+    margin-right:5%;
+}
 
 .product-page {
     margin-top: 10%;
