@@ -1,0 +1,232 @@
+.contact-text {
+    border-bottom: 1px solid black;
+    margin-top: 10%;
+}
+
+li.media p {
+    margin: 0 auto !important;
+}
+
+li.media .media-body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.contact-img {
+    vertical-align: middle !important;
+    height: 25px;
+    width: 25px;
+}
+
+.title {
+    font-weight: 500
+}
+
+.modal-dialog img{
+    width: 200px;
+    height: 200px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+img.phone-number {
+    width: 25px;
+    height: 25px;
+}
+
+img.email {
+    width: 40px;
+    height: 35px;
+    margin-top: -1%;
+}
+
+img.we-chat {
+    width: 30px;
+    height: 30px;
+}
+
+img.we-chat > h5 {
+    margin-top: 5% !important;
+}
+
+.contact-img:nth-of-type(1) {
+    /*    transform: rotate(0.11turn);*/
+}
+
+.general-contacts {
+    background-color: #FF6EA7;
+    color: white;
+    height: 500px;
+}
+
+.google-maps {
+    height: 600px;
+    text-align: center;
+    margin-bottom: 0 !important;
+    /*    background-image: url(../img/googlemaps.png);*/
+}
+
+.contact-tooltip {
+    color: white;
+    width: 25%;
+    position: absolute;
+    top: 17%;
+    left:36%;
+}
+
+.contact-tooltip div{
+
+    background-color: #da4d3c;
+    position: relative;
+    padding-top: ;
+    width: 308px;
+    padding: 20px 20px 20px 32px;
+/*    margin: auto;*/
+/*    background: url(../images/icons/meta/icon-location-white.svg) 30px 38px no-repeat #da4d3c;*/
+    background-size: 6%
+}
+
+.contact-tooltip div p {
+    color: #fff;
+    font-size: .9375rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+   padding-left: 15%;
+    text-align: left;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+a.btn--outline-white:hover{
+    background-color:white;
+    color: #da4d3c !important;;
+}
+a.btn--outline-white{
+    width:80%;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+.contact-tooltip div ::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -12px;
+    content: " ";
+    pointer-events: none;
+    border: solid transparent;
+    border-width: 12px;
+    border-color: rgba(218, 77, 60, 0);
+    border-top-color: #da4d3c;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+    border-top: 20px solid #f00;
+}
+
+.google-maps img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.contact-link {
+    color: black;
+}
+
+.general-contact li {
+    width: 100%;
+
+
+    /*    margin: 0 auto !important;*/
+}
+
+/*
+.general-contact li img, .general-contact li h5 {
+    float: left;
+}
+*/
+
+.contact-row {
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+    float: left !important;
+    vertical-align: text-bottom !important;
+}
+
+.contact-carousel img {
+    filter: brightness(70%);
+}
+
+.email .contact-img {
+    width: 75px;
+    height: 75px;
+}
+
+form #userMessage {
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+.form-card .form-group:last-of-type {
+    margin-bottom: 2.5%;
+}
+
+@media(max-width: 767px){
+    .general-contacts div div div h2, .general-contact > li{
+        width: 80% !important; 
+        margin-left: 20% !important;
+        margin-right: 20% !important;
+        float: clear;
+    }
+/*
+    .general-contacts .col-12{
+        margin-bottom: 5%
+    }
+*/
+    
+    .general-contacts{
+        height: 650px !important;
+    }
+    .general-contacts h2.title{
+        font-size: 1.75em;
+    }
+    .contact-form h2{
+        font-size: 1.5em;
+        
+    }
+    .google-maps{
+        height: 300px !important;
+    }
+    .google-maps .contact-tooltip div{
+        width: 250px !important;
+        height: 175px !important;
+        right: 50%;
+        top:0% !important;
+        padding: 5%;
+    }
+    .google-maps .contact-tooltip div .btn{
+        top: 0% !important;
+        margin-top: 0% !important;
+        font-size: .6em;
+        width: 70%;
+        height: 25%
+    }
+    .contact-tooltip div p{
+        margin-bottom: 0% !important;
+        padding-bottom: 2% !important;
+        font-size: .9em !important;
+    }
+    .google-maps .contact-tooltip{
+        top: 10%;
+        left: 40% !important;
+    }
+}

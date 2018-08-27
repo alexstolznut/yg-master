@@ -1,59 +1,153 @@
-
+<link rel="stylesheet" href="../css/contact.css">
 <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="display-3 contact-text">Contact</h2>
-                    <h5 class="display-4">We're here to help</h5>
-                    <p class="lead">We value you as a customer and would love to hear from you!</p>
-                </div>
+    <div id="aboutHeaderCarouselIndicators" class="carousel slide contact-carousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="img/contact.jpg" alt="First slide">
+            </div>
+            <div class="carousel-caption d-none d-md-block contact-carousel-caption">
+                <h2>We're here to serve you and help others</h2>
+                <h5>If you have any questions about returns or other inquires please contact us!</h5>
             </div>
         </div>
-    </header>
-
+    </div>
+    <!--
     <div class="container">
-        <div class="row contact-card">
-            <div class="col-lg-12 text-center contact-row">
-                <a href="https://www.google.com/maps/place/6835+Stockton+Blvd,+Sacramento,+CA+95823/@38.5020297,-121.4323825,18z/data=!3m1!4b1!4m5!3m4!1s0x809ac56efdee7187:0xd579d3de945fba3b!8m2!3d38.5020276!4d-121.4312882" target="_blank" class="contact-link">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="display-3 contact-text">Contact</h2>
+                <h5 class="display-4">We're here to help</h5>
+                <p class="lead">We value you as a customer and would love to hear from you!</p>
+            </div>
+        </div>
+    </div>
+-->
+</header>
+
+
+<div class="row general-contacts">
+    <div class="container">
+        <div class="row">
+
+            <!--
+        <div class="col-lg-3 text-center contact-row">
+            <a href="https://www.google.com/maps/place/6835+Stockton+Blvd,+Sacramento,+CA+95823/@38.5020297,-121.4323825,18z/data=!3m1!4b1!4m5!3m4!1s0x809ac56efdee7187:0xd579d3de945fba3b!8m2!3d38.5020276!4d-121.4312882" target="_blank" class="contact-link">
                 <img src="img/location.svg" class="contact-img">
                 <address><h5 class="lead"> 6835 Stockton Blvd, Sacramento, CA 95823</h5></address>
                 </a>
-            </div>
-            <div class="col-12 text-center contact-row">
-                <img src="img/weChat-QR.png" class="contact-img">
-                <h5 class="lead">We Chat</h5>
-            </div>
-            <div class="col-12 text-center contact-row">
-                <a href="tel:9163930333" class="contact-link">
+        </div>
+        <div class="col-3 text-center contact-row">
+            <img src="img/weChat-QR.png" class="contact-img">
+            <h5 class="lead">We Chat</h5>
+        </div>
+        <div class="col-3 text-center contact-row">
+            <a href="tel:9163930333" class="contact-link">
                 <img src="img/phone.png" class="contact-img">
                 <h5 class="lead">(916) 393-0333</h5>
                 </a>
-            </div>
-            <div class="col-12 text-center contact-row">
-                <a href="mailto:yongtaiginseng@gmail.com" class="contact-link email">
+        </div>
+        <div class="col-3 text-center contact-row">
+            <a href="mailto:yongtaiginseng@gmail.com" class="contact-link email">
                 <img src="img/email-icon.png" class="contact-img">
                 <h5 class="lead">yongtaiginseng@gmail.com</h5>
                 </a>
-            </div>
         </div>
-        <div class="row form-card">
-            <div class="col-10 offset-1">
-                <form>
-                    <div class="form-group">
-                        <label for="userName">Name</label>
-                        <input type="text" class="form-control" id="userName" aria-describedby="namelHelp" placeholder="Enter name">
-                    </div>
-                    <div class="form-group">
-                        <label for="userEmail">Email address</label>
-                        <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <label for="userMessage">Message</label>
-                        <textarea class="form-control" id="userMessage" rows="3" placeholder="Enter Message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+-->
+            <div class="col-12 col-md-6 mt-5 store-location">
+                <h2 class="title">Store Location</h2>
+                <h2 class="lead">
+                    <p>Yongtai Ginseng</p><address><p>6835 Stockton Blvd,</p><p>Sacramento, CA 95823</p></address></h2>
             </div>
-        </div>
-
+            <div class="col-12 col-md-6 mt-5 ">
+                <h2 class="title">General Contact Information</h2>
+                <ul class="list-unstyled general-contact">
+                    <li class="mb-4">
+                        <a class ="text-light" href="tel:9163930333">
+                    <img class="contact-img phone-number float-left mr-4 ml-1" src="img/phone.png">
+                    <h5 class=""> (916) 393-0333</h5>
+                    </a>
+                    </li>
+                    <li class="mb-4">
+                       <a class="text-light" href="mailto:yongtaiginseng@gmail.com">
+                        <img class="contact-img email float-left mr-3" src="img/email-icon.png">
+                        <h5 class="">YongtaiGinseng@gmail.com</h5>
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                       <a class="text-light" data-toggle="modal" data-target="#WeChatModal">
+                        <img class="contact-img we-chat float-left mr-4 ml-2" src="img/weChat-QR.png">
+                        <h5 class=""> WeChat</h5>
+                        </a>
+                    </li>
+                </ul>
+                <div class="modal fade" id="WeChatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-dark mx-auto ml-5" id="exampleModalLabel">We Chat QR Code</h1>
+        <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-auto">
+        <img src="../img/weChat-QR.png">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
+</div>
+            </div>
+            <div class="col-12 col-md-6 mt-5">
+                <h2 class="title">Hours of Operation</h2>
+                <ul class="list-unstyled general-contact">
+                    <li class="mb-4">
+                        <h5 class=""> Monday - Friday: 8:00 AM - 5:00 PM</h5>
+                    </li>
+                    <li class="mb-4">
+                        <h5 class=""> Saturday - Sunday: 10:00 AM - 4:00 PM</h5>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5 mx-auto">
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row mt-5 contact-form">
+    <div class="col-8 mx-auto">
+        <h1 class="title text-center">Contact us</h1>
+        <h2 class="sub-title text-center">We'd love to hear from you</h2>
+        <form>
+            <div class="form-group">
+                <label for="userName">Name</label>
+                <input type="text" class="form-control" id="userName" aria-describedby="namelHelp" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email address</label>
+                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="userMessage">Message</label>
+                <textarea class="form-control" id="userMessage" rows="3" placeholder="Enter Message"></textarea>
+            </div>
+            <div class="justify-content-end">
+                <button type="submit" class="btn justify-content-end btn-primary mb-5">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 google-maps">
+        <img src="../img/googlemaps.png">
+        <div class="contact-tooltip">
+            <div>
+                <p><strong>Yongtai Ginseng</strong></p>
+                <p>6835 Stockton Blvd,<br>Sacramento, CA 95823</p>
+                <a class="btn btn--outline-white btn--right" href="https://www.google.com/maps/place/6835+Stockton+Blvd,+Sacramento,+CA+95823/@38.5022205,-121.4310693,17z/data=!4m5!3m4!1s0x809ac56efdee7187:0xd579d3de945fba3b!8m2!3d38.5020276!4d-121.4312882">Get Directions</a>
+            </div>
+        </div>
+    </div>
+</div>

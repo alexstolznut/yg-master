@@ -29,7 +29,9 @@ a, a:hover, a:focus {
     transition: all 0.3s;
     z-index: 0 !important;
 }
-
+#sidebar .components{
+    margin-left: 0;
+}
 #sidebar .sidebar-header {
     padding: 20px;
     background: #6d7fcc;
@@ -51,8 +53,8 @@ a, a:hover, a:focus {
     display: block;
     color: white;
 }
-#wrapper #sidebar ul li a:hover {
-    color: #7386D5 !important;
+.wrapper #sidebar ul li a:hover, .wrapper #sidebar ul li:hover {
+    color: #B73D5E !important;
     background: #fff !important;
 }
 

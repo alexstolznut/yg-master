@@ -75,11 +75,12 @@ header #aboutHeaderCarouselIndicators img {
 }
 
 .card .btn {
-    padding: 8%;
+    padding: 4%;
     height: 3rem;
-    font-size: .7em;
-    text-align: left;
-    background-color: #B73D5E;
+    width: 100% !important;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #B73D5E !important;
 }
 
 .contact-card,
@@ -109,43 +110,18 @@ header #aboutHeaderCarouselIndicators img {
     border-radius: 65%;
 }
 
-.contact-text {
-    border-bottom: 1px solid black;
-    margin-top: 10%;
-}
 
-.contact-img {
-    width: 50px;
-    height: 50px;
-}
-
-.contact-link {
-    color: black;
-}
-
-.contact-row {
-    margin-bottom: 2.5%;
-    margin-top: 2.5%;
-}
-
-.email .contact-img {
-    width: 75px;
-    height: 75px;
-}
-
-form #userMessage {
-    margin-bottom: 0%;
-    padding-bottom: 0%;
-}
-
-.form-card .form-group:last-of-type {
-    margin-bottom: 2.5%;
-}
-footer, footer-template{
+footer,
+footer-template {
     z-index: 9999999 !important;
 }
-product-card{
+
+product-card {
     z-index: 0 !important;
 }
-/*SIDEBAR*/
 
+button[type="submit"] {
+    float: right !important;
+}
+
+/*SIDEBAR*/

@@ -153,3 +153,27 @@ footer > div h5 {
 footer > .container{
     margin: 0 auto;
 }
+
+/*
+@media(max-width:991px){
+
+    nav:before,.navbar-collapse:before, .navbar:after{
+        display: none !important;
+        content:none !important;;
+    }
+    .show{
+       
+    }
+}
+*/
+
+@media(max-width:768px){
+     a.navbar-brand img, a.navbar-brand{
+        display:none !important;
+        visibility:hidden !important;
+    }
+    nav:before,.navbar-collapse:before, .navbar:after{
+        display: none !important;
+        content:none !important;;
+    }
+}

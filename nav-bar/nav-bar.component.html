@@ -1,46 +1,18 @@
 <link rel="stylesheet" href="../nav-bar/nav-bar.css">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="/home"><img src="../img/Logo.png"></a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#!/home"><img src="../img/Logo.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#!/home" ng-if="langPos==0">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="#!/home" ng-if="langPos==1">
-家 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#!/product" ng-if="langPos==0">Products</a>
-                <a class="nav-link" href="#!/product" ng-if="langPos==1">制品</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#!/about" ng-if="langPos==0">About</a>
-                <a class="nav-link" href="#!/about" ng-if="langPos==1">
-关于</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#!/contact" ng-if="langPos==0">Contact</a>
-                <a class="nav-link" href="#!/contact" ng-if="langPos==1">
-联系</a>
-            </li>
-            <li class="nav-item justify-content-end langBtn">
-                <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral">{{$ctrl.LanguageChoice}}</a>
-            </li>
-        </ul>
-        <!--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
--->
-    </div>
-    <ul class="navbar-nav justify-content-end">
-        <li class="nav-item dropdown justify-content-end">
-            <a class="nav-link dropdown-toggle icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
+    <!--        <li class="nav-item dropdown justify-content-end">-->
+    <div class="row justify-content-end mobile-buttons">
+        <div class="justify-content-end d-md-none d-lg-none d-xl-none">
+            <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons">{{$ctrl.LanguageChoice}}</a>
+        </div>
+        <div class="justify-content-end d-md-none d-lg-none d-xl-none">
+            <a class="nav-link dropdown-toggle mobile-icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
                 <span><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0">{{checkoutInfo['totalItems']}}</span>
             <img class="cart-icon" src="../img/cart-icon.png"></span>
         </a>
@@ -51,11 +23,68 @@
                 {{itemList['title']}}
                 <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="$ctrl.getCheckout()">Checkout</button>
             </div>
-        </li>
-        <li class="nav-item justify-content-end">
+        </div>
+        <!--        </li>-->
+        <div class="signIn justify-content-end d-md-none d-lg-none d-xl-none">
+            <a class="nav-link justify-content-end mobile-icons" ng-if="langPos==0">Sign In</a>
+            <a class="nav-link justify-content-end mobile-icons" ng-if="langPos==1">
+签到</a>
+        </div>
+        <!--        </li>-->
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#!/home" ng-if="langPos==0">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#!/home" ng-if="langPos==1">家<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!/product" ng-if="langPos==0">Products</a>
+                <a class="nav-link" href="#!/product" ng-if="langPos==1">制品</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!/about" ng-if="langPos==0">About</a>
+                <a class="nav-link" href="#!/about" ng-if="langPos==1">关于</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!/contact" ng-if="langPos==0">Contact</a>
+                <a class="nav-link" href="#!/contact" ng-if="langPos==1">
+联系</a>
+            </li>
+        </ul>
+        <!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+-->
+    </div>
+
+    <div class="row desktopButtons d-none d-md-block">
+        <div class="justify-content-end d-none d-md-block">
+            <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons">{{$ctrl.LanguageChoice}}</a>
+        </div>
+        <div class="sideButtons justify-content-end  d-none d-md-block">
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
+                <span><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0">{{checkoutInfo['totalItems']}}</span>
+            <img class="cart-icon" src="../img/cart-icon.png"></span>
+        </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" ng-if="itemListLength > 0">
+                    <div class="dropdown-item" ng-repeat="item in itemList">
+                        <a class="dropdown-item row"><img class="col-4 col-sm-4 col-md-4 col-lg-4" src="{{item.variant.image['src']}}"><p class="description col-8 col-sm-8 col-md-8 col-lg-8">{{item['title']}}</p></a>
+                    </div>
+                    {{itemList['title']}}
+                    <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="$ctrl.getCheckout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+        <div class="justify-content-end d-none d-md-block">
             <a class="nav-link justify-content-end icons" ng-if="langPos==0">Sign In</a>
             <a class="nav-link justify-content-end icons" ng-if="langPos==1">
 签到</a>
-        </li>
-    </ul>
+        </div>
+    </div>
+
 </nav>
