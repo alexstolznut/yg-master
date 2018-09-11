@@ -2,7 +2,7 @@ angular.
 module('navbar').
 component('navbar', {
     templateUrl: "nav-bar/nav-bar.component.html",
-    controller: ['LangChoice', 'Product', '$scope', function NavController(LangChoice, Product, $scope) {
+    controller: ['LangChoice', 'Product', '$scope', '$routeParams', function NavController(LangChoice, Product, $scope, $routeParams) {
 
         //        Product.getProducts().then((products) => {
         //            $scope.products = products;
@@ -36,10 +36,10 @@ component('navbar', {
         
         this.LanguageChoice = LangChoice.langOptions[LangChoice.langPos];
         $scope.checkoutInfo = Product.checkoutInfo;
-        window.console.log($scope.checkoutInfo)
         this.getItem = function () {
             $scope.itemList = Product.items;
             $scope.itemListLength = Object.keys($scope.itemList).length;
+            window.console.log($scope.itemList);
         }
     
         var cartVals,x=[];

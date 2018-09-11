@@ -73,7 +73,7 @@
         </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" ng-if="itemListLength > 0">
                     <div class="dropdown-item" ng-repeat="item in itemList">
-                        <a class="dropdown-item row"><img class="col-4 col-sm-4 col-md-4 col-lg-4" src="{{item.variant.image['src']}}"><p class="description col-8 col-sm-8 col-md-8 col-lg-8">{{item['title']}}</p></a>
+                        <a class="dropdown-item row" href="#!/product/{{item.variant.product.id}}"><span class="dropdown-item-wrapper"><span class="dropdown-checkout-item-quantity btn-primary">{{item.quantity}}</span><img class="col-4 col-sm-4 col-md-4 col-lg-4" src="{{item.variant.image['src']}}"></span><p class="description col-8 col-sm-8 col-md-8 col-lg-8">{{item['title']}}</p></a>
                     </div>
                     {{itemList['title']}}
                     <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="$ctrl.getCheckout()">Checkout</button>

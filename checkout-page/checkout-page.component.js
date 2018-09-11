@@ -15,15 +15,14 @@ component('checkoutPage', {
                     //just like before, the empty .then() function is still necessary 
                 });
             }
+//         window.console.log(Product.items);
          window.console.log(Product.items);
          this.quantity = Product.items.quantity;
          this.updateQuantity = function (delta) {
                 this.quantity += delta;
             }
-         
          this.updateItem = function (itemId, q) {
                 Product.updateItem(itemId, q).then(() => {
-                    window.console.log(Product);
                     //do not remove empty .then()
                 });
             }
