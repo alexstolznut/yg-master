@@ -17,34 +17,82 @@
             <ul class="list-group">
                 <li class="list-group-item row" ng-repeat="item in itemList">
                     <div class="row">
-                        <div class="col-4"><span>{{item.quantity}}
-                            <img class="img-thumbnail col-4" src="{{item.variant.image['src']}}"></span>
+                        <div class="col-12 col-md-1 item-container"><span class="item-quantity btn-primary">{{item.quantity}}</span>
+                            <img src="{{item.variant.image['src']}}">
                         </div>
-                        <div class="col-4 justify-content-center">
-                            <h1 class="h3 col-4">{{item['title']}}</h1>
+                        <div class="col-12  col-md-3 item-title-container float-left ml-5">
+                            <h3 class="item-title lead" ng-if="langPos==0">{{item['title-en']}}</h3>
+                            <h3 class="item-title lead" ng-if="langPos==1">{{item['title-ch']}}</h3>
+                            <h4 class="item-price">{{item.variant.price * item.quantity | currency }}</h4>
+
                         </div>
-                        <div class="col-4 justify-content-end">
+                        <div class="col-12 col-md-6 mx-0">
+                            <button class="btn btn-lg checkout-qty minus-btn" ng-disabled="item.quantity<=1" ng-click="item.quantity = item.quantity - 1; $ctrl.updateItem(item.id, item.quantity)">
+   <span class="glyphicon glyphicon-minus checkout-glyphicon" aria-hidden="true"></span>
+                            </button>
+                            <input class="btn btn-md checkout-qty" value="{{item.quantity}}" />
+                            <button class="btn btn-lg checkout-qty" ng-click="item.quantity = item.quantity + 1; $ctrl.updateItem(item.id, item.quantity)">
+   <span class="glyphicon glyphicon-plus checkout-glyphicon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                        <div class="col-12 col-md-1 justify-content-end delete"><a href="" class="justify-content-end btn btn-danger" data-toggle="modal" data-target="#checkoutModal" ng-click="itemId(item.id)">Delete</a></div>
+                        <!--
+                        <div class="col-3 justify-content-end">
                             <a href="" ng-click="hideMe=false" class="justify-content-end btn btn-primary" ng-disabled="!hideMe">Edit</a>
                         </div>
+-->
                     </div>
-                    <div class="row edit-row" ng-hide="hideMe">
-                        <div class="col-4 justify-content-start"><a href="" ng-click="$ctrl.removeItem(item.id)" class="justify-content-start btn btn-danger">Delete</a></div>
-                        <div class="col-4">
-                            <span class="btn btn-default btn-lg btn-qty" ng-click="item.quantity = item.quantity - 1; $ctrl.updateItem(item.id, item.quantity)" ng-disabled="item.quantity<=1">
-   <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                            </span>
-                            <input class="btn btn-default btn-md btn-qty" value="{{item.quantity}}" />
-                            <span class="btn btn-default btn-lg btn-qty" ng-click="item.quantity = item.quantity + 1; $ctrl.updateItem(item.id, item.quantity)">
-   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            </span>
-                        </div>
-                        <div class="col-4"><a href="" class="btn btn-primary" ng-click="hideMe=true; $ctrl.updateItem(item.id, item.quantity)">Done</a></div>
-                    </div>
+
+
+
                 </li>
 
             </ul>
+
+            <div class="modal" role="dialog" id="checkoutModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to remove your item "{{itemList[itemId]['title-en']}}" from your cart?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" ng-click="$ctrl.removeItem(itemId)" data-dismiss="modal">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row subtotal mt-5 border-bottom border-top">
+               <div class="col-8"></div>
+                <div class="col-12 col-md-4 float-right">>
+                    <div class="row items" ng-repeat="item in itemList">
+
+                        <div class="col-12 border-bottom">
+                           <div class="row">
+                           <div class="col-10">
+                               <h2 class="mt-4 mb-4" ng-if="langPos==0">{{item['title-en']}}({{item.quantity}})</h2>
+                               <h2 class="mt-4 mb-4" ng-if="langPos==1">{{item['title-ch']}}({{item.quantity}})</h2></div>
+                               <div class="col-2 price-items"><h2 class=""> {{item.variant.price * item.quantity | currency}}</h2></div>
+                            </div>
+                        </div>
+                       
+
+                    </div>
+                      <div class="row">
+                        <div class="col-12">
+                            <h1 class="mt-5 float-right">Subtotal: {{totalPrice | currency}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-12 checkout">
+                <div class="col-12 checkout mb-5">
                     <button type="button" class="btn btn-primary btn-lg justify-content-end" ng-click="$ctrl.getCheckout()">Checkout</button>
 
                 </div>

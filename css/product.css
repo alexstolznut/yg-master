@@ -11,6 +11,7 @@
 body {
     min-width: 100% !important;
     margin: 0 auto !important;
+    margin-top: 0 !important;
 }
 
 .card img {
@@ -33,6 +34,9 @@ body {
 
 .card .card-body h5 {
     font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #content {

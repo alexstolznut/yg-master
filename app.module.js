@@ -19,7 +19,8 @@ angular.module('homeApp',[
     'shipping',
     'return',
     'privacy',
-    'checkoutPage'
+    'checkoutPage',
+    'fullScreenSearch'
 ]);
 
 //angular.module('aboutApp',[

@@ -35,9 +35,7 @@
 <div class="container">
 
     <div class="row weekly-special">
-        <div class="weekly-special-text">
-            <h1>Specials</h1>
-        </div>
+            <h1 class="weekly-special-text display-1">Specials</h1>
     </div>
 
     <div class="row">
@@ -56,7 +54,7 @@
     </div>
     
     <div class="row popular-items">
-        <h2 class="popular-items-text">New Arrivals</h2>
+        <h1 class="popular-items-text display-1">New Arrivals</h1>
     </div>
     <div class="row">
        <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('New Arrival',product)" ng-show="$index<15">
@@ -76,7 +74,7 @@
 
    
     <div class="row popular-items">
-        <h2 class="popular-items-text">Popular Items</h2>
+        <h1 class="popular-items-text display-1">Popular Items</h1>
     </div>
     <div class="row">
        <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('popular',product)">

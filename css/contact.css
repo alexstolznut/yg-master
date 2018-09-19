@@ -53,12 +53,18 @@ img.we-chat > h5 {
     /*    transform: rotate(0.11turn);*/
 }
 
+#formModal{
+    top: 20%;
+}
+
 .general-contacts {
     background-color: #FF6EA7;
     color: white;
     height: 500px;
 }
-
+.general-contacts a{
+    color: white !important;
+}
 .google-maps {
     height: 600px;
     text-align: center;

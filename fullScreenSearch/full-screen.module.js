@@ -1,0 +1,1 @@
+angular.module('fullScreenSearch', ['ngRoute', 'core.products', 'core.lc']);

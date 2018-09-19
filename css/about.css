@@ -1,3 +1,177 @@
-.row:nth-of-type(1),.row:nth-of-type(2){
+.row:nth-of-type(1),
+.row:nth-of-type(2) {
     margin-bottom: 5%;
+}
+
+#aboutBackground {
+    /*    margin-top: 100% !important;*/
+    /*    position: fixed;*/
+    margin-top: -10%;
+    right: 50;
+    bottom: 0;
+    max-width: 100%;
+    min-height: 100%;
+    text-align: center;
+}
+
+.content {
+    /*    position: absolute;*/
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /*    vertical-align: middle !important;*/
+    /*    margin: 0 auto;*/
+    /*    z-index: 1;*/
+    position: absolute;
+    top: 0;
+    /*    background: rgba(0, 0, 0, 0.5);*/
+    color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*    padding: 20px;*/
+}
+
+.content h2,
+.content h5 {
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+video {
+    min-height: 100%;
+    filter: brightness(-10)
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-container img {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    box-shadow: 2px 2px 2px black;
+    margin: 5%;
+}
+
+.img-container img:nth-of-type(2) {
+    z-index: 1;
+    top: 30px;
+    left: 45px;
+}
+
+.mission {
+    margin-top: 25%;
+}
+
+/*BOUNCE ARROW*/
+
+/*@import "compass/css3";*/
+
+keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        @include transform(translateY(0));
+    }
+    40% {
+        @include transform(translateY(-30px));
+    }
+    60% {
+        @include transform(translateY(-15px));
+    }
+}
+
+
+body {
+    background: black;
+}
+
+.arrow {
+    z-index: 99999;
+    top: -25%;
+    left: 50%;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+    background-size: contain;
+}
+
+.bounce {
+    animation-name: bounce;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+header {
+    height: 37.500em;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+@media(max-width:1215px) {
+    header {
+        height: 34em;
+    }
+}
+
+@media(max-width:1100px) {
+    header {
+        height: 32em;
+    }
+}
+
+@media(max-width:1035px) {
+    header {
+        height: 28em;
+    }
+}
+
+@media(max-width: 993px) {
+    header {
+        height: 24em;
+    }
+}
+
+@media(max-width: 769px) {
+    header {
+        height: 18em;
+    }
+    .content h2,
+    .content h5 {
+        position: relative;
+        top: 20%;
+        transform: translateY(-50%);
+    }
+    .content h2 {
+        font-size: 3em;
+    }
+    .content h5 {
+        font-size: 2em;
+    }
+}
+
+@media(max-width: 577px) {
+    header {
+        height: 14em;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+    .content h5 {
+        font-size: 1.5em;
+    }
+    .content h2,
+    .content h5 {
+        position: relative;
+        top: 20%;
+        transform: translateY(-50%);
+    }
 }

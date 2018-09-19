@@ -26,6 +26,83 @@ nav {
 }
 */
 
+body {
+    margin: 0;
+    padding: 0;
+}
+/*
+.search-icon {
+    font-family: fontAwesome;
+    vertical-align: text-bottom !important;
+    font-size: 25px;
+    font-weight: lighter;
+    position: absolute;
+    padding: .5%;
+    background: inherit;
+    top: 0%;
+    right: 0;
+    z-index: 99999;
+    color: white;
+}
+
+.search .search-icon:before {
+    color: white !important;
+    font-family: fontAwesome;
+    content: '\f002';
+}
+
+.search.active .search-icon:before {
+    content: '\f00d';
+    font-family: fontAwesome;
+    color: white;
+}
+
+.search {
+    margin: 0;
+    position: fixed;
+    top: 4%;
+    right: 2.5%;
+    height: 25px;
+    width: 25px;
+    z-index: 9999;
+}
+
+.search.active {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 9999;
+    right: 0;
+    top: 0;
+    opacity: .9;
+}
+
+.search input{
+    display: none;
+}
+.search.active input{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: #fff;
+    border: none;
+    border-bottom: 4px solid #fff;
+    outline: none;
+    font-size: 40px;
+    padding: 10px 0;
+}
+
+.search-icon.active {
+    min-width: 100% !important;
+    min-width: 100 !important;
+    position: absolute;
+    z-index: 999999 !important;
+    background: black;
+}
+*/
 header #headerCarouselIndicators,
 header #aboutHeaderCarouselIndicators {
     height: 500px;
@@ -56,7 +133,7 @@ header #aboutHeaderCarouselIndicators img {
     margin: 0 auto;
     padding-top: 5%;
     padding-left: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 0%;
     width: 92%;
 
 }

@@ -5,7 +5,9 @@
 
 img.card-img-top {
     min-height: 250px !important;
+    box-shadow: grey 1px 1px 1px 1px;
 }
+
 
 /*
 .card .card-body{
@@ -14,11 +16,14 @@ img.card-img-top {
     margin-top: 5%
 }
 */
-
+.weekly-special-text, .new-arrivals-text, .popular-items-text{
+    font-weight: 400;
+    font-size: 3.5em;
+    padding-bottom: 0% !important;
+}
 .card h5.card-title {
     font-size: 1.5em !important;
 }
-
 .card-body {
     padding: 0% !important;
 }
@@ -135,6 +140,11 @@ img.card-img-top {
      .carousel-caption h2{
             font-size: 1.75em !important;
         }
+      .weekly-special h1, .popular-items h1{
+            font-size: 2.5em !important;
+            font-weight: 300;
+            
+        }
 }
 
 
@@ -145,5 +155,10 @@ img.card-img-top {
         }
         .carousel-caption h2{
             font-size: 1.4em !important;
+        }
+        .weekly-special h1, .popular-items h1{
+            font-size: 2.5em !important;
+            font-weight: 300;
+            
         }
     }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"  ng-app="homeApp">
+<html lang="en" ng-app="homeApp">
 
 <head>
     <!-- Required meta tags -->
@@ -46,6 +46,8 @@
     <script src="privacy-policy/privacy.component.js"></script>
     <script src="checkout-page/checkout-page.module.js"></script>
     <script src="checkout-page/checkout-page.component.js"></script>
+    <script src="fullScreenSearch/full-screen.module.js"></script>
+    <script src="fullScreenSearch/full-screen-search.component.js"></script>
 
 
     <title>Yong Tai</title>
@@ -53,6 +55,27 @@
 
 <body>
     <navbar></navbar>
+<!--
+    <div class="search">
+        <div class="search-icon"></div>
+        <input autofocus ng-model="search">
+        <div class="dropdown-menu search-menu" ng-if="show && search">
+            <div class="dropdown-item" ng-repeat="product in products | filter: search | limitTo:4">
+                <a href="#!/product/{{product.id}}">
+                    <div class="row">
+                        <div class="col-2"><img ng-src={{product.pic_urls[0]}} class="search-image"></div>
+                        <div class="col-8">
+                            <p class="description">{{product.title}}</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+-->
+    <full-screen-search></full-screen-search>
     <div ng-view></div>
 
     <footer-template></footer-template>

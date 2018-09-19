@@ -19,14 +19,21 @@ nav {
     text-align: center;
 /*    margin: 0 auto;*/
 }
+.btn-qty{
+    text-align: center;
+}
 .btn-qty span{
     padding: 0 !important;
-    vertical-align: bottom !important;
+    width:10px;
+    text-align: center;
+    height:10px;
 }
 .add-to-cart .btn {
     border-radius: 0;
 }
-
+input.btn.btn-default.btn-lg.btn-qty {
+    padding: 0;
+}
 .btn-brand {
     background-color: #B73D5E;
     height: 46px;
@@ -127,15 +134,30 @@ nav {
     display: inline-block;
     margin: 1em;
 }
-
+.tab-content{
+    padding-left: 0 !important;
+}
+.tab-content > p, tab-content > ul > li {
+    margin-top: 5%;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+.tab-content > ul{
+    padding-left: 0 !important;
+}
+.tab-content > ul > li {
+    padding-left: 0  !important;
+    margin-top:5%;
+    font-size: 1.5em;
+}
 .atc{
     
 }
 .nav-pills>li {
-    width: 44%;
+    width: 49%;
     float: left;
     font-size: 1.5em;
-    margin-right:5%;
+/*    margin-right:5%;*/
 }
 
 .product-page {
@@ -316,7 +338,7 @@ footer > .container{
 */
 }
 @media(max-width:575px){
-    input.btn-qty{
+    input.btn-qtyqty{
         width:30% !important;
         padding:0 !important;
         
@@ -341,6 +363,9 @@ footer > .container{
     .mobile-title{
         font-size: 1.5em;
         margin: 0 auto;
+    }
+    input.btn-qty{
+        width: 52px !important;
     }
     .product{
         height: 30em !important;

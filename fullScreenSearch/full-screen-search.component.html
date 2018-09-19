@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="../fullScreenSearch/full-screen.css">
+        <div class="search">
+        <div class="search-icon"></div>
+        <input class="fullscreen-input" ng-model="search" autofocus ng-focus="show=true" ng-blur="show=false">
+        <div class="search-menu" ng-if="search && show">
+            <div class="search-item" ng-repeat="product in products | filter: search | limitTo:4">
+                <a href="#!/product/{{product.id}}">
+                    <div class="row">
+                        <div class="col-2"><img ng-src={{product.pic_urls[0]}} class="search-image"></div>
+                        <div class="col-8">
+                            <p class="lead mx-0">{{product.title}}</p>
+                            <p class="description" ng-if="product.vars[0].available">In Stock</p>
+                            <p class="description" ng-if="product.vars[0].available==false">Out of Stock</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </div>

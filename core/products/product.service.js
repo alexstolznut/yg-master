@@ -59,6 +59,14 @@ factory('Product',
             client.product.fetchAll(250).then((products_complete) => {
                 //regular expression to parse english and chinese titles
                 let re = /\（[A-Za-z\s0-9\（\）\/\-]+\）/gmi;
+                let wordre = /\ (?:^|\W)\(\)(?:$|\W) /;
+                let ED = "ED:";
+                let CD = "CD:";
+                let EU = "EU:";
+                let CU = "CU:";
+                let EB = "EB:";
+                let CB = "CB:"
+                
                 var i;
                 for (i = 0; i<products_complete.length; i++) {
                     let product_tmp = products_complete[i];
@@ -67,9 +75,21 @@ factory('Product',
                     //add name and tags
                     product['id'] = product_tmp['id'];
                     product['title'] = product_tmp['title'];
+                    product['description'] = product_tmp['description'];
+                    var description = product['description'];
+                   
                     //the title is expected in the form 
                     // chinese (english)
                     let breakPoint = product['title'].search(re);
+                    let wordBreakPoint = product['description'].search(re);
+                    product['description-en'] = description.slice(description.indexOf(ED) + ED.length, description.indexOf(CD)).trim();
+                    product['description-ch'] = description.slice(description.indexOf(CD) + CD.length, description.indexOf(EB)).trim();
+                    product['benefits-en'] = description.slice(description.indexOf(EB) + EB.length, description.indexOf(CB)).trim();
+                    product['benefits-ch'] = description.slice(description.indexOf(CB) + CD.length, description.indexOf(EU)).trim();
+                    product['uses-en'] = description.slice(description.indexOf(EU) + EU.length + 2,
+                                                          description.indexOf(CU)).trim();
+                    product['uses-en'] = product['uses-en'].split('*');
+                    product['uses-ch'] = description.slice(description.indexOf(CU) + CU.length + 2, description.length).trim().split("*");
                     product['title-ch'] = product['title'].slice(0,breakPoint);
                     product['title-en'] = product['title'].slice(breakPoint+1,-1);
                     product['tags'] = product_tmp['tags'];
@@ -122,6 +142,7 @@ factory('Product',
     */
     function addItem(itemId, q=1) {
         //this function returns a promise
+        
         var addItemDef = $q.defer();
 
         let toAdd = [{
@@ -135,7 +156,10 @@ factory('Product',
             var d = JSON.parse(JSON.stringify(tempCheckout.lineItems));
             //check if there are differences between the new items in the checkout and the service's local item dictionary.
             //if so, update
+             let re = /\（[A-Za-z\s0-9\（\）\/\-]+\）/gmi;
             for (var i=0;i<d.length;i++) {
+                
+                let breakPoint = d[i]['title'].search(re);
                 let curId = d[i]['id'];
                 //add a new item
                 if (!(curId in items)) {
@@ -149,6 +173,9 @@ factory('Product',
                     }
 
                 }
+                items[curId]['title-ch'] = d[i]['title'].slice(0,breakPoint);
+                items[curId]['title-en'] = d[i]['title'].slice(breakPoint+1, -1);
+                
             }
             //update the checkout info
             checkoutInfo['totalItems'] = countTotalItems();
@@ -229,7 +256,7 @@ factory('Product',
         }
         return numItems;
     }
-
+    window.console.log(items);
     /* Make the local functions and variables accessible to external code */
     return {
         getProducts: getProducts,
