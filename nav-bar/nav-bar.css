@@ -531,9 +531,11 @@ navbar .dropdown-menu.search-menu{
     
 }
 @media(max-width:450px){
-    .mobile-buttons{
-/*        margin-left:20% !important;*/
-    }
+
+.mobile-buttons {
+    margin-right: 5% !important;
+    margin-left: 20% !important;
+}
 }
 
 @media(max-width:375px){
