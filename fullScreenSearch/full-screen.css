@@ -94,7 +94,7 @@
     }
 }
 
-@media(max-width:450px){
+@media(min-width:375px){
     .search input{
         width:80% !important;
     }
