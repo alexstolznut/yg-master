@@ -96,7 +96,7 @@
 
 @media(max-width:375px){
     .search input{
-        min-width:100%;
+        min-width:80%;
     }
     .search{
         top: 2%;
