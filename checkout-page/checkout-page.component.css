@@ -95,7 +95,7 @@ h1.item-title {
     height: 50px;
 }
 
-input {
+input.checkout-qty {
     font-size: 1.75em !important;
     width: 75px;
     /*    font-weight: bold !important;*/

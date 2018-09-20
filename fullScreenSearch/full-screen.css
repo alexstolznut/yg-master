@@ -75,7 +75,7 @@
     position:absolute;
     top:20%;
     left: 30%;
-    width: 60%;
+    width: 100%;
     padding: 2.5%;
 }
 .search-menu > .search-item a {
@@ -96,7 +96,7 @@
 
 @media(max-width:375px){
     .search input{
-        min-width:80%;
+        min-width:100%;
     }
     .search{
         top: 2%;
