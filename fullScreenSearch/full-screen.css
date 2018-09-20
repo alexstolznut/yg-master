@@ -88,12 +88,12 @@
     border-radius: 50%;
 }
 
-/*
 @media(max-width:576px){
     .search{
     top: 4% ;
     }
 }
+
 @media(max-width:375px){
     .search input{
         min-width:80%;
@@ -103,4 +103,4 @@
         
     }
 }
-*/
+
