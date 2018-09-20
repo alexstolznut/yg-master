@@ -526,7 +526,7 @@ navbar .dropdown-menu.search-menu{
     }
     nav.navbar{
 /*        min-height: 65px !important;*/
-        overflow-y:hidden;
+/*        overflow-y:hidden;*/
     }
     
 }
