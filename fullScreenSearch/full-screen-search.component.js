@@ -13,7 +13,7 @@ component('fullScreenSearch', {
         //        $scope.langPos = LangChoice.langPos;
         this.langOptions = LangChoice.langOptions;
 
-        $scope.show=false;
+        $scope.show = false;
 
         this.switchLang = function () {
             if ($scope.langPos === 0) {
@@ -24,53 +24,53 @@ component('fullScreenSearch', {
             $scope.langPos = LangChoice.langPos;
             window.console.log(LangChoice);
         }
-        
-         Product.getProducts().then((products) => {
+
+        Product.getProducts().then((products) => {
             this.products = products;
             window.console.log(typeof (this.products));
             $scope.products = Object.values(this.products);
             window.console.log($scope.products);
 
         });
-        
-        $(document).ready(function(){
-                $('.search-icon').click(function(){
-                    $('.search').toggleClass("active");
-                })
-               
-               
-            });
-        
-//        $("input.fullscreen-input").on("focus",function(){
-//                $(".search-menu").css("display","block");
-//            })
-            $("input.fullscreen-input").focusout(function(){
-                $('.search').removeClass('active')
-                $('input.fullscreen-input').val = "";
-            });
-        
-        $('.search.search-icon').click(function(){
+
+        $(document).ready(function () {
+            $('.search-icon').click(function () {
+                $('.search').toggleClass("active");
+            })
+
+
+        });
+
+        //        $("input.fullscreen-input").on("focus",function(){
+        //                $(".search-menu").css("display","block");
+        //            })
+        $("input.fullscreen-input").focusout(function () {
+            $('.search').removeClass('active')
+            $('input.fullscreen-input').val = "";
+        });
+
+        $('.search.search-icon').click(function () {
             $('input.fullscreen-input').val = "";
             $('input.fullscreen-input').focus();
         });
-        
-         $(document).click(function (e) {
+
+        $(document).click(function (e) {
             e.stopPropagation();
             if (e.target != $('.search')) {
                 $('.navbar-collapse').removeClass('in show');
 
             }
-         })
-        
-        if($('input.fullscreen-input').css("display")=="block"){
-            $(document).click(function(e){
+        })
+
+        if ($('input.fullscreen-input').css("display") == "block") {
+            $(document).click(function (e) {
                 e.stopPropagation();
-                if(e.target != $('.fullscreen-input')){
+                if (e.target != $('.fullscreen-input')) {
                     $('.search.active').removeClass('.active');
                 }
             })
         }
-        
-       
+
+
 }]
 });

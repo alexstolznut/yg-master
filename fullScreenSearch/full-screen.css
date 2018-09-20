@@ -93,3 +93,12 @@
     top: 4% ;
     }
 }
+@media(max-width:375px){
+    .search input{
+        min-width:80%;
+    }
+    .search{
+        top: 2%;
+        
+    }
+}
