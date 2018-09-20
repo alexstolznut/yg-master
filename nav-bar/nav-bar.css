@@ -16,7 +16,7 @@ nav.bg-dark {
     color: white;
     padding-left: 12% !important;
     font-size: 1.2em;
-    z-index: 9999 !important;
+/*    z-index: 9999 !important;*/
 }
 
 .navbar-nav {
@@ -27,7 +27,7 @@ nav.bg-dark {
     color: white;
     font-size: 1.5em !important;
     float: right;
-    z-index: 9999;
+/*    z-index: 9999;*/
 }
 
 span img.cart-icon {
@@ -96,8 +96,11 @@ navbar .dropdown-menu {
 }
 
 .desktopButtons {
-    width: 32%;
+    width: 30%;
     height: 50px;
+    padding:0% !important;
+    margin:0 auto;
+/*    margin-right:2.5% !important;*/
 
 }
 .search-icon{
@@ -191,6 +194,7 @@ a.mobile-icons {
     height: 35px;
     width: 35px;
     vertical-align: text-bottom !important;
+    margin-top:20%;
 
 }
 
@@ -378,6 +382,10 @@ navbar .dropdown-menu.search-menu{
         min-width: 20% !important;
 
     }
+    .desktopButtons{
+        margin-right:2.5%;
+        width:33%;
+    }
 }
 
 @media(max-width:991px) {
@@ -385,7 +393,9 @@ navbar .dropdown-menu.search-menu{
         left: 30px;
     }
     .desktopButtons {
-        width: 40%;
+        width: 30%;
+        padding-right:0%;
+        margin-right: 0% !important;
     }
     .icons a {
         font-weight: 400;
@@ -455,11 +465,64 @@ navbar .dropdown-menu.search-menu{
         left: 30px;
         font-size: 1em;
     }
+    .mobile-buttons{
+        padding:0% !important;
+        margin:auto;
+        width:80%;
+    }
+    .mobile-buttons div{
+/*        padding: 0%;*/
+        margin:auto 0 !important;
+/*        margin-left:5% !important;*/
+        margin-bottom:0% !important;
+        padding-bottom:0% !important;
+    }
+    .mobile-buttons{
+/*        margin-right:5% !important;*/
+        padding-bottom: 0% !important;
+        margin-bottom:0%;
+    }
+    .mobile-buttons .nav-link, full-screen-search{
+/*        margin: auto 0;*/
+        padding-left: 15%;
+        padding-bottom: 0%;
+    }
+    full-screen-search{
+        margin-left:0%;
+    }
+    .profile-icon{
+        margin-top:0%;
+        height:35px;
+    }
     .mobileLangBtn {
-        min-width: 20%;
-        min-height: 25%;
+        margin-top:100% !important;
+        min-width: 20% !important;
+        min-height: 20%;
         padding: 20% !important;
         font-size: 1em !important;
         margin: 0 auto !important;
+    }
+}
+
+@media(max-width:576px){
+    .mobileLangBtn{
+        justify-content: flex-start;
+    }
+      .mobile-buttons{
+        height:45px;
+        width:50%;
+        margin-left:20% !important;
+        margin-right:0% !important;
+        padding-bottom: 0% !important;
+        margin-bottom:0%;
+          justify-content: flex-end;
+    }
+    nav.navbar{
+        height: 65px !important;
+    }
+}
+@media(max-width:450px){
+    .mobile-buttons{
+        margin-left:10% !important;
     }
 }

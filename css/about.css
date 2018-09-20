@@ -4,8 +4,6 @@
 }
 
 #aboutBackground {
-    /*    margin-top: 100% !important;*/
-    /*    position: fixed;*/
     margin-top: -10%;
     right: 50;
     bottom: 0;
@@ -15,21 +13,16 @@
 }
 
 .content {
-    /*    position: absolute;*/
+
     margin: 0;
     padding: 0;
     text-align: center;
-    /*    vertical-align: middle !important;*/
-    /*    margin: 0 auto;*/
-    /*    z-index: 1;*/
     position: absolute;
     top: 0;
-    /*    background: rgba(0, 0, 0, 0.5);*/
     color: #f1f1f1;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /*    padding: 20px;*/
 }
 
 .content h2,
@@ -44,28 +37,97 @@ video {
     filter: brightness(-10)
 }
 
+.about-header-text {
+    text-shadow: 2px 2px black;
+}
+
+.row.aboutus {
+    margin-top: 5%;
+}
+
+.row.aboutus p.description,
+.row.mission p.description {
+    font-size: 1.5em;
+}
+
+.aboutus-header {
+    font-weight: 400 !important;
+}
+
 .img-container {
-    position: relative;
+/*    width: 50%;*/
+    height: 400px;
+    width: 400px;
+    /*    margin: auto;*/
 }
 
 .img-container img {
     height: 400px;
     width: 400px;
-    position: absolute;
+    position: relative;
     box-shadow: 2px 2px 2px black;
-    margin: 5%;
+    margin: 0%;
 }
 
 .img-container img:nth-of-type(2) {
-    z-index: 1;
-    top: 30px;
+    /*    z-index: 2;*/
+    top: -22rem;
+    ;
     left: 45px;
 }
 
 .mission {
-    margin-top: 25%;
+    margin-top: 15%;
+}
+.health, .therapy, .happiness, .plus-icon, .equal-icon{
+    font-family: fontAwesome;
+    font-size:50px;
+    color:white;
+}
+.health:before {
+    font-family: fontAwesome;
+    content: '\f21e';
+    font-size: 50px;
+    color:white;
+    vertical-align: middle;
+    text-align: center;
+
 }
 
+.therapy:before {
+    font-family: fontAwesome;
+    /*    content:'\f5bb';*/
+    content: '\f0f0';
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+.happiness:before {
+    color:white;
+    font-family: fontAwesome;
+    content: '\f118';
+    font-size: 50px;
+    
+}
+.plus-icon:before{
+    content:'+';
+    font-weight: bold;
+}
+.equal-icon:before{
+    content: '=';
+    font-weight: bold;
+}
+.icon-title, .icon-description{
+    color:white;
+}
+.summary, .about-contact-form{
+    color: white;
+    background-color:rgba(33, 33, 33, .8) !important;
+    height: 500px;
+}
+.summary-header{
+    color:white;
+}
 /*BOUNCE ARROW*/
 
 /*@import "compass/css3";*/
@@ -155,6 +217,50 @@ header {
     .content h5 {
         font-size: 2em;
     }
+    .aboutus {
+        max-height: 400px;
+    }
+    /*
+    .mission .img-container:nth-of-type(1){
+        display:none;
+    }
+*/
+    /*
+    .aboutus .img-container{
+        position: relative;
+        margin: auto;
+        display:block;
+    }
+*/
+    .summary {
+        margin-top: 60%;
+    }
+    .summary .icon-description{
+        font-size: 1em;
+        width: 120%;
+        padding:0;
+        margin-left: auto!important;
+        margin-right: auto !important;
+    }
+    .summary .icon-title{
+        font-size: 1.5em;
+    }
+    .img-container {
+        height: 200px;
+        width: 200px;
+        margin: auto;
+    }
+    .img-container img {
+        height: 200px;
+        width: 200px;
+    }
+    .img-container img:nth-of-type(2) {
+        top: -10rem;
+    }
+    .aboutus {
+        max-height: 300px;
+    }
+
 }
 
 @media(max-width: 577px) {
@@ -173,5 +279,32 @@ header {
         position: relative;
         top: 20%;
         transform: translateY(-50%);
+    }
+    .summary{
+        margin-top: 75%;
+    }
+    .summary .icon-title{
+        font-size: 1em;
+    }
+    .summary .icon-description{
+        font-size: .7em;
+    }
+    .icon-row{
+        padding: 2.5%;
+    }
+}
+@media(max-width:500px){
+    .summary{
+        margin-top:100%;
+    }
+}
+@media(max-width:450px){
+    .summary{
+        margin-top:125%;
+    }
+}
+@media(max-width:400px){
+    .summary{
+        margin-top: 150%;
     }
 }

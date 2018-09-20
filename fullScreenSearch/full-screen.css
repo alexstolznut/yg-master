@@ -1,7 +1,7 @@
 .search-icon {
     font-family: fontAwesome;
     vertical-align: text-bottom !important;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: lighter;
     position: absolute;
     padding: .5%;
@@ -28,12 +28,12 @@
 .search {
     margin: 0;
     position: fixed;
-    top: 4%;
+    top: 2.5%;
     right: 2.5%;
     height: 25px;
     width: 25px;
     /*    background: pink;*/
-    z-index: 9999;
+    z-index: 99999 !important;
 }
 
 .search.active {
@@ -73,16 +73,23 @@
 }
 .search-menu{
     position:absolute;
-    top:60%;
+    top:20%;
     left: 30%;
     width: 60%;
+    padding: 2.5%;
 }
 .search-menu > .search-item a {
     color: white !important;
 }
 .search-item{
-    padding:1%;
+/*    padding:1%;*/
 }
 .search-item  img{
     border-radius: 50%;
+}
+
+@media(max-width:576px){
+    .search{
+    top: 4% ;
+    }
 }

@@ -23,6 +23,7 @@ component('checkoutPage', {
         setInterval(function () {
             $scope.$apply(function () {
                 $scope.langPos = LangChoice.langPos;
+                $scope.totalPrice = Product.checkoutInfo.totalPrice;
             });
         }, 0);
 

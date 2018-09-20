@@ -6,13 +6,19 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+    <div class="justify-content-start float-right d-md-none d-lg-none d-xl-none">
+            <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
+            <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
+        </div>
 
     <!--        <li class="nav-item dropdown justify-content-end">-->
     <div class="row justify-content-end mobile-buttons">
+<!--
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
         </div>
+-->
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
             <a class="nav-link dropdown-toggle mobile-icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
                 <span id="totalContainer"><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0" class="btn-primary">{{checkoutInfo['totalItems']}}</span>
@@ -32,6 +38,8 @@
            <img class="profile-icon" src="../img/Profile-icon.png">
             </a>
         </div>
+        
+    
         <!--        </li>-->
     </div>
 
@@ -55,6 +63,7 @@
 联系</a>
             </li>
         </ul>
+<!--
         <div class="col-4 justify-content-start search-box">
             <input class="form-control nav-item dropdown search-input" ng-focus="show=true" ng-blur="show=false" type="search" placeholder="Search" aria-label="Search" ng-model="search">
             <div class="dropdown-menu search-menu" ng-if="show && search">
@@ -70,6 +79,7 @@
                 
             </div>
         </div>
+-->
 
         <!--
     <form class="form-inline my-2 my-lg-0">
@@ -100,12 +110,16 @@
                 </div>
             </div>
         </div>
-        <div class="justify-content-end d-none d-md-block">
+        <div class="justify-content-end d-none d-lg-block">
             <a class="nav-link justify-content-end icons" ng-if="langPos==0">Sign In</a>
             <a class="nav-link justify-content-end icons" ng-if="langPos==1">
 签到</a>
         </div> 
+        <div class="justify-content-end d-none d-md-block d-lg-none">
+            <img class="profile-icon" src="../img/Profile-icon.png">
+        </div>
     </div>
+    <full-screen-search class="nav-link"></full-screen-search>
 
 </nav>
 
