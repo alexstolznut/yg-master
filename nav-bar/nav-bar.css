@@ -448,6 +448,9 @@ navbar .dropdown-menu.search-menu {
     .navbar-collapse .nav-item {
         /*        padding-left: 5% !important;*/
     }
+    a.navbar-brand{
+        margin-right:5% !important;
+    }
 
 
 }
@@ -485,7 +488,8 @@ navbar .dropdown-menu.search-menu {
         /*        position:fixed;*/
         padding: 0% !important;
         margin: auto;
-        width: 70%;
+        width: 80%;
+        margin-right:2.5% !important;
         /*        margin-left:10% !important;*/
     }
     .mobile-buttons div {
@@ -520,14 +524,15 @@ navbar .dropdown-menu.search-menu {
     }
     .mobileLangBtn {
         padding:0%;
-/*        margin-top: 100% !important;*/
         width: 50px !important;
         height: 50px !important;
-        /*        padding: 20% !important;*/
+
         font-size: 1em !important;
         justify-content: flex-start;
         margin:0 !important; 
-/*        margin: 0 auto !important;*/
+    }
+    .mobileLangBtn.btn{
+        padding:25%;
     }
     a.mobile-icons{
         margin:0 !important
@@ -542,21 +547,18 @@ navbar .dropdown-menu.search-menu {
     .mobile-buttons {
         justify-content: flex-end;
         float: right !imporant;
-        /*        height:45px;*/
         width: 80%;
-        margin: auto;
-        /*
-        margin-left:30% !important;
-        margin-right:0% !important;
-*/
         padding-bottom: 0% !important;
         margin-bottom: 0%;
         justify-content: flex-end;
     }
-    nav.navbar {
-        /*        min-height: 65px !important;*/
-        /*        overflow-y:hidden;*/
+    .nav-search-icon{
+        font-size:50px;
+        padding-right:25%;
     }
+    a.btn.btn-secondary-neutral.mobile-icons.mobileLangBtn.ng-scope {
+    padding: 20% !important;
+}
 
 }
 
@@ -566,7 +568,6 @@ navbar .dropdown-menu.search-menu {
 /*        margin-right: 5% !important;*/
         margin-left: 20% !important;
         width:45%;
-        padding: 5%;
     }
 }
 
@@ -577,8 +578,11 @@ navbar .dropdown-menu.search-menu {
     full-screen-search {
         margin-left: 5%;
     }
+    .nav-search-icon{
+        padding:30%;
+    }
     .mobile-buttons{
-        margin-left:10%;
-        width:45%;
+        margin-left:0%;
+        width:35%;
     }
 }
