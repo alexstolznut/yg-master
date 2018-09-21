@@ -16,14 +16,19 @@ img.card-img-top {
     margin-top: 5%
 }
 */
-.weekly-special-text, .new-arrivals-text, .popular-items-text{
+
+.weekly-special-text,
+.new-arrivals-text,
+.popular-items-text {
     font-weight: 400;
     font-size: 3.5em;
     padding-bottom: 0% !important;
 }
+
 .card h5.card-title {
     font-size: 1.5em !important;
 }
+
 .card-body {
     padding: 0% !important;
 }
@@ -78,7 +83,7 @@ img.card-img-top {
     header #aboutHeaderCarouselIndicators img {
         height: 350px !important;
     }
-    .carousel-caption{
+    .carousel-caption {
         top: 40% !important;
     }
 }
@@ -92,21 +97,22 @@ img.card-img-top {
 
     header #headerCarouselIndicators,
     header #aboutHeaderCarouselIndicators {
-        height: 300px !important;
-        margin-top: 0px;
+        height: 350px !important;
+        margin-top: -15% !important;
     }
 
     header #headerCarouselIndicators img,
     header #aboutHeaderCarouselIndicators img {
-        height: 300px !important;
+        height: 350px !important;
+        margin-top: 0%;
     }
-    
-    .card img{
+
+    .card img {
         min-height: 300px !important;
     }
-    
-    .card h5.card-title{
-        font-size:1.3em !important;
+
+    .card h5.card-title {
+        font-size: 1.3em !important;
     }
 
 }
@@ -114,12 +120,14 @@ img.card-img-top {
 @media(max-width:575px) {
     header #headerCarouselIndicators,
     header #aboutHeaderCarouselIndicators {
-        height: 250px !important;
+        height: 300px !important;
+        z-index: 0;
+        margin-top: -18% !important;
     }
 
     header #headerCarouselIndicators img,
     header #aboutHeaderCarouselIndicators img {
-        height: 250px !important;
+        height: 300px !important;
     }
     .card {
         margin-left: auto !important;
@@ -130,35 +138,43 @@ img.card-img-top {
         width: 68% !important;
         /*    border-bottom:none !important;*/
     }
-    .card img{
+    .card img {
         min-height: 350px !important;
     }
-    
-    .card h5.card-title{
+
+    .card h5.card-title {
         font-size: 1.2em !important;
     }
-     .carousel-caption h2{
-            font-size: 1.75em !important;
-        }
-      .weekly-special h1, .popular-items h1{
-            font-size: 2.5em !important;
-            font-weight: 300;
-            
-        }
+    .carousel-caption h2 {
+        font-size: 1.75em !important;
+    }
+    .weekly-special h1,
+    .popular-items h1 {
+        font-size: 2.5em !important;
+        font-weight: 300;
+
+    }
 }
 
 
-    @media(max-width: 410px) {
-        .card .btn {
-            width: 41%;
-            padding: 4%;
-        }
-        .carousel-caption h2{
-            font-size: 1.4em !important;
-        }
-        .weekly-special h1, .popular-items h1{
-            font-size: 2.5em !important;
-            font-weight: 300;
-            
-        }
+@media(max-width: 410px) {
+    .card .btn {
+        width: 41%;
+        padding: 4%;
     }
+    .carousel-caption h2 {
+        font-size: 1.4em !important;
+    }
+    .weekly-special h1,
+    .popular-items h1 {
+        font-size: 2.5em !important;
+        font-weight: 300;
+
+    }
+    header #headerCarouselIndicators,
+    header #aboutHeaderCarouselIndicators {
+        height: 300px !important;
+        z-index: 0;
+        margin-top: -20% !important;
+    }
+}

@@ -405,6 +405,9 @@ navbar .dropdown-menu.search-menu {
 }
 
 @media(max-width:991px) {
+    nav.bg-dark {
+    background-color: rgba(33, 33, 33, .8) !important;
+}
     #cartTotal {
         left: 30px;
     }
