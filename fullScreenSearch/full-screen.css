@@ -12,12 +12,16 @@
     color: white;
 }
 
+/*
 .search .search-icon:before {
     color: white !important;
     font-family: fontAwesome;
     content: '\f002';
-    /*    top:25%;*/
+        top:25%;
 }
+
+*/
+
 
 .search.active .search-icon:before {
     content: '\f00d';

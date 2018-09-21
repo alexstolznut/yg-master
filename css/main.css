@@ -107,6 +107,7 @@ header #headerCarouselIndicators,
 header #aboutHeaderCarouselIndicators {
     height: 500px;
     overflow: hidden;
+    margin-top:-1.5%;
 }
 
 header #headerCarouselIndicators img,

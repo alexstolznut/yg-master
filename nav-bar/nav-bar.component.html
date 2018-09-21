@@ -6,12 +6,10 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-<!--
     <div class="justify-content-start float-right d-md-none d-lg-none d-xl-none">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
         </div>
--->
 
     <!--        <li class="nav-item dropdown justify-content-end">-->
     <div class="row justify-content-end mobile-buttons">
@@ -39,6 +37,9 @@
             <a class="nav-link">
            <img class="profile-icon" src="../img/Profile-icon.png">
             </a>
+        </div>
+        <div class="justify-content-end d-md-none d-lg-none d-xl-none">
+           <div class="nav-search-icon"></div>
         </div>
         
     
@@ -113,15 +114,19 @@
             </div>
         </div>
         <div class="justify-content-end d-none d-lg-block">
-            <a class="nav-link justify-content-end icons" ng-if="langPos==0">Sign In</a>
-            <a class="nav-link justify-content-end icons" ng-if="langPos==1">
+           <a class="btn btn-secondary-neutral mobile-icons">Sign In</a>
+            <a class="btn btn-secondary-ne" ng-if="langPos==1">
 签到</a>
         </div> 
         <div class="justify-content-end d-none d-md-block d-lg-none">
             <img class="profile-icon" src="../img/Profile-icon.png">
         </div>
+        <div class="justify-content-end d-none d-md-block">
+            <div class="nav-search-icon">
+        </div>
     </div>
-    <full-screen-search class="nav-link"></full-screen-search>
+    </div>
 
 </nav>
+<full-screen-search></full-screen-search>
 

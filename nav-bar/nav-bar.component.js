@@ -93,6 +93,17 @@ component('navbar', {
                 //do not remove empty .then()
             });
         }
+        
+          $(document).ready(function () {
+            $('.nav-search-icon').click(function () {
+                $('.search').addClass("active");
+            });
+              $('.search-icon').click(function(){
+                  $('.search').removeClass("active");
+              })
+
+
+        });
 
         // HIDES MENU OUT OF CLICK
         $(document).click(function (e) {
@@ -136,6 +147,7 @@ component('navbar', {
             //                $('.dropdown-menu').hide();
             //            }
         });
+        
 
 
         //        

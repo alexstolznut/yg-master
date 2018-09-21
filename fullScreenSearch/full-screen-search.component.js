@@ -34,7 +34,7 @@ component('fullScreenSearch', {
         });
 
         $(document).ready(function () {
-            $('.search-icon').click(function () {
+            $('.nav-search-icon').click(function () {
                 $('.search').toggleClass("active");
             })
 
