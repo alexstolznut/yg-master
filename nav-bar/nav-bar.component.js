@@ -6,9 +6,9 @@ component('navbar', {
         $scope.numLimit = 4;
         Product.getProducts().then((products) => {
             this.products = products;
-            window.console.log(typeof (this.products));
+
             $scope.products = Object.values(this.products);
-            window.console.log($scope.products);
+
 
         });
         $scope.langPos = LangChoice.langPos;
@@ -93,14 +93,14 @@ component('navbar', {
                 //do not remove empty .then()
             });
         }
-        
-          $(document).ready(function () {
+
+        $(document).ready(function () {
             $('.nav-search-icon').click(function () {
                 $('.search').addClass("active");
             });
-              $('.search-icon').click(function(){
-                  $('.search').removeClass("active");
-              })
+            $('.search-icon').click(function () {
+                $('.search').removeClass("active");
+            })
 
 
         });
@@ -112,34 +112,34 @@ component('navbar', {
                 $('.navbar-collapse').removeClass('in show');
 
             }
-            
-//            
-//            $(function () {
-//    $('.search-icon').on('click', function(event) {
-//        event.preventDefault();
-//        $('.search').addClass('open');
-//        $('.search > form > input[type="search"]').focus();
-//    });
-//    
-//    $('.search, .search button.close').on('click keyup', function(event) {
-//        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-//            $(this).removeClass('open');
-//        }
-//    });
-//    
-    
-    //Do not include! This prevents the form from submitting for DEMO purposes only!
-//    $('form').submit(function(event) {
-//        event.preventDefault();
-//        return false;
-//    })
-//});
-//            $(".search-input").on("focus",function(){
-//                $(".search-menu").css("display","block");
-//            })
-//            $(".search-input").focusout(function(){
-//                $('.search-menu').css("display","none");
-//            })
+
+            //            
+            //            $(function () {
+            //    $('.search-icon').on('click', function(event) {
+            //        event.preventDefault();
+            //        $('.search').addClass('open');
+            //        $('.search > form > input[type="search"]').focus();
+            //    });
+            //    
+            //    $('.search, .search button.close').on('click keyup', function(event) {
+            //        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            //            $(this).removeClass('open');
+            //        }
+            //    });
+            //    
+
+            //Do not include! This prevents the form from submitting for DEMO purposes only!
+            //    $('form').submit(function(event) {
+            //        event.preventDefault();
+            //        return false;
+            //    })
+            //});
+            //            $(".search-input").on("focus",function(){
+            //                $(".search-menu").css("display","block");
+            //            })
+            //            $(".search-input").focusout(function(){
+            //                $('.search-menu').css("display","none");
+            //            })
 
 
             //check if the clicked area is dropDown or not
@@ -147,7 +147,7 @@ component('navbar', {
             //                $('.dropdown-menu').hide();
             //            }
         });
-        
+
 
 
         //        

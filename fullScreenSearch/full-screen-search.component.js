@@ -22,14 +22,14 @@ component('fullScreenSearch', {
                 LangChoice.langPos = 0;
             }
             $scope.langPos = LangChoice.langPos;
-            window.console.log(LangChoice);
+
         }
 
         Product.getProducts().then((products) => {
             this.products = products;
-            window.console.log(typeof (this.products));
+
             $scope.products = Object.values(this.products);
-            window.console.log($scope.products);
+
 
         });
 
