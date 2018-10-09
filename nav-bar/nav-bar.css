@@ -568,7 +568,7 @@ navbar .dropdown-menu.search-menu {
     .mobile-buttons{
         margin-left:0% !important;
         margin-right:0% !important;
-        width:50%;
+        width:55%;
         display:flex;
         justify-content: flex-end;
     }
