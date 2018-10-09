@@ -553,9 +553,6 @@ navbar .dropdown-menu.search-menu {
         text-align: center;
         
     }
-    .nav-search-icon::before{
-        font-size:35px;
-    }
 }
 
 @media(max-width:375px) {
