@@ -5,7 +5,6 @@ body {
 nav {
     background-color: #B73D5E !important;
     z-index: 9998 !important;
-    /*    opacity: .8;*/
 }
 
 nav.bg-dark {
@@ -16,7 +15,6 @@ nav.bg-dark {
     color: white;
     padding-left: 12% !important;
     font-size: 1.2em;
-    /*    z-index: 9999 !important;*/
 }
 
 .navbar-nav {
@@ -27,7 +25,6 @@ nav.bg-dark {
     color: white;
     font-size: 1.5em !important;
     float: right;
-    /*    z-index: 9999;*/
 }
 
 span img.cart-icon {
@@ -48,10 +45,6 @@ span img.cart-icon {
 }
 
 .dropdown-item-wrapper {
-    /*
-    width: 45px !important;
-    height: 25px !important;
-*/
     width: 100px;
     position: relative;
     left: 23% !important;
@@ -72,7 +65,6 @@ span.dropdown-checkout-item-quantity.ng-binding {
 
 .dropdown-checkout-item-quantity {
     background: #B73D5E;
-    /*    border-radius: 50%;*/
     color: white;
     font-weight: 600;
     font-size: .8em !important;
@@ -99,24 +91,8 @@ navbar .dropdown-menu {
     width: 35%;
     height: 50px;
     padding: 0% !important;
-    /*    margin: 0 auto;*/
-    /*    margin-right:2.5% !important;*/
 }
 
-/*
-.search-icon {
-    vertical-align: text-bottom !important;
-    font-size: 25px;
-    font-weight: lighter;
-    position: absolute;
-    padding: .5%;
-    background: inherit;
-    top: 0%;
-    right: -50%;
-    z-index: 99999;
-    color: white;
-}
-*/
 
 .nav-search-icon:before {
     display: block;
@@ -318,7 +294,6 @@ li.dropdown:hover > .dropdown-menu {
 .sideButtons {
     z-index: 99999 !important;
     position: relative;
-    /*    width: 60% !important;*/
 }
 
 .btn-checkout {
@@ -431,7 +406,6 @@ navbar .dropdown-menu.search-menu {
     }
     .navbar-collapse .nav-item,
     .navbar-collapse .nav-item .nav-link {
-        /*        float: left !important;*/
         margin-left: 0 !important;
         padding-left: 0% !important;
     }
@@ -441,15 +415,11 @@ navbar .dropdown-menu.search-menu {
         font-weight: 400 !important;
     }
     .navbar-collapse .nav-item:hover .nav-link {
-        /*        background-color:white;*/
         color: #B73D5E !important;
 
     }
     .navbar-collapse .nav-item:last-of-type {
         border-bottom: none;
-    }
-    .navbar-collapse .nav-item {
-        /*        padding-left: 5% !important;*/
     }
     a.navbar-brand{
         margin-right:5% !important;
@@ -488,28 +458,19 @@ navbar .dropdown-menu.search-menu {
         font-size: 1em;
     }
     .mobile-buttons {
-        /*        position:fixed;*/
         padding: 0% !important;
         margin: auto;
         width: 80%;
-        margin-right:2.5% !important;
-        /*        margin-left:10% !important;*/
     }
     .mobile-buttons div {
-        /*        padding: 0%;*/
         margin: auto 0 !important;
-        /*        margin-left:5% !important;*/
-        margin-bottom: 0% !important;
-        padding-bottom: 0% !important;
     }
     .mobile-buttons {
-        /*        margin-right:5% !important;*/
         padding-bottom: 0% !important;
         margin-bottom: 0%;
     }
     .mobile-buttons .nav-link,
     full-screen-search {
-        /*        margin: auto 0;*/
         padding-left: 15%;
         padding-bottom: 0%;
     }
@@ -522,7 +483,6 @@ navbar .dropdown-menu.search-menu {
     }
     .mobileLangBtn.btn{
         padding:0;
-        padding-top:1.5%;
         text-align: center;
     }
     .mobileLangBtn {
@@ -543,34 +503,55 @@ navbar .dropdown-menu.search-menu {
 }
 
 @media(max-width:576px) {
+    .langBtn{
+        display:flex;
+        width:40%
+    }
+/*
     .mobileLangBtn {
         float:left!important;
         justify-content: flex-start;
     }
+*/
     .mobile-buttons {
-        justify-content: flex-end;
-        float: right !imporant;
-        width: 80%;
+        width: 45%;
         padding-bottom: 0% !important;
         margin-bottom: 0%;
-        justify-content: flex-end;
+/*        justify-content: flex-end;*/
     }
     .nav-search-icon{
         font-size:50px;
-        padding-right:25%;
+/*        padding-right:25%;*/
     }
-    a.btn.btn-secondary-neutral.mobile-icons.mobileLangBtn.ng-scope {
-    padding: 20% !important;
-}
+     .langBtn .langIcon a.btn{
+        width:40px !important;
+        height:40px !important;
+        padding: 0%;
+        padding-top:15%;
+        text-align: center;
+        
+    }
+    
 
 }
 
 @media(max-width:450px) {
 
     .mobile-buttons {
-/*        margin-right: 5% !important;*/
-        margin-left: 20% !important;
-        width:45%;
+        width:50%;
+    }
+    .langBtn{
+        width:35%;
+        display:flex;
+        margin:0 !important;
+    }
+    .langBtn .langIcon a.btn{
+        width:40px !important;
+        height:40px !important;
+        padding: 0%;
+        padding-top:15%;
+        text-align: center;
+        
     }
 }
 
@@ -582,10 +563,16 @@ navbar .dropdown-menu.search-menu {
         margin-left: 5%;
     }
     .nav-search-icon{
-        padding:30%;
+/*        padding:30%;*/
     }
     .mobile-buttons{
-        margin-left:0%;
-        width:35%;
+        margin-left:0% !important;
+        margin-right:0% !important;
+        width:50%;
+        display:flex;
+        justify-content: flex-end;
+    }
+    .mobile-buttons > .mobile-icons {
+        height: 5px !important;
     }
 }

@@ -38,42 +38,41 @@
             <p class="description" ng-if="langPos == 1">永泰参茸公司於2014年加州沙卡缅度，至今成為北加州地區較具規模的亞洲商品誠信零售商。傳承世代經營藥材及茶葉的精髓，永合豐經營的貨品琳瑯滿目，品種繁千，包括有中藥材、雀石茗茶、花旗人參、亞洲美食、家用電器、世界名酒等。
             </p>
         </div>
-        <div class="col-12 col-md-12 col-lg-6">
-            <div class="row">
-                <div class="img-container">
-                    <img class="img-1" src="../img/about-1.jpg">
-                    <img class="img-2" src="../img/about-2.jpg">
-                </div>
+       <div class="col-12 col-md-12 col-lg-6 d-md-block d-lg-none img-div">
+
+            <div class="img-container">
+                <img class="img-1" src="../img/about-1.jpg">
+                <img class="img-2" src="../img/about-2.jpg">
             </div>
         </div>
 
     </div>
 </div>
-<div class="row summary mt-5">
+<div class="row summary">
     <div class="col-12 text-center mt-4 mx-auto summary-header">
-        <h1>Ginseng Can Benefit Your Life In Ways You Have Never Imagined</h1>
+        <h1 class="title mb-4">Ginseng Can Benefit Your Life In Ways You Have Never Imagined</h1>
         <h2 class="lead mt-auto mx-auto">Ginseng provides you the perfect balance between health benefits, medicinal use, and theraputic effects. These aspects combined result in an increase in quality of life.</h2>
     </div>
-    <div class="col-12">
+    <div class="col-12 mb-2 mt-0">
         <div class="row icon-row mx-auto mt-auto">
-            <div class="col-3 mx-auto text-center">
+            <div class="col-md-12 col-lg-3 mx-auto text-center">
                 <div class="health mx-auto"></div>
                 <h3 class="icon-title">Health</h3>
-                <h5 class="lead icon-description">Our Ginseng boosts energy, lowers blood sugar and cholesterol levels, and can treat diabetes.</h5>
+                <h5 class="lead icon-description text-center">Our Ginseng boosts energy, lowers blood sugar and cholesterol levels, and can treat diabetes.</h5>
             </div>
-            <div class="col-1 mx-auto text-center">
+            <div class="col-lg-1 mx-auto text-center d-none d-lg-block">
                 <div></div>
                 <div class="plus-icon"></div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-md-12 col-lg-3 text-center">
                 <div class="therapy"></div>
                 <h3 class="icon-title">Therapy</h3>
                 <h5 class="lead icon-description">Our Ginseng can impact your life positively by reducing anxiety, stress, and promoting relaxation.</h5>
             </div>
-            <div class="col-1 mx-auto text-center">
+            <div class="col-lg-1 mx-auto text-center d-none d-lg-block">
                 <div class="equal-icon"></div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-md-12 col-lg-3 text-center">
                 <div class="happiness"></div>
                 <h3 class="icon-title">Happiness</h3>
                 <h5 class="lead icon-description">Through the use of our ginseng you will experience a noticable change in your life.</h5>
@@ -110,25 +109,26 @@
 
     </div>
 </div>
-<div class="row mt-5 about-contact-form">
+<div class="mt-5 about-contact-form">
     <div class="col-10 mx-auto">
-        <h2 class="sub-title text-center mt-5">If you would like to get in touch please feel free to contact us</h2>
+        <h2 class="sub-title text-center">If you would like to get in touch please feel free to contact us</h2>
         <form>
             <div class="form-group">
                 <label for="userName">Name</label>
-                <input type="text" class="form-control" id="userName" aria-describedby="namelHelp" placeholder="Enter name">
+                <input type="text" class="form-control" id="userName" name="name" aria-describedby="namelHelp" placeholder="Enter name">
             </div>
             <div class="form-group">
                 <label for="userEmail">Email address</label>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="userEmail" name="email" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="userMessage">Message</label>
-                <textarea class="form-control" id="userMessage" rows="3" placeholder="Enter Message"></textarea>
+
+                <textarea class="form-control" id="userMessage" name="message" rows="3" placeholder="Enter Message"></textarea>
             </div>
-            <div class="justify-content-end">
-                <button type="submit" class="btn justify-content-end btn-primary mb-5">Submit</button>
-            </div>
+            
+            <button type="submit" ng-click="submitForm()" class="btn btn-primary mb-5">Submit</button>
+            
         </form>
     </div>
 </div>

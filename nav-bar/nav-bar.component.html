@@ -6,9 +6,11 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-    <div class="justify-content-start float-right d-md-none d-lg-none d-xl-none">
+    <div class="d-md-none d-lg-none d-xl-none langBtn">
+           <div class="justify-content-end langIcon">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
+        </div>
         </div>
 
     <!--        <li class="nav-item dropdown justify-content-end">-->
@@ -39,7 +41,7 @@
             </a>
         </div>
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
-           <div class="nav-search-icon"></div>
+           <div class="nav-search-icon nav-link"></div>
         </div>
         
     
