@@ -24,7 +24,7 @@ component('about', {
                 'message' : message,
             };
             
-            $http.post('about/formm-submit.php', data)
+            $http.post('about/form-submit.php', data)
             .success(function(data, status, headers, config){
                 window.console.log(status + ' - ' + data);
             })
