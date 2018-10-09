@@ -29,7 +29,7 @@ component('about', {
                 window.console.log(status + ' - ' + data);
             })
             .error(function(data, status, headers, config){
-                window.console.log('error');
+                window.console.log('error: ' + status);
             });
         }
 
