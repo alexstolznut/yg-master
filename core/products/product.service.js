@@ -137,12 +137,59 @@ factory('Product',
             return deferred.promise;
         }
 
+        
+        function sortTags(products) {
+            return getProducts().then((products) => {
+            var products = products;
+//            $scope.sortTags($scope.products);
+//            window.console.log($scope.sortTags);
+        
+//            $scope.sortTags($scope.products);
+                     var JSONProducts = JSON.stringify(products);
+            var arr = [];
+            var tagsArr = []
+            var productTags = [];
+            for (var tags in products) {
+                if (products.hasOwnProperty(tags)) {
+                    arr.push([tags, products[tags]]);
+
+                }
+
+                for (var i = 0; i < arr.length; i = i + 1) {
+                    //                    arr = arr.splice(0,1);
+                    for (var h = 0; h < arr[i][1].tags.length; h = h + 1) {
+                        if (tagsArr.includes(arr[i][1].tags[h].value) === false) {
+                            tagsArr.push(arr[i][1].tags[h].value);
+                        }
+                    }
+
+                    //                    window.console.log(arr[i][1].tags);
+                }
+            }
+                
+            const titleCase = function(str) {
+            return str.replace(/\w\S*/g,
+                function (txt) {
+                    return txt.charAt(0).toLocaleUpperCase() + txt.substring(1).toLocaleLowerCase()
+                }
+            );
+        }
+                
+                for(var g = 0; g < tagsArr.length; g = g + 1){
+                productTags.push(titleCase(tagsArr[g]));
+            } 
+            return productTags;
+        });
+            
+        }
+    
 
         /*Add an item to the cart. 
             Input: 
                 itemId: item id as assigned by shopify
                 q: quantity to add. Default is 1. 
         */
+        
         function addItem(itemId, q = 1) {
             //this function returns a promise
 
@@ -267,6 +314,7 @@ factory('Product',
             removeItem: removeItem,
             updateItem: updateItem,
             items: items,
-            checkoutInfo: checkoutInfo
+            checkoutInfo: checkoutInfo,
+            sortTags: sortTags
         };
     });

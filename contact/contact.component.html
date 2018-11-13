@@ -116,42 +116,49 @@
     </div>
 
 </div>
+
+<!--Powered by https://postmail.invotes.com PostMail-->
 <div class="row mt-5 contact-form">
     <div class="col-8 mx-auto">
         <h1 class="title text-center">Contact us</h1>
         <h2 class="sub-title text-center">We'd love to hear from you</h2>
-        <form>
+        <form name="myForm" id="contact-form" ng-model="form" validate>
             <div class="form-group">
-                <label for="userName">Name</label>
-                <input type="text" class="form-control" id="userName" aria-describedby="namelHelp" placeholder="Enter name">
-            </div>
-            <div class="form-group">
-                <label for="userEmail">Email address</label>
-                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="name">Name</label>
+            <input name="name" id="userName" type="text" class="form-control" ng-model="user.name" required/>
+            <p ng-show="myForm.name.$invalid && myForm.name.$touched" class="required-message">Name is required</p>
             </div>
             <div class="form-group">
-                <label for="userMessage">Message</label>
-                <textarea class="form-control" id="userMessage" rows="3" placeholder="Enter Message"></textarea>
+            <label for="email">Email</label>
+            <input name="email" type="email" class="form-control" id="userEmail" ng-model="user.email" required/>
+            <p ng-show="myForm.email.$invalid && myForm.email.$touched" class="required-message">Email is required</p>
             </div>
-            <div class="justify-content-end">
-                <button type="submit" class="btn justify-content-end btn-primary mb-5" data-toggle="modal" data-target="#formModal">Submit</button>
+            <div class="form-group">
+            <label for="message">Message</label>
+                <textarea name="message" class="form-control" id="userMessage" type="text" ng-model="user.age" required></textarea>
+                <p ng-show="myForm.message.$invalid && myForm.message.$touched" class="required-message">Message is required</p>
             </div>
-                <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title text-dark mx-auto ml-5" id="exampleModalLabel">Thank you for contacting us!</h1>
-                                <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+            <div class="form-group">
+            <button ng-disabled="myForm.$invalid" class="btn btn-primary" ng-click="sendMail()" data-toggle="modal" data-target="#formModal">Submit</button>
+            </div>
+        </form>
+
+            <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title text-dark mx-auto text-center ml-5" id="exampleModalLabel">Thank you for contacting us!</h1>
+                            <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
-        </form>
+            </div>
+      
     </div>
 </div>
 <div class="row">

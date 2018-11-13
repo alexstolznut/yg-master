@@ -7,15 +7,15 @@
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="d-md-none d-lg-none d-xl-none langBtn">
-           <div class="justify-content-end langIcon">
+        <div class="justify-content-start langIcon">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
         </div>
-        </div>
+    </div>
 
     <!--        <li class="nav-item dropdown justify-content-end">-->
     <div class="row justify-content-end mobile-buttons">
-<!--
+        <!--
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
@@ -41,11 +41,51 @@
             </a>
         </div>
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
-           <div class="nav-search-icon nav-link"></div>
+            <div class="nav-search-icon nav-link"></div>
         </div>
-        
-    
+
+
         <!--        </li>-->
+    </div>
+    <div ng-show="currentPath == '/product'" class="d-md-none submenu">
+<!--
+        <ul class="">
+            <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-if="langPos==0" ng-click="changeCurrentTagValue(tags)">{{tag}}</a><a class="nav-link" ng-if="langPos==1">草本</a></li>
+-->
+            <ul class="">
+                <li class="nav-item" ng-repeat="tag in tags | orderBy: alphabet">
+                    <a class="nav-link" ng-click="changeTagValue(tag)">{{tag}} <span class="sr-only">(current)</span></a>
+                </li>
+<!--
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features and Shit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+-->
+                
+            </ul>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -68,7 +108,7 @@
 联系</a>
             </li>
         </ul>
-<!--
+        <!--
         <div class="col-4 justify-content-start search-box">
             <input class="form-control nav-item dropdown search-input" ng-focus="show=true" ng-blur="show=false" type="search" placeholder="Search" aria-label="Search" ng-model="search">
             <div class="dropdown-menu search-menu" ng-if="show && search">
@@ -116,19 +156,18 @@
             </div>
         </div>
         <div class="justify-content-end d-none d-lg-block">
-           <a class="btn btn-secondary-neutral mobile-icons">Sign In</a>
+            <a class="btn btn-secondary-neutral mobile-icons">Sign In</a>
             <a class="btn btn-secondary-ne" ng-if="langPos==1">
 签到</a>
-        </div> 
+        </div>
         <div class="justify-content-end d-none d-md-block d-lg-none">
             <img class="profile-icon" src="../img/Profile-icon.png">
         </div>
         <div class="justify-content-end d-none d-md-block">
             <div class="nav-search-icon">
+            </div>
         </div>
-    </div>
     </div>
 
 </nav>
 <full-screen-search></full-screen-search>
-

@@ -7,6 +7,11 @@ nav {
     z-index: 9998 !important;
 }
 
+.scroll-nav {
+    width: 100%;
+    float: clear;
+}
+
 nav.bg-dark {
     background-color: rgba(33, 33, 33, .8) !important;
 }
@@ -381,8 +386,8 @@ navbar .dropdown-menu.search-menu {
 
 @media(max-width:991px) {
     nav.bg-dark {
-    background-color: rgba(33, 33, 33, .8) !important;
-}
+        background-color: rgba(33, 33, 33, .8) !important;
+    }
     #cartTotal {
         left: 30px;
     }
@@ -421,8 +426,8 @@ navbar .dropdown-menu.search-menu {
     .navbar-collapse .nav-item:last-of-type {
         border-bottom: none;
     }
-    a.navbar-brand{
-        margin-right:5% !important;
+    a.navbar-brand {
+        margin-right: 5% !important;
     }
 
 
@@ -481,33 +486,33 @@ navbar .dropdown-menu.search-menu {
         margin-top: 0%;
         height: 35px;
     }
-    .mobileLangBtn.btn{
-        padding:0;
+    .mobileLangBtn.btn {
+        padding: 0;
         text-align: center;
     }
     .mobileLangBtn {
-        padding:0%;
+        padding: 0%;
         width: 50px !important;
         height: 50px !important;
 
         font-size: 1em !important;
         justify-content: flex-start;
-        margin:0 !important; 
+        margin: 0 !important;
     }
-    .mobileLangBtn.btn{
-        padding:25%;
+    .mobileLangBtn.btn {
+        padding: 25%;
     }
-    a.mobile-icons{
-        margin:0 !important
+    a.mobile-icons {
+        margin: 0 !important
     }
 }
 
 @media(max-width:576px) {
-    .langBtn{
-        display:flex;
-        width:40%
+    .langBtn {
+        display: flex;
+        width: 40%
     }
-/*
+    /*
     .mobileLangBtn {
         float:left!important;
         justify-content: flex-start;
@@ -517,42 +522,101 @@ navbar .dropdown-menu.search-menu {
         width: 45%;
         padding-bottom: 0% !important;
         margin-bottom: 0%;
-/*        justify-content: flex-end;*/
+        /*        justify-content: flex-end;*/
     }
-    .nav-search-icon{
-        font-size:50px;
-/*        padding-right:25%;*/
+    .nav-search-icon {
+        font-size: 50px;
+        /*        padding-right:25%;*/
     }
-     .langBtn .langIcon a.btn{
-        width:40px !important;
-        height:40px !important;
+    .langBtn .langIcon a.btn {
+        width: 40px !important;
+        height: 40px !important;
         padding: 0%;
-        padding-top:15%;
+        padding-top: 15%;
         text-align: center;
-        
+
     }
-    
+
 
 }
 
 @media(max-width:450px) {
 
     .mobile-buttons {
-        width:50%;
+        width: 50%;
     }
-    .langBtn{
-        width:20%;
-        display:flex;
-        margin:0 !important;
+    .langBtn {
+        width: 30%;
+        display: flex;
+        margin: 0 !important;
     }
-    .langBtn .langIcon a.btn{
-        width:40px !important;
-        height:40px !important;
+    .langBtn .langIcon a.btn {
+        width: 40px !important;
+        height: 40px !important;
         padding: 0%;
-        padding-top:15%;
+        padding-top: 15%;
         text-align: center;
-        
+
     }
+}
+
+.submenu {
+    min-width: 100%;
+    height:35px; !important;
+    padding-bottom:0% !important;
+    margin-bottom: 0% !important;
+}
+
+.submenu > ul {
+    padding: 0%;
+    margin: 0% ;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+.submenu > ul > li {
+    min-width:20% !important;
+    /*    flex: 1 1 100%;*/
+    flex: auto;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0 5% 0 5%;;
+    /*    float: left;*/
+}
+
+.submenu > ul > li > a {
+/*    min-width:25% !important;*/
+    flex: auto;
+    word-wrap: normal;
+    font-size: .8em !important
+}
+
+.submenu>ul::-webkit-scrollbar {
+    visibility: hidden !important;
+    display: none;
+/*
+    background: transparent;
+    height: 0px !important;
+    width: 0px;
+*/
+}
+
+.submenu>ul::-webkit-scrollbar-track {
+    display: none;
+/*
+    background: transparent !important;
+    width: 0px;
+*/
+}
+
+.submenu>ul::-webkit-scrollbar-thumb {
+    display: none;
+/*
+    background: transparent;
+    color: transparent;
+*/
 }
 
 @media(max-width:375px) {
@@ -562,14 +626,17 @@ navbar .dropdown-menu.search-menu {
     full-screen-search {
         margin-left: 5%;
     }
-    .nav-search-icon{
-/*        padding:30%;*/
+    .nav-search-icon {
+        /*        padding:30%;*/
     }
-    .mobile-buttons{
-        margin-left:0% !important;
-        margin-right:0% !important;
-        width:55%;
-        display:flex;
+    .langBtn {
+        width: 20%;
+    }
+    .mobile-buttons {
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+        width: 55%;
+        display: flex;
         justify-content: flex-end;
     }
     .mobile-buttons > .mobile-icons {

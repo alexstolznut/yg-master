@@ -2,35 +2,33 @@ angular.
 module('about').
 component('about', {
     templateUrl: "about/about.component.html",
-    controller: ['LangChoice', '$scope', '$http', function homeController(LangChoice, $scope, $http) {
-        $scope.langPos = LangChoice.langPos;
+    controller: ['LangChoice', 'emService', '$scope', function (LangChoice, emService, $scope) {
+     
         setInterval(function () {
             $scope.$apply(function () {
                 $scope.langPos = LangChoice.langPos;
             });
         }, 0);
         
-        
-        $scope.submitForm = function () {
-           
-            $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+//        setInterval(function(){
+//            $scope.$apply(function(){
+//                $scope.langPos = LangChoice.langPos;
+//                window.console.log($scope.langPos);
+//            });
+//        },0);
+//       setInterval(function () {
+//            $scope.$apply(function () {
+//                $scope.langPos = LangChoice.langPos;
+//            });
+//        }, 0);
 
-            const name = $("#userName").val();
-            const email = $("#userEmail").val();
-            const message = $("#userMessage").val();
-            data = {
-                'name' : name,
-                'email' : email,
-                'message' : message,
-            };
-            
-            $http.post('about/form-submit.php', data)
-            .success(function(data, status, headers, config){
-                window.console.log(status + ' - ' + data);
-            })
-            .error(function(data, status, headers, config){
-                window.console.log('error: ' + status);
-            });
+
+        $scope.sendMail = function () {
+            window.console.log("submit");
+            var form = document.getElementById('contact-form');
+            emService.sendMail(form);
+            form.reset();
+
         }
 
 }]

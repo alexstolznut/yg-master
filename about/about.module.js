@@ -1,1 +1,1 @@
-angular.module('about',['core.lc']);
+angular.module('about',['core.lc', 'core.e']);

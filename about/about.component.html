@@ -38,7 +38,7 @@
             <p class="description" ng-if="langPos == 1">永泰参茸公司於2014年加州沙卡缅度，至今成為北加州地區較具規模的亞洲商品誠信零售商。傳承世代經營藥材及茶葉的精髓，永合豐經營的貨品琳瑯滿目，品種繁千，包括有中藥材、雀石茗茶、花旗人參、亞洲美食、家用電器、世界名酒等。
             </p>
         </div>
-       <div class="col-12 col-md-12 col-lg-6 d-md-block d-lg-none img-div">
+        <div class="col-12 col-md-12 col-lg-6 d-md-block d-lg-none img-div">
 
             <div class="img-container">
                 <img class="img-1" src="../img/about-1.jpg">
@@ -91,7 +91,9 @@
         </div>
         <div class="col-12 col-md-12 col-lg-6">
             <h2 class="display-3 mission-header">Our Origins</h2>
-            <p class="description" ng-if="langPos == 0">
+
+            <p class="description" ng-if="langPos==0">
+
                 The ginseng &amp; wellness products offered by Yongtai Ginseng will meet or exceed your expectations of the high quality, effectiveness and consideration you demand in order to maintain your healthy lifestyle. Yongtai has taken the time to develop and research our ginseng and wellness products intent on ensuring they meet your high standards and increase the state of wellness you deserve. Enrich your capabilities. Balance your well-being. Thrive for the best.
 
             </p>
@@ -112,23 +114,44 @@
 <div class="mt-5 about-contact-form">
     <div class="col-10 mx-auto">
         <h2 class="sub-title text-center">If you would like to get in touch please feel free to contact us</h2>
-        <form>
+        <form name="myForm" ng-model="form" id="contact-form" validate>
             <div class="form-group">
                 <label for="userName">Name</label>
-                <input type="text" class="form-control" id="userName" name="name" aria-describedby="namelHelp" placeholder="Enter name">
+                <input type="text" ng-model="user.name" class="form-control" id="userName" name="name" aria-describedby="namelHelp" placeholder="Enter name" required>
+                <p ng-show="myForm.name.$invalid && myForm.name.$touched" class="required-message">Name is required</p>
             </div>
             <div class="form-group">
                 <label for="userEmail">Email address</label>
-                <input type="email" class="form-control" id="userEmail" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" ng-model="user.email" class="form-control" id="userEmail" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                <p ng-show="myForm.name.$invalid && myForm.name.$touched" class="required-message">Email is required</p>
             </div>
             <div class="form-group">
                 <label for="userMessage">Message</label>
 
-                <textarea class="form-control" id="userMessage" name="message" rows="3" placeholder="Enter Message"></textarea>
+                <textarea class="form-control" ng-model="user.message" id="userMessage" name="message" rows="3" placeholder="Enter Message" required></textarea>
+                <p ng-show="myForm.name.$invalid && myForm.name.$touched" class="required-message">Message is required</p>
             </div>
-            
-            <button type="submit" ng-click="submitForm()" class="btn btn-primary mb-5">Submit</button>
-            
+
+            <button ng-disabled="myForm.$invalid" ng-click="sendMail()" data-toggle="modal" data-target="#formModal" class="btn btn-primary mb-5">Submit</button>
+
         </form>
+        <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-dark mx-auto text-center ml-5" id="exampleModalLabel">Thank you for contacting us!</h2>
+                        <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body text-center text-dark">
+                        <h5>We'll get back to you as soon as possible!</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

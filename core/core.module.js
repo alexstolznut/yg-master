@@ -1,1 +1,1 @@
-angular.module('core', ['core.products', 'core.lc','core.bs', 'core.customers']);
+angular.module('core', ['core.products', 'core.lc','core.bs', 'core.customers', 'core.tc', 'core.e']);

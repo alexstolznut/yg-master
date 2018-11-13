@@ -203,4 +203,13 @@ button[type="submit"] {
     float: right !important;
 }
 
+.required-message{
+    padding-top: 1%;
+    color: red;
+    font-size: .8em;
+}
+input.ng-invalid{
+    border-color:red;
+}
+
 /*SIDEBAR*/

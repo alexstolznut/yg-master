@@ -2,8 +2,13 @@ angular.
 module('navbar').
 component('navbar', {
     templateUrl: "nav-bar/nav-bar.component.html",
-    controller: ['LangChoice', 'Product', '$scope', '$routeParams', function NavController(LangChoice, Product, $scope, $routeParams) {
+    controller: ['LangChoice', 'Product', 'TagChoice','$scope', '$rootScope','$routeParams', '$location', function NavController(LangChoice, Product, TagChoice, $scope, $rootScope, $routeParams, $location) {
         $scope.numLimit = 4;
+        
+        $scope.changeTagValue = function(value){
+            TagChoice.tagChoice = value;
+            window.console.log(TagChoice.changeTag);
+        }
         Product.getProducts().then((products) => {
             this.products = products;
 
@@ -11,6 +16,19 @@ component('navbar', {
 
 
         });
+        $scope.currentPath = $location.path();
+        if($scope.currentPath === '/product'){
+            window.console.log("products");
+        }
+
+        $rootScope.$watch(function () {
+                $scope.currentPath = $location.path();
+        });
+        
+        Product.sortTags().then((tags)=>{
+            $scope.tags = tags;
+        })
+
         $scope.langPos = LangChoice.langPos;
         $scope.langPos = LangChoice.langPos;
         setInterval(function () {

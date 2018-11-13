@@ -4,16 +4,26 @@
     <div id="sidebar">
 
         <ul class="list-unstyled components navbar-nav">
-            <li><a class="nav-link" href="#!/product/#herbal" ng-if="langPos==0">Herbal</a><a class="nav-link" href="#!/product/#herbal" ng-if="langPos==1">草本</a></li>
+            <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-if="langPos==0" ng-click="changeCurrentTagValue(tag)">{{tag}}</a><a class="nav-link"  ng-if="langPos==1">草本</a></li>
+            
+<!--
             <li><a href="#!/product/#delicacy" ng-if="langPos == 0">Delicacy</a><a class="nav-link" href="#!/product/#herbal" ng-if="langPos==1">美味</a>
 </li>
             <li><a href="#!/product/#supplements" ng-if="langPos==0">Supplements</a><a class="nav-link" href="#!/product/#herbal" ng-if="langPos==1">
 补品
 </a></li>
+-->
         </ul>
     </div>
 
     <div id="content">
+        <h1>{{tagValue}}</h1>
+      <div ng-repeat="tag in tags" ng-if="tag === tagValue">
+       {{tag}}<br>
+       <div ng-repeat="(id,product) in products" ng-if="product.tags[0].value === currentTagValue">
+           {{product['title-en']}}
+       </div>
+        </div>
         <div class="row herbal" id="herbal">
             <div class="col-12 mx-auto">
                <h2 class="display-4 product-category">Herbal</h2>
@@ -50,3 +60,4 @@
     </div>
 
 </div>
+<script src="app.js"></script>
