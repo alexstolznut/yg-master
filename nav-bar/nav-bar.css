@@ -363,6 +363,8 @@ navbar .dropdown-menu.search-menu {
     height: 45px !important;
 }
 
+
+
 @media(max-width:1199px) {
     .navbar-nav > .nav-item.langBtn {
         min-width: 40% !important;
@@ -582,7 +584,7 @@ navbar .dropdown-menu.search-menu {
     flex: auto;
     justify-content: center;
     list-style-type: none;
-    margin: 0 5% 0 5%;;
+    margin: 0  0 5%;;
     /*    float: left;*/
 }
 

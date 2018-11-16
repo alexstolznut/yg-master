@@ -4,7 +4,8 @@
     <div id="sidebar">
 
         <ul class="list-unstyled components navbar-nav">
-            <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-if="langPos==0" ng-click="changeCurrentTagValue(tag)">{{tag}}</a><a class="nav-link"  ng-if="langPos==1">草本</a></li>
+           <li><a class="nav-link" ng-click="changeCurrentTagValue('All')">All</a></li>
+            <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-click="changeCurrentTagValue(tag)">{{tag}}</a></li>
             
 <!--
             <li><a href="#!/product/#delicacy" ng-if="langPos == 0">Delicacy</a><a class="nav-link" href="#!/product/#herbal" ng-if="langPos==1">美味</a>
@@ -17,18 +18,12 @@
     </div>
 
     <div id="content">
-        <h1>{{tagValue}}</h1>
-      <div ng-repeat="tag in tags" ng-if="tag === tagValue">
-       {{tag}}<br>
-       <div ng-repeat="(id,product) in products" ng-if="product.tags[0].value === currentTagValue">
-           {{product['title-en']}}
-       </div>
-        </div>
-        <div class="row herbal" id="herbal">
+     
+        <div class="row herbal" id="herbal" ng-if="tagValue != 'All'">
             <div class="col-12 mx-auto">
-               <h2 class="display-4 product-category">Herbal</h2>
+               <h2 class="display-4 product-category">{{tagValue}}</h2>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="(id,product) in products" ng-if="product.type == 'Herbal'">
+            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="(id,product) in products" ng-if="product.tags[0].value === tagValue">
                 <a href="#!/product/{{product.id}}"><img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title" ng-if="langPos == 0">{{product['title-en']}}</h5>
@@ -40,11 +35,11 @@
             </div>
         </div>
 
-        <div class="row delicacies" id="delicacy">
+        <div class="row delicacies" id="delicacy" ng-if="tagValue == 'All'">
             <div class="col-12 mx-auto">
-                <h2 class="display-4 product-category">Delicaies</h2>
+                <h2 class="display-4 product-category">{{tagValue}}</h2>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in products" ng-if="product.type == 'Delicacies'">
+            <div class="col-lg-3 col-md-4 col-sm-5 card" ng-repeat="product in products">
                 <a href="#!/product/{{product.id}}"><img class="card-img-top" src="{{product.pic_urls[0]}}" alt="Card image cap"></a>
                 <div class="card-body">
                     <h5 class="card-title" ng-if="langPos == 0">{{product['title-en']}}</h5>

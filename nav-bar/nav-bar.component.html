@@ -22,17 +22,10 @@
         </div>
 -->
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
-            <a class="nav-link dropdown-toggle mobile-icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
+            <a class="nav-link dropdown-toggle mobile-icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span id="totalContainer"><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0" class="btn-primary">{{checkoutInfo['totalItems']}}</span>
             <img class="cart-icon" src="../img/cart-icon.png"></span>
         </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" ng-if="itemListLength > 0">
-                <div class="dropdown-item" ng-repeat="item in itemList">
-                    <a class="dropdown-item row"><img class="col-4 col-sm-4 col-md-4 col-lg-4" src="{{item.variant.image['src']}}"><p class="description col-8 col-sm-8 col-md-8 col-lg-8">{{item['title']}}</p></a>
-                </div>
-                {{itemList['title']}}
-                <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="$ctrl.getCheckout()">Checkout</button>
-            </div>
         </div>
         <!--        </li>-->
         <div class="signIn justify-content-end d-md-none d-lg-none d-xl-none">
@@ -48,15 +41,16 @@
         <!--        </li>-->
     </div>
     <div ng-show="currentPath == '/product'" class="d-md-none submenu">
-<!--
+        <!--
         <ul class="">
             <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-if="langPos==0" ng-click="changeCurrentTagValue(tags)">{{tag}}</a><a class="nav-link" ng-if="langPos==1">草本</a></li>
 -->
-            <ul class="">
-                <li class="nav-item" ng-repeat="tag in tags | orderBy: alphabet">
-                    <a class="nav-link" ng-click="changeTagValue(tag)">{{tag}} <span class="sr-only">(current)</span></a>
-                </li>
-<!--
+        <ul class="mobile-scroll">
+           <li class="nav-item"><a class="nav-link" ng-click="changeTagValue('All')">All</a></li>
+            <li class="nav-item" ng-repeat="tag in tags | orderBy: alphabet">
+                <a class="nav-link" ng-click="changeTagValue(tag)">{{tag}} <span class="sr-only">(current)</span></a>
+            </li>
+            <!--
                 <li class="nav-item">
                     <a class="nav-link" href="#">Features and Shit</a>
                 </li>
@@ -84,8 +78,8 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
 -->
-                
-            </ul>
+
+        </ul>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -151,7 +145,8 @@
                         <p ng-if="langPos==1" class="description col-8 col-sm-8 col-md-8 col-lg-8">{{item['title-ch']}}</p></a>
                     </div>
                     {{itemList['title']}}
-                    <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="$ctrl.getCheckout()">Checkout</button>
+                    <a href="#!/checkout">
+                        <button ng-if="itemListLength > 0" class="btn btn-primary btn-checkout" ng-click="#!/checkout">Checkout</button></a>
                 </div>
             </div>
         </div>

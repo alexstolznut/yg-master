@@ -25,10 +25,11 @@ component('productCard', {
         //            })
         //        }, 0)
 
+
         $scope.$watch(function () {
 
             $scope.tagValue = TagChoice.tagChoice;
-            
+
 
         })
 
@@ -36,6 +37,8 @@ component('productCard', {
             TagChoice.tagChoice = value;
 
         }
+        window.onload = function(){$scope.changeCurrentTagValue('All');}
+        
         $scope.productTags = [];
         Product.getProducts().then((products) => {
             $scope.products = products;
