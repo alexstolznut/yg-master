@@ -28,11 +28,13 @@
         </a>
         </div>
         <!--        </li>-->
+<!--
         <div class="signIn justify-content-end d-md-none d-lg-none d-xl-none">
             <a class="nav-link">
            <img class="profile-icon" src="../img/Profile-icon.png">
             </a>
         </div>
+-->
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
             <div class="nav-search-icon nav-link"></div>
         </div>
@@ -50,34 +52,6 @@
             <li class="nav-item" ng-repeat="tag in tags | orderBy: alphabet">
                 <a class="nav-link" ng-click="changeTagValue(tag)">{{tag}} <span class="sr-only">(current)</span></a>
             </li>
-            <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features and Shit</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
--->
 
         </ul>
     </div>
@@ -128,7 +102,7 @@
 -->
     </div>
 
-    <div class="row desktopButtons d-none d-md-block">
+<!--    <div class="row desktopButtons d-none d-md-block">-->
         <div class="justify-content-end d-none d-md-block">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons">{{$ctrl.LanguageChoice}}</a>
         </div>
@@ -150,19 +124,22 @@
                 </div>
             </div>
         </div>
+<!--
         <div class="justify-content-end d-none d-lg-block">
-            <a class="btn btn-secondary-neutral mobile-icons">Sign In</a>
-            <a class="btn btn-secondary-ne" ng-if="langPos==1">
+            <a class="btn btn-secondary-neutral mobile-icons" ng-if="langPos==0">Sign In</a>
+            <a class="btn btn-secondary-neutral mobile-icons" ng-if="langPos==1">
 签到</a>
         </div>
         <div class="justify-content-end d-none d-md-block d-lg-none">
             <img class="profile-icon" src="../img/Profile-icon.png">
         </div>
+-->
         <div class="justify-content-end d-none d-md-block">
             <div class="nav-search-icon">
             </div>
         </div>
-    </div>
+<!--    </div>-->
+
 
 </nav>
 <full-screen-search></full-screen-search>
