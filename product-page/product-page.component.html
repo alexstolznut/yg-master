@@ -11,7 +11,7 @@
                         <h1 class="display-4" ng-if="langPos===0">{{product['title-en']}}</h1>
                         <h1 class="display-4" ng-if="langPos===1">{{product['title-ch']}}</h1>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12" ng-if="$ctrl.product.sku">
                         <h4 class="monospace">Product #: {{$ctrl.product.sku}}</h4>
                     </div>
                 </div>
@@ -30,14 +30,14 @@
                 </div>
                 <div class="d-none d-sm-block">
 
-                
-                <img class="d-block w-100 image-responsive product" ng-src="{{$ctrl.mainImageUrl}}" alt="First slide">
 
-                <ul class="phone-thumbs image-responsive text-center mx-auto">
-                    <li ng-repeat="img in product.pic_urls">
-                        <img class="btn img-fluid img-thumbnail mx-auto" src={{img}} ng-click="$ctrl.setImage(img)" />
-                    </li>
-                </ul>
+                    <img class="d-block w-100 image-responsive product" ng-src="{{$ctrl.mainImageUrl}}" alt="First slide">
+
+                    <ul class="phone-thumbs image-responsive text-center mx-auto">
+                        <li ng-repeat="img in product.pic_urls">
+                            <img class="btn img-fluid img-thumbnail mx-auto" src={{img}} ng-click="$ctrl.setImage(img)" />
+                        </li>
+                    </ul>
                 </div>
 
 
@@ -93,18 +93,31 @@
                                 </li>
                             </ul>
 
-                            <div class="tab-content" ng-show="selectedTab == 1" ng-if="langPos==0">
-                                1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                            <div class="tab-content" col-12 ng-show="selectedTab == 1" ng-if="langPos==0">
+                                <p class="description">
+                                    {{product['benefits-en']}}
+                                </p>
                             </div>
                             <div class="tab-content" ng-show="selectedTab == 1" ng-if="langPos==1">
-                                Chinese Stuff
+                                <p class="description">
+                                    {{product['benefits-ch']}}
+                                </p>
                             </div>
 
                             <div class="tab-content" ng-show="selectedTab == 2" ng-if="langPos==0">
-                                2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                <ul class="list-unstyled">
+                                    <li class="list-item" ng-repeat="uses in product['uses-en']">
+                                        {{uses}}
+                                    </li>
+                                </ul>
                             </div>
                             <div class="tab-content" ng-show="selectedTab == 2" ng-if="langPos==1">
-                                Chinese Uses
+                                <ul>
+                                    <li ng-repeat="uses in product['uses-ch']">
+                                        {{uses}}
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
@@ -206,26 +219,26 @@
                 </ul>
 
                 <div class="tab-content" col-12 ng-show="selectedTab == 1" ng-if="langPos==0">
-                   <p class="description">
-                    {{product['benefits-en']}}
+                    <p class="description">
+                        {{product['benefits-en']}}
                     </p>
                 </div>
                 <div class="tab-content" ng-show="selectedTab == 1" ng-if="langPos==1">
-                   <p class="description">
-                    {{product['benefits-ch']}}
+                    <p class="description">
+                        {{product['benefits-ch']}}
                     </p>
                 </div>
                 <div class="col-6"></div>
                 <div class="tab-content" ng-show="selectedTab == 2" ng-if="langPos==0">
                     <ul class="list-unstyled">
-                        <li class="list-item" ng-repeat = "uses in product['uses-en']">
+                        <li class="list-item" ng-repeat="uses in product['uses-en']">
                             {{uses}}
                         </li>
                     </ul>
                 </div>
                 <div class="tab-content" ng-show="selectedTab == 2" ng-if="langPos==1">
-                     <ul>
-                        <li ng-repeat = "uses in product['uses-ch']">
+                    <ul>
+                        <li ng-repeat="uses in product['uses-ch']">
                             {{uses}}
                         </li>
                     </ul>

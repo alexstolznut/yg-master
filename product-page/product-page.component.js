@@ -14,7 +14,7 @@ module('productPage').component('productPage', {
 
             $scope.selectedTab = 1;
 
-
+         
 
             this.quantity = 1;
 
@@ -32,15 +32,7 @@ module('productPage').component('productPage', {
                 $scope.product = products[$routeParams['productId']];
 
                 this.mainImageUrl = $scope.product['pic_urls'][0];
-
-
-                /*for (var i = 0; i < products.length; i = i + 1) {
-                    if (products[i].id === $routeParams.productId) {
-                        $scope.product = products[i];
-                        this.setImage($scope.product.pic_urls[0]);
-                    }
-                }
-                */
+            
             });
 
             $scope.username = {

@@ -26,7 +26,7 @@ factory('Product',
         //the items object must refer to the same memory address
         //throughout the application lifecycle
         var items = {};
-
+        
         //boolean flag to prevent reloading of product data
         var fetchAllCompleted = false;
 
@@ -59,6 +59,7 @@ factory('Product',
             if (fetchAllCompleted) {
                 deferred.resolve(products);
             } else {
+                
                 client.product.fetchAll(250).then((products_complete) => {
                     //regular expression to parse english and chinese titles
                     let re = /\（[A-Za-z\s0-9\（\）\/\-]+\）/gmi;
@@ -69,10 +70,13 @@ factory('Product',
                     let CU = "CU:";
                     let EB = "EB:";
                     let CB = "CB:"
+                    
 
                     var i;
                     for (i = 0; i < products_complete.length; i++) {
                         let product_tmp = products_complete[i];
+                        var test = product_tmp['variants'];
+                       
                        
                         let product = {};
                         //add name and tags
@@ -98,6 +102,8 @@ factory('Product',
                         product['tags'] = product_tmp['tags'];
                         product['type'] = product_tmp['productType'];
                         product['pic_urls'] = [];
+                        product['sku'] = product_tmp['variants'][0]['sku'];
+                        
                         //add the images 
                         for (var j in product_tmp['images']) {
                             if (product_tmp['images'][j]['src'] != null) {
