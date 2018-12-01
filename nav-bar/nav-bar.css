@@ -105,7 +105,6 @@ navbar .dropdown-menu {
     color: white !important;
     font-family: fontAwesome;
     content: '\f002';
-    /*    top:25%;*/
 }
 
 .search-icon.active:before {
@@ -201,7 +200,6 @@ a.mobile-icons {
     width: 25px;
     top: -5px;
     left: 35px;
-    /*    padding-bottom: 1%0 !important;*/
     z-index: 9999;
 }
 
@@ -514,21 +512,16 @@ navbar .dropdown-menu.search-menu {
         display: flex;
         width: 40%
     }
-    /*
-    .mobileLangBtn {
-        float:left!important;
-        justify-content: flex-start;
-    }
-*/
+ 
     .mobile-buttons {
         width: 45%;
         padding-bottom: 0% !important;
         margin-bottom: 0%;
-        /*        justify-content: flex-end;*/
+       
     }
     .nav-search-icon {
         font-size: 50px;
-        /*        padding-right:25%;*/
+        
     }
     .langBtn .langIcon a.btn {
         width: 40px !important;
@@ -580,16 +573,13 @@ navbar .dropdown-menu.search-menu {
 
 .submenu > ul > li {
     min-width:20% !important;
-    /*    flex: 1 1 100%;*/
     flex: auto;
     justify-content: center;
     list-style-type: none;
     margin: 0  0 5%;;
-    /*    float: left;*/
 }
 
 .submenu > ul > li > a {
-/*    min-width:25% !important;*/
     flex: auto;
     word-wrap: normal;
     font-size: .8em !important
@@ -598,27 +588,14 @@ navbar .dropdown-menu.search-menu {
 .submenu>ul::-webkit-scrollbar {
     visibility: hidden !important;
     display: none;
-/*
-    background: transparent;
-    height: 0px !important;
-    width: 0px;
-*/
 }
 
 .submenu>ul::-webkit-scrollbar-track {
     display: none;
-/*
-    background: transparent !important;
-    width: 0px;
-*/
 }
 
 .submenu>ul::-webkit-scrollbar-thumb {
     display: none;
-/*
-    background: transparent;
-    color: transparent;
-*/
 }
 
 @media(max-width:375px) {
@@ -628,9 +605,7 @@ navbar .dropdown-menu.search-menu {
     full-screen-search {
         margin-left: 5%;
     }
-    .nav-search-icon {
-        /*        padding:30%;*/
-    }
+    
     .langBtn {
         width: 20%;
     }

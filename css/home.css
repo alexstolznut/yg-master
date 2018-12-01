@@ -9,14 +9,6 @@ img.card-img-top {
 }
 
 
-/*
-.card .card-body{
-    margin: 0  auto;
-    padding: 0;
-    margin-top: 5%
-}
-*/
-
 .weekly-special-text,
 .new-arrivals-text,
 .popular-items-text {
@@ -136,7 +128,6 @@ img.card-img-top {
     .weekly-special-text,
     .popular-items-text {
         width: 68% !important;
-        /*    border-bottom:none !important;*/
     }
     .card img {
         min-height: 350px !important;

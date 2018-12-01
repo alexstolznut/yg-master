@@ -13,7 +13,6 @@ nav {
     vertical-align: top !important;
     margin-top: 0;
     padding-top: 0%;
-    /*    float: left !important;*/
 }
 
 .item-container {
@@ -36,11 +35,6 @@ span.item-quantity {
     left: 0;
 }
 
-/*
-.item-title-container, .item-container{
-    padding: 5% 0;
-}
-*/
 
 .item-title-container .item-title {
     font-size: 1.5em;
@@ -56,10 +50,8 @@ h1.item-title {
 }
 
 .list-group-item > div > div > h1 {
-    /*    float: left;*/
     margin-top: 2.5%;
     padding: 0 !important;
-    /*    margin: 0 auto !important;*/
     font-size: 2.5em;
     font-weight: 300 !important;
     min-width: 100% !important;
@@ -74,11 +66,6 @@ h1.item-title {
     justify-content: flex-end !important;
     float: right
 }
-
-/*
-.btn-qty{
-    min-width:10% !important;
-}*/
 
 .btn.checkout-qty {
     background-color: white !important;
@@ -98,7 +85,6 @@ h1.item-title {
 input.checkout-qty {
     font-size: 1.75em !important;
     width: 75px;
-    /*    font-weight: bold !important;*/
     line-height: 12px !important;
 }
 
@@ -106,7 +92,6 @@ span.glyphicon {
     margin: 0 auto !important;
     ;
     text-align: center !important;
-    /*    margin-top:100% !important;*/
 }
 
 .list-group-item span {

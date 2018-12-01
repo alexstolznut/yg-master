@@ -37,11 +37,7 @@
                         </div>
 
                         <div class="col-12 col-md-1 justify-content-end delete"><a href="" class="justify-content-end btn btn-danger" data-toggle="modal" data-target="#checkoutModal" ng-click="itemId(item.id)">Delete</a></div>
-                        <!--
-                        <div class="col-3 justify-content-end">
-                            <a href="" ng-click="hideMe=false" class="justify-content-end btn btn-primary" ng-disabled="!hideMe">Edit</a>
-                        </div>
--->
+
                     </div>
 
 
@@ -69,22 +65,25 @@
                 </div>
             </div>
             <div class="row subtotal mt-5 border-bottom border-top">
-               <div class="col-8"></div>
+                <div class="col-8"></div>
                 <div class="col-12 col-md-4 float-right">
                     <div class="row items" ng-repeat="item in itemList">
 
                         <div class="col-12 border-bottom">
-                           <div class="row">
-                           <div class="col-10">
-                               <h2 class="mt-4 mb-4" ng-if="langPos==0">{{item['title-en']}}({{item.quantity}})</h2>
-                               <h2 class="mt-4 mb-4" ng-if="langPos==1">{{item['title-ch']}}({{item.quantity}})</h2></div>
-                               <div class="col-2 price-items"><h2 class=""> {{item.variant.price * item.quantity | currency}}</h2></div>
+                            <div class="row">
+                                <div class="col-10">
+                                    <h2 class="mt-4 mb-4" ng-if="langPos==0">{{item['title-en']}}({{item.quantity}})</h2>
+                                    <h2 class="mt-4 mb-4" ng-if="langPos==1">{{item['title-ch']}}({{item.quantity}})</h2>
+                                </div>
+                                <div class="col-2 price-items">
+                                    <h2 class=""> {{item.variant.price * item.quantity | currency}}</h2>
+                                </div>
                             </div>
                         </div>
-                       
+
 
                     </div>
-                      <div class="row">
+                    <div class="row">
                         <div class="col-12">
                             <h1 class="mt-5 float-right">Subtotal: {{totalPrice | currency}}</h1>
                         </div>

@@ -13,40 +13,25 @@
         </div>
     </div>
 
-    <!--        <li class="nav-item dropdown justify-content-end">-->
+
     <div class="row justify-content-end mobile-buttons">
-        <!--
-        <div class="justify-content-end d-md-none d-lg-none d-xl-none">
-            <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==0">CH</a>
-            <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons mobileLangBtn" ng-if="langPos==1">EN</a>
-        </div>
--->
+  
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
             <a class="nav-link dropdown-toggle mobile-icons" href="#!/checkout" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span id="totalContainer"><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0" class="btn-primary">{{checkoutInfo['totalItems']}}</span>
             <img class="cart-icon" src="../img/cart-icon.png"></span>
         </a>
         </div>
-        <!--        </li>-->
-<!--
-        <div class="signIn justify-content-end d-md-none d-lg-none d-xl-none">
-            <a class="nav-link">
-           <img class="profile-icon" src="../img/Profile-icon.png">
-            </a>
-        </div>
--->
+
         <div class="justify-content-end d-md-none d-lg-none d-xl-none">
             <div class="nav-search-icon nav-link"></div>
         </div>
 
 
-        <!--        </li>-->
+     
     </div>
     <div ng-show="currentPath == '/product'" class="d-md-none submenu">
-        <!--
-        <ul class="">
-            <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-if="langPos==0" ng-click="changeCurrentTagValue(tags)">{{tag}}</a><a class="nav-link" ng-if="langPos==1">草本</a></li>
--->
+
         <ul class="mobile-scroll">
            <li class="nav-item"><a class="nav-link" ng-click="changeTagValue('All')">All</a></li>
             <li class="nav-item" ng-repeat="tag in tags | orderBy: alphabet">
@@ -76,33 +61,9 @@
 联系</a>
             </li>
         </ul>
-        <!--
-        <div class="col-4 justify-content-start search-box">
-            <input class="form-control nav-item dropdown search-input" ng-focus="show=true" ng-blur="show=false" type="search" placeholder="Search" aria-label="Search" ng-model="search">
-            <div class="dropdown-menu search-menu" ng-if="show && search">
-             <div class="dropdown-item" ng-repeat="product in products | filter: search | limitTo:4">
-              <a href="#!/product/{{product.id}}">
-              <div class="row">
-                  <div class="col-2"><img ng-src={{product.pic_urls[0]}} class="search-image"></div>
-                  <div class="col-8"><p class="description">{{product.title}}</p></div>
-              </div>
-                 </a>
-              
-                </div>
-                
-            </div>
-        </div>
--->
-
-        <!--
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
--->
     </div>
 
-<!--    <div class="row desktopButtons d-none d-md-block">-->
+
         <div class="justify-content-end d-none d-md-block">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons">{{$ctrl.LanguageChoice}}</a>
         </div>
@@ -138,7 +99,7 @@
             <div class="nav-search-icon">
             </div>
         </div>
-<!--    </div>-->
+
 
 
 </nav>

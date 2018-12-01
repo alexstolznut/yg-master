@@ -17,7 +17,6 @@ nav {
     width: 52px;
     height: 46px;
     text-align: center;
-/*    margin: 0 auto;*/
 }
 .btn-qty{
     text-align: center;
@@ -84,15 +83,7 @@ input.btn.btn-default.btn-lg.btn-qty {
 .assist-info{
     font-size: 1.5em;
 }
-/*
-.image-responsive {
-    height: 400px;
-    max-width: 400px !important;
-    margin: 0 auto;
 
-
-}
-*/
 .phone-thumbs li img.btn{
     padding: 0;
     margin:0;
@@ -102,18 +93,12 @@ input.btn.btn-default.btn-lg.btn-qty {
   background-color: white;
   height: 400px;
   margin-bottom: 2em;
-/*  margin-left: 6em;*/
   padding: 0em;
   max-width: 400px;
 }
 
 .phone-thumbs {
     padding: 0;
-/*
-    margin-left: 0 auto;
-    margin-right: 0 auto;
-*/
-/*    margin-left: 1em;*/
     list-style: none;
     vertical-align: inherit;
 
@@ -122,7 +107,6 @@ input.btn.btn-default.btn-lg.btn-qty {
 .phone-thumbs img {
     margin: 0 auto;
     height: 100px;
-/*    padding: 1em;*/
     width: 80px;
     border: none;
 }
@@ -157,7 +141,6 @@ input.btn.btn-default.btn-lg.btn-qty {
     width: 49%;
     float: left;
     font-size: 1.5em;
-/*    margin-right:5%;*/
 }
 
 .product-page {
@@ -189,21 +172,9 @@ footer > .container{
     margin: 0 auto;
 }
 
-/*
-@media(max-width:991px){
 
-    nav:before,.navbar-collapse:before, .navbar:after{
-        display: none !important;
-        content:none !important;;
-    }
-    .show{
-       
-    }
-}
-*/
 @media(max-width: 991px){
     .btn-qty{
-/*        margin:auto !important;*/
         margin-left: 1% !important;
         margin-right: 1% !important;
     }
@@ -223,7 +194,6 @@ footer > .container{
     }
     .phone-thumbs li, .phone-thumbs li img{
         padding: 0 !important;
-/*        margin: auto !important;*/
         height: 70px;
         width: 55px;
         
@@ -250,7 +220,6 @@ footer > .container{
         margin: 0 0auto;
         height:50px;
         width: 30px;
-/*        padding: 2%;*/
     }
     .product-qty{
         width: 100%;
@@ -310,32 +279,9 @@ footer > .container{
     .image-carousel{
         margin: 0 auto !important;
     }
-    .mobile-view{
-/*        height: 140vh !important;*/
-    }
     .phone-thumbs li{
         width:19%;
     }
-/*
-    .phone-thumbs{
-        margin-left: 0 auto !important;
-        margin-right: 0 auto !important;
-        width:90%;
-    }
-    .phone-thumbs li{
-        float: left;
-        margin:0%;
-        margin: 4% !important;
-        width:70px;
-    }
-    
-    .phone-thumbs li img{
-        width: 80px;
-        height: 80px;
-        margin: auto !important;
-        padding: auto !important;
-    }
-*/
 }
 @media(max-width:575px){
     input.btn-qtyqty{

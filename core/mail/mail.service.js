@@ -7,16 +7,6 @@ factory('emService',
             "access_token": "a92hxnllyfofnbuq42jyscq9"
         };
 
-//        function js_onSuccess() {
-//            // remove this to avoid redirect
-//            window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
-//        }
-//
-//        function js_onError(error) {
-//            // remove this to avoid redirect
-//            window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
-//        }
-
         var sendMessage = function (form) {
 
             //            endButton.value = 'Sending…';

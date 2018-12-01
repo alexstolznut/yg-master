@@ -69,7 +69,6 @@ img.we-chat > h5 {
     height: 600px;
     text-align: center;
     margin-bottom: 0 !important;
-    /*    background-image: url(../img/googlemaps.png);*/
 }
 
 .contact-tooltip {
@@ -87,9 +86,7 @@ img.we-chat > h5 {
     padding-top: ;
     width: 308px;
     padding: 20px 20px 20px 32px;
-/*    margin: auto;*/
-/*    background: url(../images/icons/meta/icon-location-white.svg) 30px 38px no-repeat #da4d3c;*/
-    background-size: 6%
+    background-size: 6%;
 }
 
 .contact-tooltip div p {
@@ -150,16 +147,8 @@ a.btn--outline-white{
 
 .general-contact li {
     width: 100%;
-
-
-    /*    margin: 0 auto !important;*/
 }
 
-/*
-.general-contact li img, .general-contact li h5 {
-    float: left;
-}
-*/
 
 .contact-row {
     margin-bottom: 2.5%;
@@ -193,11 +182,6 @@ form #userMessage {
         margin-right: 20% !important;
         float: clear;
     }
-/*
-    .general-contacts .col-12{
-        margin-bottom: 5%
-    }
-*/
     
     .general-contacts{
         height: 650px !important;

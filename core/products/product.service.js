@@ -100,6 +100,7 @@ factory('Product',
                         product['title-ch'] = product['title'].slice(0, breakPoint);
                         product['title-en'] = product['title'].slice(breakPoint + 1, -1);
                         product['tags'] = product_tmp['tags'];
+                        window.console.log(product['tags']);
                         product['type'] = product_tmp['productType'];
                         product['pic_urls'] = [];
                         product['sku'] = product_tmp['variants'][0]['sku'];

@@ -25,7 +25,7 @@ module('productPage').component('productPage', {
 
             this.setImage = function setImage(imageUrl) {
                 this.mainImageUrl = imageUrl;
-                //window.console.log(this.mainImageUrl);
+           
             };
 
             Product.getProducts().then((products) => {
@@ -43,7 +43,6 @@ module('productPage').component('productPage', {
                 text: 'password',
                 word: /^\w*$/
             }
-            //    window.console.log(Product.q)
             /* arbitrary max items limit. Currently the number of displayed photos is limited by this constant */
             this.maxItems = 2;
 
@@ -53,7 +52,7 @@ module('productPage').component('productPage', {
             /* Fetch the products from the shopify api. Once the call is returned and the promise resolves, assign the results to products */
                         Product.getProducts().then((products) => {
                             this.products = products;
-                            window.console.log(this.products);
+                          
                         });
 
             /* Add an item to the cart.
@@ -63,11 +62,8 @@ module('productPage').component('productPage', {
             */
             this.addItem = function (itemId, q) {
                 Product.addItem(itemId, q).then(() => {
-                    window.console.log("success");
                     this.quantity = 1;
-                    //            var objectLength = (Object.values(shopService.items));
-                    //            window.console.log(objectLength[0].quantity);
-                    //            window.console.log(objectLength.length);
+                 
                     //these empty .then() functions are necessary to trigger an update of the UI. If you remove them you will notice the UI will not reflect changes in state until a new event (button click, keypress) is triggered. 
                 });
             }
@@ -88,7 +84,6 @@ module('productPage').component('productPage', {
             */
             this.updateItem = function (itemId, q) {
                 Product.updateItem(itemId, q).then(() => {
-                    window.console.log(Product);
                     //do not remove empty .then()
                 });
             }

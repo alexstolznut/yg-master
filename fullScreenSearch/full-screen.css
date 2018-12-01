@@ -12,15 +12,6 @@
     color: white;
 }
 
-/*
-.search .search-icon:before {
-    color: white !important;
-    font-family: fontAwesome;
-    content: '\f002';
-        top:25%;
-}
-
-*/
 
 
 .search.active .search-icon:before {
@@ -36,7 +27,6 @@
     right: 2.5%;
     height: 25px;
     width: 25px;
-    /*    background: pink;*/
     z-index: 99999 !important;
 }
 
@@ -86,7 +76,7 @@
     color: white !important;
 }
 .search-item{
-/*    padding:1%;*/
+
 }
 .search-item  img{
     border-radius: 50%;

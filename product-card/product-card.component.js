@@ -12,18 +12,6 @@ component('productCard', {
             if ($location.hash()) $anchorScroll();
         });
 
-        //    $scope.$watch(function(){
-        //        $scope.tagValue = TagChoice.tagChoice;
-        //        window.console.log($scope.tagValue);
-        //    })
-
-
-        //        setInterval(function () {
-        //            $scope.$apply(function () {
-        //                $scope.tagValue = TagChoice.tagChoice;
-        //                window.console.log($scope.tagValue)
-        //            })
-        //        }, 0)
 
 
         $scope.$watch(function () {
@@ -42,7 +30,6 @@ component('productCard', {
         $scope.productTags = [];
         Product.getProducts().then((products) => {
             $scope.products = products;
-            //            $scope.tags = Product.sortTags($scope.products);
 
         });
 
@@ -50,10 +37,7 @@ component('productCard', {
             $scope.tags = tags;
         })
 
-        //        Product.sortTags().then((tags)=> {
-        //            $scope.tags = tags;
-        //            window.console.log(tags);
-        //        })
+       
 
         $scope.username = {
             text: 'email',
@@ -83,13 +67,12 @@ component('productCard', {
                         }
                     }
 
-                    //                    window.console.log(arr[i][1].tags);
+                 
                 }
             }
             for (var g = 0; g < tagsArr.length; g = g + 1) {
                 $scope.productTags.push(titleCase(tagsArr[g]));
             }
-            window.console.log($scope.productTags);
         }
 
         const titleCase = function titleCase(str) {
@@ -99,7 +82,7 @@ component('productCard', {
                 }
             );
         }
-        //    window.console.log(Product.q)
+
         /* arbitrary max items limit. Currently the number of displayed photos is limited by this constant */
         this.maxItems = 2;
 
@@ -119,17 +102,7 @@ component('productCard', {
         this.addItem = function (itemId, q) {
             Product.addItem(itemId, q).then(() => {
                 $scope.checkoutInfo = Product.checkoutInfo;
-                window.console.log(Product);
-                //                cartVals = Object.values(Product.items);
-                ////                window.console.log(cartVals.length);
-                //                
-                //                var x;
-                //                x = [];
-                //                for(var i = 0; i < cartVals.length; i = i + 1){
-                //                    x.push(parseInt(cartVals[i].quantity));
-                //                }
-                //                $scope.cartTotal = x.reduce((a,b)=> a + b,0);
-                //                window.console.log("Final Val: " + parseInt(finalVal));
+               
                 //these empty .then() functions are necessary to trigger an update of the UI. If you remove them you will notice the UI will not reflect changes in state until a new event (button click, keypress) is triggered. 
             });
         }
@@ -159,8 +132,6 @@ component('productCard', {
          */
         this.getCheckout = function () {
             Product.getCheckout().then((url) => {
-                //If you want to see where this will direct you,
-                //console.log(url);
                 window.location.href = url;
             });
         }

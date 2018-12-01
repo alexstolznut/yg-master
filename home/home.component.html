@@ -39,14 +39,13 @@
     </div>
 
     <div class="row">
-        <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('special',product)">
+        <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in products" ng-if=products.types === 'special'>
             <a href="#!/product/{{id}}"> <img class="card-img-top" src="{{product['pic_urls'][0]}}" alt="Card image cap"></a>
             <div class="card-body">
                 <h5 class="card-title" ng-if="langPos == 0">{{product['title-en']}}</h5>
                 <h5 class="card-title" ng-if="langPos == 1">{{product['title-ch']}}</h5>
 
                 <h5 class="card-subtitle mb-2">{{product['vars'][0]['price']}}</h5>
-<!--                <a href="#!/product/{{id}}" class="btn btn-primary btn-action">Read More</a>-->
                 <a class="btn btn-primary" ng-click="$ctrl.addItem(product.vars[0].id)">Add to Cart</a>
             </div>
 
@@ -57,14 +56,13 @@
         <h1 class="popular-items-text display-1">New Arrivals</h1>
     </div>
     <div class="row">
-       <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('New Arrival',product)" ng-show="$index<15">
+       <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in products" ng-if="mapFilter('New Arrival',product)" ng-show="$index<15">
             <a href="#!/product/{{id}}"> <img class="card-img-top" src="{{product['pic_urls'][0]}}" alt="Card image cap"></a>
             <div class="card-body">
                 <h5 class="card-title" ng-if="langPos == 0">{{product['title-en']}}</h5>
                 <h5 class="card-title" ng-if="langPos == 1">{{product['title-ch']}}</h5>
 
                 <h5 class="card-subtitle mb-2">{{product['vars'][0]['price']}}</h5>
-<!--                <a href="#!/product/{{id}}" class="btn btn-primary btn-action">Read More</a>-->
                 <a class="btn btn-primary" ng-click="$ctrl.addItem(product.vars[0].id)">Add to Cart</a>
             </div>
 
@@ -77,14 +75,13 @@
         <h1 class="popular-items-text display-1">Popular Items</h1>
     </div>
     <div class="row">
-       <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in $ctrl.products" ng-if="mapFilter('popular',product)">
+       <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in products" ng-if="mapFilter('popular',product)">
             <a href="#!/product/{{id}}"> <img class="card-img-top" src="{{product['pic_urls'][0]}}" alt="Card image cap"></a>
             <div class="card-body">
                 <h5 class="card-title" ng-if="langPos == 0">{{product['title-en']}}</h5>
                 <h5 class="card-title" ng-if="langPos == 1">{{product['title-ch']}}</h5>
 
                 <h5 class="card-subtitle mb-2">{{product['vars'][0]['price']}}</h5>
-<!--                <a href="#!/product/{{id}}" class="btn btn-primary btn-action">Read More</a>-->
                 <a class="btn btn-primary" ng-click="$ctrl.addItem(product.vars[0].id)">Add to Cart</a>
             </div>
 

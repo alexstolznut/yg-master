@@ -82,11 +82,6 @@ body {
     .card {
         margin: 2%;
     }
-    .card-body {
-        /*        padding: 1rem;*/
-    }
-
-
 }
 
 @media (min-width: 858px) and (max-width: 991px) {

@@ -63,15 +63,11 @@ video {
     font-size: 1.5em;
 }
 
-.aboutus-header {
-    /*    font-weight: 400 !important;*/
-}
+
 
 .img-container {
-    /*    width: 50%;*/
     height: 400px;
     width: 400px;
-    /*    margin: auto;*/
 }
 
 .img-container img {
@@ -83,9 +79,7 @@ video {
 }
 
 .img-container img:nth-of-type(2) {
-    /*    z-index: 2;*/
     top: -22rem;
-    ;
     left: 45px;
 }
 
@@ -115,7 +109,6 @@ video {
 
 .therapy:before {
     font-family: fontAwesome;
-    /*    content:'\f5bb';*/
     content: '\f0f0';
     font-size: 50px;
     color: white;
@@ -278,18 +271,6 @@ header {
     .arrow {
         top: -35%;
     }
-    /*
-    .mission .img-container:nth-of-type(1){
-        display:none;
-    }
-*/
-    /*
-    .aboutus .img-container{
-        position: relative;
-        margin: auto;
-        display:block;
-    }
-*/
     .summary {
         margin-top: 60% !important;
         height: 800px !important;
@@ -332,14 +313,6 @@ header {
       h2.about-header-text {
         margin-top: 5% !important;
     }
-
-/*
-    .arrow {
-        top: -35%;
-        width: 25px;
-        height: 25px;
-    }
-*/
 
 
 }

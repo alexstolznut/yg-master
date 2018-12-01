@@ -8,15 +8,12 @@ component('checkoutPage', {
             $scope.itemListLength = Object.keys($scope.itemList).length;
         }
         $scope.totalPrice = Product.checkoutInfo.totalPrice;
-        window.console.log($scope.totalPrice);
         this.getItem();
         this.removeItem = function (itemId) {
             Product.removeItem(itemId).then(() => {
-                window.console.log(Product.itemList);
                 //just like before, the empty .then() function is still necessary 
             });
         }
-        //         window.console.log(Product.items);
         
         $scope.langPos = LangChoice.langPos;
         $scope.langPos = LangChoice.langPos;
@@ -26,10 +23,7 @@ component('checkoutPage', {
                 $scope.totalPrice = Product.checkoutInfo.totalPrice;
             });
         }, 0);
-
-
-       
-        window.console.log(Product.items)
+        
         this.quantity = Product.items.quantity;
         this.updateQuantity = function (delta) {
             this.quantity += delta;
@@ -44,7 +38,7 @@ component('checkoutPage', {
                 //do not remove empty .then()
             });
         }
-        window.console.log($scope.itemList)
+      
 
         this.getCheckout = function () {
             Product.getCheckout().then((url) => {
