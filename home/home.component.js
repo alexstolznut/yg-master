@@ -108,14 +108,14 @@ component('home', {
         //        Output: 
         //            boolean isFound: true is match is found, false otherwise
         //    */
-//        $scope.mapFilter = function (match, product) {
-//            let i = 0;
-//            for (i; i < product['tags'].length; i++) {
-//                if (product['tags'][i]['value'].indexOf(match) != -1) {
-//                    return true;
-//                }
-//            }
-//            return false;
-//        }
+        $scope.mapFilter = function (match, product) {
+            let i = 0;
+            for (i; i < product['tags'].length; i++) {
+                if (product['tags'][i]['value'].indexOf(match) != -1) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }]
 });

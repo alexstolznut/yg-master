@@ -39,7 +39,7 @@
     </div>
 
     <div class="row">
-        <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in products" ng-if=products.types === 'special'>
+        <div class="card col-lg-3 col-md-5 col-sm-5 col-8" ng-repeat="(id, product) in products" ng-if="mapFilter('special', product)">
             <a href="#!/product/{{id}}"> <img class="card-img-top" src="{{product['pic_urls'][0]}}" alt="Card image cap"></a>
             <div class="card-body">
                 <h5 class="card-title" ng-if="langPos == 0">{{product['title-en']}}</h5>

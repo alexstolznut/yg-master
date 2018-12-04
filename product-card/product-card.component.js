@@ -30,11 +30,15 @@ component('productCard', {
         $scope.productTags = [];
         Product.getProducts().then((products) => {
             $scope.products = products;
+//            window.console.log($scope.products);
 
         });
+        
+        window.console.log(Product.getProducts('Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzEzNjc3MDQ3MzE3MDY='));
 
         Product.sortTags().then((tags) => {
             $scope.tags = tags;
+            window.console.log($scope.tags);
         })
 
        

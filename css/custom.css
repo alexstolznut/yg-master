@@ -28,7 +28,7 @@ a, a:hover, a:focus {
     z-index: 0 !important;
     box-shadow: 1px grey;
     opacity: .5;
-    margin-top: 6.7% !important;
+    margin-top: 75px !important;
 }
 #sidebar .components{
     margin-left: 0;

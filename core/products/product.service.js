@@ -2,6 +2,8 @@ angular.
 module('core.products').
 factory('Product',
     function ($q, $http) {
+    
+    
         var client = window.ShopifyBuy.buildClient({
             domain: 'yongtai-ginseng.myshopify.com',
             storefrontAccessToken: 'b787e9f392b579d00b2a3405e04b11bd'
@@ -26,7 +28,7 @@ factory('Product',
         //the items object must refer to the same memory address
         //throughout the application lifecycle
         var items = {};
-        
+
         //boolean flag to prevent reloading of product data
         var fetchAllCompleted = false;
 
@@ -47,7 +49,7 @@ factory('Product',
                     price: price of the variant
                     available: availability of variant
         */
-        
+
 
 
 
@@ -59,8 +61,9 @@ factory('Product',
             if (fetchAllCompleted) {
                 deferred.resolve(products);
             } else {
-                
+
                 client.product.fetchAll(250).then((products_complete) => {
+//                console.log(products_complete[2]);
                     //regular expression to parse english and chinese titles
                     let re = /\（[A-Za-z\s0-9\（\）\/\-]+\）/gmi;
                     let wordre = /\ (?:^|\W)\(\)(?:$|\W) /;
@@ -69,15 +72,19 @@ factory('Product',
                     let EU = "EU:";
                     let CU = "CU:";
                     let EB = "EB:";
-                    let CB = "CB:"
-                    
+                    let CB = "CB:";
+                 
 
                     var i;
                     for (i = 0; i < products_complete.length; i++) {
+                     
+
                         let product_tmp = products_complete[i];
+
                         var test = product_tmp['variants'];
-                       
-                       
+
+
+
                         let product = {};
                         //add name and tags
                         product['id'] = product_tmp['id'];
@@ -100,11 +107,11 @@ factory('Product',
                         product['title-ch'] = product['title'].slice(0, breakPoint);
                         product['title-en'] = product['title'].slice(breakPoint + 1, -1);
                         product['tags'] = product_tmp['tags'];
-                        window.console.log(product['tags']);
+
                         product['type'] = product_tmp['productType'];
                         product['pic_urls'] = [];
                         product['sku'] = product_tmp['variants'][0]['sku'];
-                        
+
                         //add the images 
                         for (var j in product_tmp['images']) {
                             if (product_tmp['images'][j]['src'] != null) {
@@ -136,67 +143,73 @@ factory('Product',
                     }
                     //set the boolean flag and resolve the promise
                     fetchAllCompleted = true;
-                    //console.log(products.length);
+                  
                     deferred.resolve(products);
                 });
             }
+            
             //return a promise object to whatever object (most likely a controller) is calling the getProducts function
             return deferred.promise;
         }
+       
 
-        
         function sortTags(products) {
             return getProducts().then((products) => {
-            var products = products;
-//            $scope.sortTags($scope.products);
-//            window.console.log($scope.sortTags);
-        
-//            $scope.sortTags($scope.products);
-                     var JSONProducts = JSON.stringify(products);
-            var arr = [];
-            var tagsArr = []
-            var productTags = [];
-            for (var tags in products) {
-                if (products.hasOwnProperty(tags)) {
-                    arr.push([tags, products[tags]]);
+                var products = products;
+                
+             
+                //            $scope.sortTags($scope.products);
+                //            window.console.log($scope.sortTags);
 
-                }
+                //            $scope.sortTags($scope.products);
+                var JSONProducts = JSON.stringify(products);
+                var arr = [];
+                var tagsArr = []
+                var productTags = [];
+                for (var tags in products) {
+                    if (products.hasOwnProperty(tags)) {
+                        arr.push([tags, products[tags]]);
 
-                for (var i = 0; i < arr.length; i = i + 1) {
-                    //                    arr = arr.splice(0,1);
-                    for (var h = 0; h < arr[i][1].tags.length; h = h + 1) {
-                        if (tagsArr.includes(arr[i][1].tags[h].value) === false) {
-                            tagsArr.push(arr[i][1].tags[h].value);
-                        }
                     }
 
-                    //                    window.console.log(arr[i][1].tags);
+                    for (var i = 0; i < arr.length; i = i + 1) {
+                        //                    arr = arr.splice(0,1);
+                        for (var h = 0; h < arr[i][1].tags.length; h = h + 1) {
+                            if (tagsArr.includes(arr[i][1].tags[h].value) === false) {
+                                tagsArr.push(arr[i][1].tags[h].value);
+                            }
+                        }
+
+                      
+                    }
                 }
-            }
-                
-            const titleCase = function(str) {
-            return str.replace(/\w\S*/g,
-                function (txt) {
-                    return txt.charAt(0).toLocaleUpperCase() + txt.substring(1).toLocaleLowerCase()
+
+                const titleCase = function (str) {
+                    return str.replace(/\w\S*/g,
+                        function (txt) {
+                            return txt.charAt(0).toLocaleUpperCase() + txt.substring(1).toLocaleLowerCase()
+                        }
+                    );
                 }
-            );
+
+                for (var g = 0; g < tagsArr.length; g = g + 1) {
+                    productTags.push(titleCase(tagsArr[g]));
+                }
+                window.console.log(productTags);
+                return productTags;
+            });
+
         }
-                
-                for(var g = 0; g < tagsArr.length; g = g + 1){
-                productTags.push(titleCase(tagsArr[g]));
-            } 
-            return productTags;
-        });
-            
-        }
-    
+
+
+
 
         /*Add an item to the cart. 
             Input: 
                 itemId: item id as assigned by shopify
                 q: quantity to add. Default is 1. 
         */
-        
+
         function addItem(itemId, q = 1) {
             //this function returns a promise
 
@@ -312,7 +325,7 @@ factory('Product',
             }
             return numItems;
         }
-       
+
         /* Make the local functions and variables accessible to external code */
         return {
             getProducts: getProducts,
