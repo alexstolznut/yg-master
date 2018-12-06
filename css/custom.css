@@ -85,11 +85,11 @@ ul ul a {
     margin-left: 250px;
 }
 #sidebar{
-    margin-top:20px;
+/*    margin-top:20px;*/
     position: fixed;
     min-width: 250px;
     max-width: 250px;
-    height: 100vh;
+    height: 95vh;
 }
 #sidebar.active{
     margin-left: -250px;
