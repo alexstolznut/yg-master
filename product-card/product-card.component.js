@@ -25,23 +25,38 @@ component('productCard', {
             TagChoice.tagChoice = value;
 
         }
-        window.onload = function(){$scope.changeCurrentTagValue('All');}
-        
+        $scope.changeCurrentTagValue('All');
+
         $scope.productTags = [];
         Product.getProducts().then((products) => {
             $scope.products = products;
-//            window.console.log($scope.products);
+            //            window.console.log($scope.products);
 
         });
-        
-        window.console.log(Product.getProducts('Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzEzNjc3MDQ3MzE3MDY='));
+
+        $scope.sidebar = function () {
+            var li = $('#sidebar > ul > li.sidebar-nav');
+            for (var i = 0; i < li.length; i = i + 1) {
+                li[i].addEventListener('click', function (e) {
+                  
+
+                    for (var i = 0; i < li.length; i = i + 1) {
+                        li[i].setAttribute('class', '');
+                    }
+                    e.target.parentNode.setAttribute('class', 'sidebar-active');
+                });
+
+            }
+
+        };
+
 
         Product.sortTags().then((tags) => {
             $scope.tags = tags;
             window.console.log($scope.tags);
         })
 
-       
+
 
         $scope.username = {
             text: 'email',
@@ -71,7 +86,7 @@ component('productCard', {
                         }
                     }
 
-                 
+
                 }
             }
             for (var g = 0; g < tagsArr.length; g = g + 1) {
@@ -106,7 +121,7 @@ component('productCard', {
         this.addItem = function (itemId, q) {
             Product.addItem(itemId, q).then(() => {
                 $scope.checkoutInfo = Product.checkoutInfo;
-               
+
                 //these empty .then() functions are necessary to trigger an update of the UI. If you remove them you will notice the UI will not reflect changes in state until a new event (button click, keypress) is triggered. 
             });
         }

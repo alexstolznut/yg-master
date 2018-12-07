@@ -22,12 +22,10 @@ a, a:hover, a:focus {
 }
 
 #sidebar {
-    background: #938393;
-    color: #fff;
+    background: rgba(170, 131, 147, .5);
     transition: all 0.3s;
     z-index: 0 !important;
     box-shadow: 1px grey;
-    opacity: .5;
     margin-top: 75px !important;
 }
 #sidebar .components{
@@ -55,13 +53,14 @@ a, a:hover, a:focus {
 }
 .wrapper #sidebar ul li a:hover, .wrapper #sidebar ul li:hover {
     color: #B73D5E !important;
-    background: #fff !important;
+    background-color: #fff !important;
+}
+.wrapper #sidebar ul li.sidebar-active > a{
+    color: #B73D5E !important;
+    background-color: #fff !important;
+    font-weight: 400;
 }
 
-#sidebar ul li.active > a {
-    color: #fff;
-    background: #6d7fcc;
-}
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;

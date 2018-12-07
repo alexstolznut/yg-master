@@ -3,9 +3,9 @@
 <div class="wrapper">
     <div id="sidebar">
 
-        <ul class="list-unstyled components navbar-nav">
-           <li><a class="nav-link" ng-click="changeCurrentTagValue('All')">All</a></li>
-            <li ng-repeat="tag in tags | orderBy: alphabet "><a class="nav-link" ng-click="changeCurrentTagValue(tag)">{{tag}}</a></li>
+        <ul class="list-unstyled components navbar-nav" ng-click="sidebar()">
+           <li class="sidebar-nav"><a class="nav-link" ng-click="changeCurrentTagValue('All')">All</a></li>
+            <li ng-repeat="tag in tags | orderBy: alphabet " class="sidebar-nav"><a class="nav-link" ng-click="changeCurrentTagValue(tag)">{{tag}}</a></li>
             
 <!--
             <li><a href="#!/product/#delicacy" ng-if="langPos == 0">Delicacy</a><a class="nav-link" href="#!/product/#herbal" ng-if="langPos==1">美味</a>
