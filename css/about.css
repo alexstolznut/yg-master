@@ -33,7 +33,7 @@ about {
     top: 0;
     color: #f1f1f1;
     min-width: 100%;
-    height: 100%;
+    min-height: 100%;
     overflow: hidden;
 }
 
@@ -206,6 +206,34 @@ header {
     margin: 0;
 }
 
+.header-container-mobile {
+    display: none;
+
+}
+
+h2.about-header-text {
+    margin-top: 15% !important;
+}
+.modal{
+    top: 15% !important;
+    text-align: center !important;
+}
+.modal .modal-content{
+    background: rgba(255, 34, 130);
+    border-radius: 10px !important;
+}
+
+.modal .modal-content .modal-body h2, .modal .modal-content .modal-body h5, .modal .modal-content button{
+     color: #fff !important;
+}
+.modal-body{
+
+}
+.modal .modal-header, .modal .modal-footer{
+    border:none;
+    
+}
+
 @media(max-width:1215px) {
     header {
         height: 34em;
@@ -223,7 +251,7 @@ header {
         height: 28em;
     }
     .arrow {
-        top: -30%;
+        top: 0%;
     }
 }
 
@@ -232,7 +260,7 @@ header {
         height: 26em
     }
     .arrow {
-        top: -30%;
+        margin-top: -8%;
     }
     .content h2,
     .content h5 {
@@ -240,6 +268,9 @@ header {
     }
     .summary {
         height: 850px;
+    }
+    h2.about-header-text {
+        margin-top: 15% !important;
     }
 }
 
@@ -269,7 +300,7 @@ header {
         max-height: 400px;
     }
     .arrow {
-        top: -35%;
+        margin-top: -5%;
     }
     .summary {
         margin-top: 60% !important;
@@ -310,8 +341,8 @@ header {
     body {
         text-align: center !important;
     }
-      h2.about-header-text {
-        margin-top: 5% !important;
+    h2.about-header-text {
+        margin-top: 15% !important;
     }
 
 
@@ -331,7 +362,7 @@ header {
     .content h2,
     .content h5 {
         position: relative;
-        top: 20%;
+        top: 30%;
         transform: translateY(-50%);
     }
     .summary {
@@ -349,27 +380,28 @@ header {
     .icon-row {
         padding: 2.5%;
     }
-    
-         h2.about-header-text {
-        margin-top: 10% !important;
+
+    h2.about-header-text {
+        margin-top: 20% !important;
     }
 
     .arrow {
-        top: -15%;
-        width: 25px;
-        height: 25px;
+        margin-top: 0%;
+        top:15%;
+        width: 30px;
+        height: 30px;
     }
-    
+
 }
 
 @media(max-width:530px) {
     header {
         height: 15em;
-        margin-top: -16%
+        margin-top: -18%
     }
     .content h2,
     .content h5 {
-        top: 15%;
+        top: 30%;
     }
 
     .content h2 {
@@ -384,11 +416,11 @@ header {
     .about-contact-form {
         height: 550px;
     }
-    
-      .arrow {
-        top: -30%;
-        width: 25px;
-        height: 25px;
+
+    .arrow {
+/*        top: -30%;*/
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -432,7 +464,7 @@ header {
     }
 
     h2.about-header-text {
-        margin-top: 10% !important;
+        margin-top: 20% !important;
     }
 
     .arrow {
@@ -445,6 +477,20 @@ header {
 @media(max-width:400px) {
     .summary {
         margin-top: 150%;
+    }
+    .header-container-mobile {
+        display: block;
+    }
+    h2.about-header-text{
+        margin-top:25% !important;
+    }
+    .mobile-image {
+        width: 100%;
+        display: block;
+        filter:brightness(50%);
+    }
+    .header-container-desktop {
+        display: none;
     }
 
 }

@@ -1,18 +1,32 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../css/about.css">
 <header>
-    <video autoplay muted loop id="aboutBackground">
+    <div class="header-container-desktop">
+        <video autoplay muted loop id="aboutBackground">
                     <source src="../video/nature.mp4" poster="../img/about-header.jpg" type="video/mp4">
                 </video>
 
-    <div class="content">
-        <h2 class="display-1 about-header-text">Yongtai Ginseng</h2>
-        <h5 class="display-4 about-header-text">Stockton's number one provider in herbal remedies</h5>
-    </div>
-    <div class="arrow bounce">
+        <div class="content">
+            <h2 class="display-1 about-header-text">Yongtai Ginseng</h2>
+            <h5 class="display-4 about-header-text">Stockton's number one provider in herbal remedies</h5>
+             <div class="arrow bounce">
 
+        </div>
+        </div>
     </div>
- 
+    
+      <div class="header-container-mobile">
+        <img class="mobile-image" src="../img/nature.png">
+
+        <div class="content">
+            <h2 class="display-1 about-header-text">Yongtai Ginseng</h2>
+            <h5 class="display-4 about-header-text">Stockton's number one provider in herbal remedies</h5>
+        </div>
+        <div class="arrow bounce">
+
+        </div>
+    </div>
+
 </header>
 
 <div class="container">
@@ -126,12 +140,12 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title text-dark mx-auto text-center ml-5" id="exampleModalLabel">Thank you for contacting us!</h2>
                         <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
                     </div>
                     <div class="modal-body text-center text-dark">
+                       <h2 class="modal-title text-dark mx-auto text-center ml-5" id="exampleModalLabel">Thank you for contacting us!</h2>
                         <h5>We'll get back to you as soon as possible!</h5>
                     </div>
                     <div class="modal-footer">
