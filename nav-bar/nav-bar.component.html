@@ -64,10 +64,10 @@
     </div>
 
 
-        <div class="justify-content-end d-none d-md-block">
+        <div class="justify-content-end d-none d-md-block mr-3">
             <a ng-click="$ctrl.switchLang()" class="btn btn-secondary-neutral mobile-icons">{{$ctrl.LanguageChoice}}</a>
         </div>
-        <div class="sideButtons justify-content-end  d-none d-md-block">
+        <div class="sideButtons justify-content-end  d-none d-md-block mr-3">
             <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle icons" href="#!/checkout" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" ng-mouseover="$ctrl.getItem()">
                     <span><span id="cartTotal" ng-if="checkoutInfo['totalItems'] > 0" class="btn-primary"><span class="total"><span ng-if="checkoutInfo['totalItems'] > 9">9+</span><span ng-if="checkoutInfo['totalItems'] <= 9">{{checkoutInfo['totalItems']}}</span></span></span>

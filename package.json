@@ -1,0 +1,27 @@
+{
+  "name": "master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.config.js",
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.5.6",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2",
+    "node-mandrill": "^1.0.1",
+    "nodemailer": "^4.6.8",
+    "shopify-buy": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/yongtaiginseng/yongtaiginseng.bitbucket.io/src/master/"
+  },
+  "author": "",
+  "license": "ISC"
+}
